@@ -5,26 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Integrador I - ADS</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <header>
         <h1>Projeto Integrador I</h1>
-        <h2>Curso de Análise e Desenvolvimento de Sistemas</h2>
-    </header>
+        
+  <div class="container">
+    
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="materias.html">Matérias</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
 
     <main>
         <section>
             <h3>Visão Geral</h3>
             <p>O Projeto Integrador I visa aplicar conhecimentos adquiridos nas disciplinas iniciais do curso de ADS, através do desenvolvimento de soluções tecnológicas para problemas reais ou simulados.</p>
+            <p>Neste projeto, utilizaremos o Git e GitHub para controle de versão e colaboração em equipe.</p>
         </section>
 
         <section>
-            <h3>Objetivos</h3>
+            <h3>Controle de Versionamento com Git</h3>
+            <p>Git é um sistema de controle de versão distribuído criado em 2005 por Linus Torvalds. Principais vantagens:</p>
             <ul>
-                <li>Aplicar conhecimentos práticos na análise e desenvolvimento de sistemas.</li>
-                <li>Trabalhar em equipe e cumprir prazos.</li>
-                <li>Utilizar metodologias de desenvolvimento de software.</li>
-                <li>Elaborar protótipos, diagramas e documentação técnica.</li>
+                <li>Gratuito e open source</li>
+                <li>Alta performance</li>
+                <li>Operações locais (sem necessidade de servidor)</li>
+                <li>Integridade dos dados</li>
+                <li>Suporte a diferentes workflows</li>
+            </ul>
+            
+            <div class="note">
+                <h4>Git vs GitHub</h4>
+                <p>Git é o sistema de controle de versão, enquanto GitHub é um serviço de hospedagem de código que usa Git. Eles são coisas diferentes!</p>
+            </div>
+        </section>
+
+        <section>
+            <h3>Configuração Inicial do Git</h3>
+            <p>Para começar a usar o Git, é necessário configurar seu usuário:</p>
+            <code class="command">git config --global user.name "Seu Nome"
+git config --global user.email "seu@email.com"</code>
+            
+            <p>Para verificar as configurações:</p>
+            <code class="command">git config --list</code>
+        </section>
+
+        <section>
+            <h3>Fluxo Básico de Trabalho</h3>
+            <ol>
+                <li><strong>Working Directory</strong>: Arquivos modificados, inseridos ou excluídos</li>
+                <li><strong>Staging Area</strong>: Arquivos rastreados e prontos para serem versionados (<code>git add</code>)</li>
+                <li><strong>Repository</strong>: Alterações efetivadas (<code>git commit</code>)</li>
+            </ol>
+            
+            <h4>Comandos Essenciais:</h4>
+            <code class="command">git init          # Inicializa um repositório
+git status        # Verifica o estado dos arquivos
+git add .         # Adiciona todas as alterações
+git commit -m "mensagem"  # Registra as alterações
+git log           # Mostra o histórico de commits</code>
+        </section>
+
+        <section>
+            <h3>Trabalhando com Branches</h3>
+            <p>Branches são ramificações no projeto usadas para desenvolver funcionalidades sem impactar a versão principal.</p>
+            
+            <h4>Comandos para Branches:</h4>
+            <code class="command">git branch                  # Lista branches
+git branch nome_branch     # Cria nova branch
+git checkout nome_branch   # Muda para a branch
+git merge nome_branch      # Mescla branches</code>
+            
+            <div class="note">
+                <h4>Boa Prática</h4>
+                <p>Mantenha a branch principal (main/master) estável e crie branches para cada nova funcionalidade.</p>
+            </div>
+        </section>
+
+        <section>
+            <h3>Trabalhando com GitHub</h3>
+            <p>GitHub é uma plataforma para hospedar repositórios Git e colaborar em projetos.</p>
+            
+            <h4>Fluxo Básico:</h4>
+            <ol>
+                <li>Crie um repositório no GitHub</li>
+                <li>Conecte seu repositório local:
+                    <code class="command">git remote add origin URL_DO_REPOSITORIO</code>
+                </li>
+                <li>Envie suas alterações:
+                    <code class="command">git push origin main</code>
+                </li>
+                <li>Para baixar atualizações:
+                    <code class="command">git pull origin main</code>
+                </li>
+            </ol>
+        </section>
+
+        <section>
+            <h3>Trabalho em Equipe com Pull Requests</h3>
+            <p>Pull Requests permitem revisão de código antes de mesclar alterações:</p>
+            <ol>
+                <li>Crie uma branch para sua funcionalidade</li>
+                <li>Faça e commit suas alterações</li>
+                <li>Envie para o GitHub (<code>git push</code>)</li>
+                <li>Abra um Pull Request no GitHub</li>
+                <li>Após revisão, faça o merge</li>
+            </ol>
+            
+            <div class="note">
+                <h4>Resolvendo Conflitos</h4>
+                <p>Quando há alterações conflitantes, é necessário editar manualmente os arquivos marcados pelo Git antes de completar o merge.</p>
+            </div>
+        </section>
+
+        <section>
+            <h3>Boas Práticas</h3>
+            <ul>
+                <li>Faça commits atômicos (uma mudança por commit)</li>
+                <li>Escreva mensagens de commit claras e descritivas</li>
+                <li>Use o <code>.gitignore</code> para arquivos desnecessários</li>
+                <li>Sincronize frequentemente com o repositório remoto</li>
+                <li>Revise o código dos colegas antes de fazer merge</li>
             </ul>
         </section>
 
@@ -32,31 +143,23 @@
             <h3>Etapas do Projeto</h3>
             <ol>
                 <li>Escolha do Tema / Problema</li>
-                <li>Análise e Planejamento</li>
-                <li>Modelagem</li>
-                <li>Prototipagem</li>
-                <li>Documentação</li>
+                <li>Análise e Planejamento (incluindo setup do repositório Git)</li>
+                <li>Modelagem (com versionamento de documentos)</li>
+                <li>Prototipagem (usando branches para funcionalidades)</li>
+                <li>Documentação (incluindo README no GitHub)</li>
             </ol>
         </section>
 
         <section>
-            <h3>Exemplos de Temas</h3>
-            <ul>
-                <li>Sistema de controle de estoque para microempresas</li>
-                <li>Aplicativo de organização de estudos</li>
-                <li>Plataforma de agendamento de serviços</li>
-                <li>Cadastro e gerenciamento de pets para clínicas</li>
-            </ul>
-        </section>
-
-        <section>
             <h3>Conclusão</h3>
-            <p>Este projeto representa o início da jornada prática dos estudantes no mundo da tecnologia. Ele fortalece o raciocínio lógico, o trabalho em equipe e a criatividade.</p>
+            <p>Este projeto representa o início da jornada prática dos estudantes no mundo da tecnologia. O uso de Git e GitHub fortalece o trabalho em equipe, a organização do código e a colaboração eficiente.</p>
+            <p>Dominar essas ferramentas é essencial para qualquer desenvolvedor de software profissional.</p>
         </section>
+         <a href="https://github.com/Adryan-Francisco/Curso-Git">Atividade feita no GITHUB</a>
     </main>
 
     <footer>
-        <p>&copy; 2025 - Adryan Thiago de Oliveira Francisco </p>
+        <p>&copy; 2025 - Adryan Thiago de Oliveira Francisco</p>
     </footer>
 </body>
 </html>

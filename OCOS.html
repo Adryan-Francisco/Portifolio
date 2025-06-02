@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<header>
+        <h1>Organização de Computadores e Sistemas Operacionais</h1>
+        
+  <div class="container">
+    
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="materias.html">Matérias</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<body>
+    <h1></h1>
+    
+    <!-- Seção 1: Componentes Fundamentais -->
+    <div class="section">
+        <h2>Componentes Fundamentais de um Computador</h2>
+        <div class="three-columns">
+            <div class="card">
+                <h3>CPU (Unidade Central de Processamento)</h3>
+                <ul>
+                    <li>Executa instruções e operações</li>
+                    <li>Contém ULA, registradores e unidade de controle</li>
+                    <li>Ciclo básico: Busca, Decodificação, Execução, Armazenamento</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Memória</h3>
+                <ul>
+                    <li>Hierarquia: Cache, RAM, Armazenamento secundário</li>
+                    <li>RAM (volátil) e ROM (não-volátil)</li>
+                    <li>Memória virtual para expandir capacidade</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Dispositivos de E/S e Barramentos</h3>
+                <ul>
+                    <li>Periféricos de entrada e saída</li>
+                    <li>Barramentos de dados, endereços e controle</li>
+                    <li>Interfaces como USB, HDMI, SATA</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Seção 2: Memória -->
+    <div class="section">
+        <h2>Hierarquia de Memória</h2>
+        
+        <div class="highlight">
+            <p>A hierarquia de memória organiza os diferentes tipos de memória em termos de velocidade, capacidade e custo, otimizando o desempenho do sistema.</p>
+        </div>
+        
+        <div class="two-columns">
+            <div>
+                <h3>Tipos de Memória</h3>
+                <ul>
+                    <li><strong>Registradores:</strong> Mais rápidos, dentro da CPU</li>
+                    <li><strong>Cache (L1, L2, L3):</strong> Memória rápida para dados frequentes</li>
+                    <li><strong>RAM:</strong> Memória principal volátil</li>
+                    <li><strong>ROM:</strong> Memória não-volátil para firmware</li>
+                    <li><strong>Armazenamento secundário:</strong> Discos rígidos, SSDs</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Características</h3>
+                <table>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Velocidade</th>
+                        <th>Capacidade</th>
+                        <th>Custo</th>
+                    </tr>
+                    <tr>
+                        <td>Registradores</td>
+                        <td>1-2 ns</td>
+                        <td>KB</td>
+                        <td>Alto</td>
+                    </tr>
+                    <tr>
+                        <td>Cache</td>
+                        <td>2-10 ns</td>
+                        <td>MB</td>
+                        <td>Alto</td>
+                    </tr>
+                    <tr>
+                        <td>RAM</td>
+                        <td>10-100 ns</td>
+                        <td>GB</td>
+                        <td>Médio</td>
+                    </tr>
+                    <tr>
+                        <td>Armazenamento</td>
+                        <td>ms</td>
+                        <td>TB</td>
+                        <td>Baixo</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <h3>Memória Virtual</h3>
+        <p>Técnica que usa espaço em disco como extensão da RAM, gerenciada pelo sistema operacional através de paginação.</p>
+    </div>
+    
+    <!-- Seção 3: CPU e ULA -->
+    <div class="section">
+        <h2>Unidade Central de Processamento (CPU)</h2>
+        
+        <div class="two-columns">
+            <div>
+                <h3>Componentes da CPU</h3>
+                <ul>
+                    <li><strong>ULA (Unidade Lógica e Aritmética):</strong> Executa operações matemáticas e lógicas</li>
+                    <li><strong>Unidade de Controle:</strong> Coordena as operações</li>
+                    <li><strong>Registradores:</strong> Armazenamento temporário rápido</li>
+                    <li><strong>Cache:</strong> Memória rápida para dados frequentes</li>
+                </ul>
+                
+                <h3>Ciclo de Instrução</h3>
+                <ol>
+                    <li><strong>Busca (Fetch):</strong> Obtém instrução da memória</li>
+                    <li><strong>Decodificação (Decode):</strong> Interpreta a instrução</li>
+                    <li><strong>Execução (Execute):</strong> ULA realiza operação</li>
+                    <li><strong>Armazenamento (Store):</strong> Salva resultados</li>
+                </ol>
+            </div>
+            <div>
+                <h3>Unidade Lógica e Aritmética (ULA)</h3>
+                <div class="operation-card">
+                    <h4>Operações Aritméticas</h4>
+                    <ul>
+                        <li>Adição, subtração</li>
+                        <li>Multiplicação, divisão</li>
+                        <li>Operações com complemento para dois</li>
+                    </ul>
+                </div>
+                <div class="operation-card">
+                    <h4>Operações Lógicas</h4>
+                    <ul>
+                        <li>AND, OR, NOT, XOR</li>
+                        <li>Comparações (maior, menor, igual)</li>
+                        <li>Deslocamento e rotação de bits</li>
+                    </ul>
+                </div>
+                <div class="operation-card">
+                    <h4>Entradas e Saídas</h4>
+                    <ul>
+                        <li>Operandos (dados de entrada)</li>
+                        <li>Código de operação (da unidade de controle)</li>
+                        <li>Resultados e códigos de condição (overflow, zero, etc.)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Seção 4: Pipeline -->
+    <div class="section">
+        <h2>Técnica de Pipeline</h2>
+        
+        <div class="highlight">
+            <p>O pipeline permite a execução sobreposta de instruções, dividindo o processamento em estágios que podem operar simultaneamente em diferentes instruções.</p>
+        </div>
+        
+        <h3>Estágios do Pipeline</h3>
+        <div class="three-columns">
+            <div class="card">
+                <h4>1. Busca (Fetch)</h4>
+                <p>Carrega a próxima instrução da memória para o registrador de instrução</p>
+            </div>
+            <div class="card">
+                <h4>2. Decodificação (Decode)</h4>
+                <p>Interpreta a instrução e prepara operandos</p>
+            </div>
+            <div class="card">
+                <h4>3. Execução (Execute)</h4>
+                <p>ULA realiza a operação especificada</p>
+            </div>
+            <div class="card">
+                <h4>4. Acesso à Memória</h4>
+                <p>Lê ou escreve dados na memória se necessário</p>
+            </div>
+            <div class="card">
+                <h4>5. Escrita (Write Back)</h4>
+                <p>Armazena resultados em registradores ou memória</p>
+            </div>
+        </div>
+        
+        <h3>Desafios do Pipeline</h3>
+        <div class="two-columns">
+            <div>
+                <h4>Hazards (Perigos)</h4>
+                <ul>
+                    <li><strong>Data Hazard:</strong> Dependência de dados entre instruções</li>
+                    <li><strong>Control Hazard:</strong> Mudanças no fluxo de controle (desvios)</li>
+                    <li><strong>Structural Hazard:</strong> Conflito por recursos</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Soluções</h4>
+                <ul>
+                    <li>Forwarding (adiantamento de resultados)</li>
+                    <li>Branch Prediction (predição de desvios)</li>
+                    <li>Execução fora de ordem</li>
+                    <li>Pipeline superescalar (múltiplas pipelines)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Seção 5: Barramentos -->
+    <div class="section">
+        <h2>Barramentos e Comunicação</h2>
+        
+        <div class="highlight">
+            <p>Barramentos são vias de comunicação que permitem a transferência de dados entre os componentes do computador.</p>
+        </div>
+        
+        <h3>Tipos de Barramentos</h3>
+        <div class="three-columns">
+            <div class="card">
+                <h4>Barramento de Dados</h4>
+                <ul>
+                    <li>Transfere dados entre componentes</li>
+                    <li>Largura determina quantidade de bits transferidos simultaneamente</li>
+                    <li>Ex: 32 bits, 64 bits</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>Barramento de Endereços</h4>
+                <ul>
+                    <li>Especifica localizações de memória</li>
+                    <li>Largura determina memória máxima endereçável</li>
+                    <li>Ex: 32 bits → 4GB, 64 bits → 16 exabytes</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>Barramento de Controle</h4>
+                <ul>
+                    <li>Transporta sinais de controle</li>
+                    <li>Coordena operações (leitura, escrita, interrupções)</li>
+                    <li>Sincroniza comunicações</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h3>Exemplos de Barramentos</h3>
+        <table>
+            <tr>
+                <th>Barramento</th>
+                <th>Tipo</th>
+                <th>Uso</th>
+                <th>Características</th>
+            </tr>
+            <tr>
+                <td>PCI</td>
+                <td>Expansão</td>
+                <td>Placas internas</td>
+                <td>Paralelo, substituído pelo PCIe</td>
+            </tr>
+            <tr>
+                <td>PCI Express</td>
+                <td>Expansão</td>
+                <td>Placas de vídeo, etc.</td>
+                <td>Serial, alta velocidade, múltiplas lanes</td>
+            </tr>
+            <tr>
+                <td>USB</td>
+                <td>E/S</td>
+                <td>Periféricos externos</td>
+                <td>Hot plug, versões 2.0, 3.0, etc.</td>
+            </tr>
+            <tr>
+                <td>SATA</td>
+                <td>Armazenamento</td>
+                <td>HDDs, SSDs</td>
+                <td>Serial, substituiu IDE</td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- Seção 6: Dispositivos de E/S -->
+    <div class="section">
+        <h2>Dispositivos de Entrada e Saída</h2>
+        
+        <div class="two-columns">
+            <div>
+                <h3>Tipos de Dispositivos</h3>
+                <ul>
+                    <li><strong>Entrada:</strong> Teclado, mouse, scanner, câmera</li>
+                    <li><strong>Saída:</strong> Monitor, impressora, alto-falantes</li>
+                    <li><strong>Armazenamento:</strong> HD externo, pendrive</li>
+                    <li><strong>Comunicação:</strong> Modem, roteador</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Processo de Comunicação</h3>
+                <ol>
+                    <li>Conexão física (cabo ou sem fio)</li>
+                    <li>Detecção e instalação de drivers</li>
+                    <li>Transferência de dados gerenciada por módulos de E/S</li>
+                    <li>Monitoramento de status e desempenho</li>
+                </ol>
+            </div>
+        </div>
+        
+        <h3>Desafios</h3>
+        <div class="three-columns">
+            <div class="card">
+                <h4>Compatibilidade</h4>
+                <p>Garantir funcionamento com diferentes sistemas e versões</p>
+            </div>
+            <div class="card">
+                <h4>Desempenho</h4>
+                <p>Evitar gargalos e conflitos</p>
+            </div>
+            <div class="card">
+                <h4>Segurança</h4>
+                <p>Proteger contra ameaças por dispositivos externos</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

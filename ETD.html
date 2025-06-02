@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+   
+    
+</head>
+ <header>
+        <h1>Estrutura de Dados</h1>
+        
+  <div class="container">
+    
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="materias.html">Matérias</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<body>
+     
+    <div class="container">
+       
+
+        <h2>1. Vetores</h2>
+        <h3>1.1 Vetores Não Ordenados</h3>
+        <ul>
+            <li>Elementos armazenados sem ordem específica</li>
+            <li>Inserção sempre no final</li>
+            <li>Busca linear (O(n))</li>
+            <li>Remoção requer deslocamento de elementos</li>
+        </ul>
+
+        <h3>1.2 Vetores Ordenados</h3>
+        <ul>
+            <li>Elementos mantidos em ordem crescente/decrescente</li>
+            <li>Inserção requer encontrar posição correta e deslocar elementos</li>
+            <li>Busca binária possível (O(log n))</li>
+            <li>Vantagens: busca rápida, facilita operações como união e interseção</li>
+        </ul>
+
+        <h3>1.3 Alocação de Memória</h3>
+        <table>
+            <tr>
+                <th>Tipo</th>
+                <th>Descrição</th>
+                <th>Exemplo</th>
+            </tr>
+            <tr>
+                <td>Estática</td>
+                <td>Tamanho fixo definido em tempo de compilação</td>
+                <td><code>int vetor[10];</code></td>
+            </tr>
+            <tr>
+                <td>Dinâmica</td>
+                <td>Tamanho definido em tempo de execução (malloc)</td>
+                <td><code>int *v = malloc(10 * sizeof(int));</code></td>
+            </tr>
+        </table>
+
+        <h3>1.4 Algoritmos de Ordenação</h3>
+        <table>
+            <tr>
+                <th>Algoritmo</th>
+                <th>Complexidade</th>
+                <th>Características</th>
+            </tr>
+            <tr>
+                <td>Bubble Sort</td>
+                <td>O(n²)</td>
+                <td>Simples, compara pares adjacentes</td>
+            </tr>
+            <tr>
+                <td>Selection Sort</td>
+                <td>O(n²)</td>
+                <td>Encontra menor elemento e coloca na posição correta</td>
+            </tr>
+            <tr>
+                <td>QuickSort</td>
+                <td>O(n log n) médio</td>
+                <td>Divide usando pivô, recursivo, eficiente para grandes conjuntos</td>
+            </tr>
+        </table>
+
+        <h2>2. Structs</h2>
+        <ul>
+            <li>Agrupamento de variáveis de tipos diferentes sob um único nome</li>
+            <li>Permite criar tipos de dados personalizados</li>
+            <li>Exemplo:
+                <pre><code>struct Aluno {
+    char nome[50];
+    int idade;
+    float nota;
+};</code></pre>
+            </li>
+            <li>Ponteiros para structs permitem passagem por referência e alocação dinâmica</li>
+        </ul>
+
+        <h2>3. Listas Encadeadas</h2>
+        <h3>3.1 Lista Simplesmente Encadeada</h3>
+        <ul>
+            <li>Cada nó contém dados e ponteiro para próximo nó</li>
+            <li>Vantagens: tamanho dinâmico, inserções/remoções eficientes</li>
+            <li>Desvantagens: acesso sequencial, maior uso de memória</li>
+        </ul>
+
+        <h3>3.2 Operações Básicas</h3>
+        <table>
+            <tr>
+                <th>Operação</th>
+                <th>Complexidade</th>
+            </tr>
+            <tr>
+                <td>Inserir no início</td>
+                <td>O(1)</td>
+            </tr>
+            <tr>
+                <td>Inserir no fim</td>
+                <td>O(n)</td>
+            </tr>
+            <tr>
+                <td>Buscar elemento</td>
+                <td>O(n)</td>
+            </tr>
+            <tr>
+                <td>Remover elemento</td>
+                <td>O(n)</td>
+            </tr>
+        </table>
+
+        <h3>3.3 Lista Duplamente Encadeada</h3>
+        <ul>
+            <li>Cada nó contém ponteiros para anterior e próximo</li>
+            <li>Permite navegação bidirecional</li>
+            <li>Mais eficiente para remoções em posições arbitrárias</li>
+        </ul>
+
+        <h2>4. Pilhas e Filas</h2>
+        <h3>4.1 Pilhas (LIFO)</h3>
+        <ul>
+            <li>Último a entrar é o primeiro a sair</li>
+            <li>Operações básicas: push (empilhar) e pop (desempilhar)</li>
+        </ul>
+
+        <h3>4.2 Filas (FIFO)</h3>
+        <ul>
+            <li>Primeiro a entrar é o primeiro a sair</li>
+            <li>Operações básicas: enqueue (enfileirar) e dequeue (desenfileirar)</li>
+            <li>Implementações:
+                <ul>
+                    <li>Com vetor (tamanho fixo ou circular)</li>
+                    <li>Com lista encadeada</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>4.3 Fila com Prioridade</h3>
+        <ul>
+            <li>Elementos com maior prioridade são atendidos primeiro</li>
+            <li>Pode ser implementada com duas filas separadas ou usando heap</li>
+        </ul>
+
+        <h2>5. Comparação de Estruturas</h2>
+        <table>
+            <tr>
+                <th>Estrutura</th>
+                <th>Vantagens</th>
+                <th>Desvantagens</th>
+                <th>Melhor Caso de Uso</th>
+            </tr>
+            <tr>
+                <td>Vetor</td>
+                <td>Acesso rápido por índice, baixo overhead</td>
+                <td>Tamanho fixo, inserções/remoções custosas</td>
+                <td>Quando o tamanho é conhecido e há muitos acessos aleatórios</td>
+            </tr>
+            <tr>
+                <td>Lista Encadeada</td>
+                <td>Tamanho dinâmico, inserções/remoções eficientes</td>
+                <td>Acesso sequencial, maior uso de memória</td>
+                <td>Quando o tamanho varia muito e há muitas inserções/remoções</td>
+            </tr>
+            <tr>
+                <td>Pilha</td>
+                <td>Operações rápidas (O(1)), simples</td>
+                <td>Acesso limitado ao topo</td>
+                <td>Chamadas de função, undo/redo, avaliação de expressões</td>
+            </tr>
+            <tr>
+                <td>Fila</td>
+                <td>Operações rápidas (O(1)), ordem justa</td>
+                <td>Acesso limitado às extremidades</td>
+                <td>Processamento em ordem de chegada, buffers</td>
+            </tr>
+        </table>
+
+        <div class="note">
+            <h3>Dicas Importantes</h3>
+            <ul>
+                <li>Para vetores grandes com muitas buscas, prefira ordenados com busca binária</li>
+                <li>Para aplicações com muitas inserções/remoções, prefira listas encadeadas</li>
+                <li>Sempre libere memória alocada dinamicamente com <code>free()</code></li>
+                <li>Use passagem por referência (ponteiros) para structs grandes para melhor desempenho</li>
+    
+            </ul>
+            <a href="https://github.com/Adryan-Francisco/AtividadeC">Atividade feita no GITHUB</a>
+        </div>
+    </div>
+</body>
+</html>
