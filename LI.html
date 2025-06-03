@@ -3,13 +3,361 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link rel="stylesheet" href="style.css">
-</head>
-<header>
-        <h1>Lingua Inglesa</h1>
+    <title>Lingua Inglesa - Unidade 1 | It's Nice to Meet You</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
         
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--dark-text);
+            background-color: #f5f5f5;
+        }
+        
+      /* Estilos específicos para esta página */
+        .course-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .course-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        
+ .course-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .course-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .course-card h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .course-card h3 {
+            color: var(--dark-color);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .course-card p, .course-card li {
+            color: var(--gray-color);
+            line-height: 1.8;
+        }
+        
+        .course-card ul {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .course-card li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+        
+        .course-card li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .course-card code {
+            background-color: #e0e7ff;
+            color: var(--primary-color);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 10px;
+        }
+        
+        nav ul li a {
+            color: var(--light-text);
+            text-decoration: none;
+            padding: 0.8rem 1.2rem;
+            display: block;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        nav ul li a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .course-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 8rem 0 4rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .course-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .course-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .course-content {
+            padding: 0 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .feature-card h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .feature-card h3 {
+            color: var(--secondary-color);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .feature-card ul {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .feature-card li {
+            color: var(--gray-color);
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+        
+        .feature-card li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .feature-card li strong {
+            color: var(--dark-text);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            color: var(--secondary-color);
+        }
+        
+        .example {
+            background-color: var(--light-bg);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .example p {
+            margin: 0.5rem 0;
+        }
+        
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+        
+        .tech-item {
+            background-color: #e0e7ff;
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            margin: 0.5rem 0;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            margin-bottom: 1rem;
+        }
+        
+        .social-link {
+            color: var(--light-text);
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .course-header {
+                padding: 7rem 0 3rem;
+            }
+            
+            .course-header h1 {
+                font-size: 2rem;
+            }
+            
+            .course-content {
+                padding: 0 1rem 3rem;
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
   <div class="container">
-    
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -22,19 +370,35 @@
   </div>
 </header>
 
-<body>
-    <div class="container">
-        <h1>Unidade 1 - It's Nice to Meet You</h1>
-        
-        <h2>1. Conversação e Apresentações</h2>
+<div class="course-header">
+    <h1>Lingua Inglesa - Unidade 1</h1>
+    <p>It's Nice to Meet You - Conversação básica e gramática fundamental</p>
+</div>
+
+<main class="course-content">
+    <article class="feature-card">
+        <h2>Conversação e Apresentações</h2>
         <p>Diálogos básicos para se apresentar e cumprimentar pessoas:</p>
+        
         <div class="example">
             <p><strong>Joshua:</strong> Hi. My name is Joshua Brown.</p>
             <p><strong>Isabella:</strong> I'm Isabella Martins.</p>
             <p><strong>Joshua:</strong> It's nice to meet you, Isabella.</p>
         </div>
-
-        <h2>2. Gramática Básica</h2>
+        
+        <h3>Expressões úteis</h3>
+        <ul>
+            <li><strong>Hello / Hi</strong> - Olá / Oi</li>
+            <li><strong>Good morning/afternoon/evening</strong> - Bom dia/tarde/noite</li>
+            <li><strong>How are you?</strong> - Como você está?</li>
+            <li><strong>I'm fine, thank you</strong> - Estou bem, obrigado</li>
+            <li><strong>What's your name?</strong> - Qual é o seu nome?</li>
+        </ul>
+    </article>
+    
+    <article class="feature-card">
+        <h2>Gramática Básica</h2>
+        
         <h3>Pronomes Possessivos</h3>
         <table>
             <tr>
@@ -54,7 +418,7 @@
                 <td><span class="highlight">Her</span> name is Isabella.</td>
             </tr>
         </table>
-
+        
         <h3>Verbo "To Be"</h3>
         <p>Formas no presente:</p>
         <ul>
@@ -62,16 +426,47 @@
             <li><strong>You are</strong> (You're)</li>
             <li><strong>He/She/It is</strong> (He's/She's/It's)</li>
         </ul>
+        
         <div class="example">
             <p><strong>Afirmativo:</strong> She is a teacher. (She's)</p>
             <p><strong>Negativo:</strong> He is not a doctor. (He isn't)</p>
             <p><strong>Interrogativo:</strong> Are you a student?</p>
         </div>
-
-        <h2>3. Vocabulário e Pronúncia</h2>
-        <h3>Alfabeto</h3>
-        <p>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
-
+    </article>
+    
+    <article class="feature-card">
+        <h2>Vocabulário e Pronúncia</h2>
+        
+        <h3>Alfabeto Inglês</h3>
+        <div class="tech-list">
+            <span class="tech-item">A</span>
+            <span class="tech-item">B</span>
+            <span class="tech-item">C</span>
+            <span class="tech-item">D</span>
+            <span class="tech-item">E</span>
+            <span class="tech-item">F</span>
+            <span class="tech-item">G</span>
+            <span class="tech-item">H</span>
+            <span class="tech-item">I</span>
+            <span class="tech-item">J</span>
+            <span class="tech-item">K</span>
+            <span class="tech-item">L</span>
+            <span class="tech-item">M</span>
+            <span class="tech-item">N</span>
+            <span class="tech-item">O</span>
+            <span class="tech-item">P</span>
+            <span class="tech-item">Q</span>
+            <span class="tech-item">R</span>
+            <span class="tech-item">S</span>
+            <span class="tech-item">T</span>
+            <span class="tech-item">U</span>
+            <span class="tech-item">V</span>
+            <span class="tech-item">W</span>
+            <span class="tech-item">X</span>
+            <span class="tech-item">Y</span>
+            <span class="tech-item">Z</span>
+        </div>
+        
         <h3>Títulos Formais</h3>
         <ul>
             <li><strong>Mr.</strong> Rodriguez (homens)</li>
@@ -79,21 +474,58 @@
             <li><strong>Miss</strong> Kato (mulheres solteiras)</li>
             <li><strong>Ms.</strong> Yong (mulheres, estado civil não especificado)</li>
         </ul>
-
+        
         <h3>Números (0-10)</h3>
-        <p>Zero, one, two, three, four, five, six, seven, eight, nine, ten.</p>
-
-        <h2>4. Exercícios Práticos</h2>
+        <ul>
+            <li>Zero</li>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+            <li>Four</li>
+            <li>Five</li>
+            <li>Six</li>
+            <li>Seven</li>
+            <li>Eight</li>
+            <li>Nine</li>
+            <li>Ten</li>
+        </ul>
+    </article>
+    
+    <article class="feature-card">
+        <h2>Exercícios Práticos</h2>
+        
         <h3>Complete o Diálogo</h3>
         <div class="example">
             <p><strong>Ben:</strong> Hello, Christy. How <span class="highlight">are</span> you?</p>
             <p><strong>Christy:</strong> <span class="highlight">I'm</span> fine, thanks.</p>
         </div>
-
+        
         <h3>Substitua por Pronomes</h3>
         <div class="example">
             <p><strong>Julia Martin</strong> is a good student. → <span class="highlight">She</span> is a good student.</p>
+            <p><strong>Mark and I</strong> are friends. → <span class="highlight">We</span> are friends.</p>
         </div>
+        
+        <h3>Traduza para o Inglês</h3>
+        <ul>
+            <li>Olá, meu nome é Pedro → <span class="highlight">Hello, my name is Pedro</span></li>
+            <li>Ela não é professora → <span class="highlight">She isn't a teacher</span></li>
+        </ul>
+        
+        <a href="#" class="btn">Mais Exercícios</a>
+    </article>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="copyright">&copy; 2023 - Lingua Inglesa Curso</p>
     </div>
+</footer>
+
 </body>
 </html>

@@ -98,7 +98,7 @@ h5 { font-size: var(--text-lg); }
 
 p {
   margin-bottom: var(--space-md);
-  color: var(--gray-color);
+  color: var(--white-color);
 }
 
 a {

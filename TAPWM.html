@@ -3,79 +3,335 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="style.css">
-    
-</head>
-<header>
-        <h1>Técnicas Avançadas de Programação Web e Mobile</h1>
+    <title>Técnicas Avançadas de Programação Web e Mobile | ADS</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para esta página */
+        .course-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
         
+        .course-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .course-content {
+            padding: 0 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .feature-card h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .feature-card h3 {
+            color: var(--dark-color);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .feature-card ul {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .feature-card li {
+            color: var(--gray-color);
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+        
+        .feature-card li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .feature-card li strong {
+            color: var(--dark-color);
+        }
+        
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+        
+        .tech-item {
+            background-color: #e0e7ff;
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .header-example {
+            background-color: var(--primary-color);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .header-example nav {
+            display: flex;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .header-example a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        .header-example a:hover {
+            opacity: 0.8;
+        }
+        
+        form {
+            max-width: 400px;
+            margin: 1.5rem auto;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 1rem;
+        }
+        
+        label span {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+        
+        input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            margin: 0.5rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--dark-color);
+            border: 1px solid var(--dark-color);
+        }
+        
+        .btn-outline:hover {
+            background: var(--dark-color);
+            color: white;
+        }
+        
+        .btn-dark {
+            background-color: var(--dark-color);
+        }
+        
+        .btn-dark:hover {
+            background-color: #1a2230;
+        }
+        
+        .github-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 250px;
+            margin: 3rem auto 0;
+            background-color: var(--dark-color);
+        }
+        
+        .github-btn i {
+            margin-right: 0.8rem;
+        }
+        
+        @media (max-width: 768px) {
+            .course-header {
+                padding: 5rem 0 3rem;
+            }
+            
+            .course-header h1 {
+                font-size: 2rem;
+            }
+            
+            .course-content {
+                padding: 0 1rem 3rem;
+                grid-template-columns: 1fr;
+            }
+            
+            .header-example nav {
+                flex-wrap: wrap;
+            }
+            
+            .header-example a {
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
   <div class="container">
-    
     <nav>
-      <ul>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#projetos">Projetos</a></li>
         <li><a href="contato.html">Contato</a></li>
         <li><a href="materias.html">Matérias</a></li>
       </ul>
     </nav>
   </div>
 </header>
-<body>
-   
-    
-    <div class="header-example">
-        
-        <nav>
-            <a href="#" style="color: white; margin-right: 15px;">Home</a>
-            <a href="#" style="color: white; margin-right: 15px;">Login</a>
-            <a href="#" style="color: white; margin-right: 15px;">Lojas</a>
-            <a href="#" style="color: white; margin-right: 15px;">Contato</a>
-            <a href="#" style="color: white;">Sobre</a>
-        </nav>
-    </div>
-    
-    <div class="feature-card">
+
+<div class="course-header">
+    <h1>Técnicas Avançadas de Programação Web e Mobile</h1>
+    <p>Desenvolvimento de aplicações modernas com React e boas práticas</p>
+</div>
+
+<div class="header-example">
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Login</a>
+        <a href="#">Lojas</a>
+        <a href="#">Contato</a>
+        <a href="#">Sobre</a>
+    </nav>
+</div>
+
+<main class="course-content">
+    <article class="feature-card fade-in">
         <h2>Principais Características</h2>
         <ul>
-            <li>Aplicação React com roteamento</li>
-            <li>Design responsivo e moderno</li>
-            <li>Cabeçalho fixo com navegação</li>
-            <li>Várias páginas e componentes</li>
-            <li>Configuração completa de testes</li>
-            <li>Monitoramento de performance</li>
+            <li>Aplicação React com roteamento avançado</li>
+            <li>Design responsivo e adaptável a qualquer dispositivo</li>
+            <li>Cabeçalho fixo com navegação acessível</li>
+            <li>Arquitetura modular com vários componentes reutilizáveis</li>
+            <li>Configuração completa de testes unitários e de integração</li>
+            <li>Monitoramento de performance com Web Vitals</li>
+            <li>Padrões modernos de estilização com CSS Modules</li>
+            <li>Gerenciamento de estado eficiente</li>
         </ul>
-    </div>
+    </article>
     
-    <div class="feature-card">
+    <article class="feature-card fade-in">
         <h2>Tecnologias Utilizadas</h2>
         <div class="tech-list">
-            <span class="tech-item">React</span>
-            <span class="tech-item">React Router</span>
+            <span class="tech-item">React 18</span>
+            <span class="tech-item">React Router 6</span>
             <span class="tech-item">CSS Modules</span>
             <span class="tech-item">Jest</span>
             <span class="tech-item">Testing Library</span>
             <span class="tech-item">Web Vitals</span>
+            <span class="tech-item">ESLint</span>
+            <span class="tech-item">Prettier</span>
+            <span class="tech-item">Hooks API</span>
+            <span class="tech-item">Context API</span>
         </div>
-    </div>
+        
+        <h3>Dependências Principais</h3>
+        <div class="tech-list">
+            <span class="tech-item">Axios</span>
+            <span class="tech-item">Formik</span>
+            <span class="tech-item">Yup</span>
+            <span class="tech-item">React Icons</span>
+            <span class="tech-item">Sass</span>
+        </div>
+    </article>
     
-    <div class="feature-card">
+    <article class="feature-card fade-in">
         <h2>Rotas da Aplicação</h2>
         <ul>
-            <li><strong>/</strong> - Página inicial</li>
-            <li><strong>/login</strong> - Tela de login</li>
-            <li><strong>/register</strong> - Tela de cadastro</li>
-            <li><strong>/store</strong> - Página de lojas</li>
-            <li><strong>/contact</strong> - Página de contato</li>
-            <li><strong>/about</strong> - Página sobre</li>
+            <li><strong>/</strong> - Página inicial com resumo e destaques</li>
+            <li><strong>/login</strong> - Tela de autenticação de usuários</li>
+            <li><strong>/register</strong> - Tela de cadastro de novos usuários</li>
+            <li><strong>/store</strong> - Página de lojas com filtros e busca</li>
+            <li><strong>/products</strong> - Catálogo de produtos</li>
+            <li><strong>/contact</strong> - Página de contato com formulário</li>
+            <li><strong>/about</strong> - Página sobre a empresa/equipe</li>
+            <li><strong>/profile</strong> - Área do usuário (protegida)</li>
+            <li><strong>/admin</strong> - Painel administrativo (protegido)</li>
         </ul>
-    </div>
+    </article>
     
-    <div class="feature-card">
+    <article class="feature-card fade-in">
         <h2>Estilos e Componentes</h2>
+        
         <h3>Formulários</h3>
-        <form style="max-width: 400px; margin: 0 auto;">
+        <form>
             <label>
                 <span>Email</span>
                 <input type="email" placeholder="Seu email">
@@ -89,10 +345,47 @@
         
         <h3>Botões</h3>
         <button class="btn">Primário</button>
-        <button class="btn" style="background: black;">Escuro</button>
-        <button class="btn" style="background: transparent; color: black; border: 1px solid black;">Outline</button>
+        <button class="btn btn-dark">Escuro</button>
+        <button class="btn btn-outline">Outline</button>
+        <button class="btn" style="background-color: var(--success-color);">Sucesso</button>
+    </article>
+</main>
+
+<div style="text-align: center; margin-bottom: 4rem;">
+    <a href="https://github.com/Adryan-Francisco/TAP" class="btn github-btn fade-in">
+        <i class="fab fa-github"></i> Ver Código Fonte
+    </a>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 - Adryan Thiago de Oliveira Francisco</p>
     </div>
-    
-    <a href="https://github.com/Adryan-Francisco/TAP" class="btn">Ver Código Fonte</a>
+</footer>
+
+<script>
+    // Animação de fade-in
+    document.addEventListener('DOMContentLoaded', () => {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => {
+            fadeInObserver.observe(element);
+        });
+    });
+</script>
+
 </body>
 </html>

@@ -3,54 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Técnicas Avançadas de Programação | ADS</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    
-</head>
-<header>
-        <h1>Técnicas Avançadas de Programação</h1>
+    <style>
+        /* Estilos específicos para esta página */
+        .course-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
         
+        .course-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .course-content {
+            padding: 0 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+        
+        .course-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .course-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .course-card h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .course-card h3 {
+            color: var(--dark-color);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .course-card p, .course-card li {
+            color: var(--gray-color);
+            line-height: 1.8;
+        }
+        
+        .course-card ul {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .course-card li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+        
+        .course-card li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .course-card code {
+            background-color: #e0e7ff;
+            color: var(--primary-color);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+        }
+        
+        .tech-badge {
+            display: inline-block;
+            background-color: #e0e7ff;
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .course-header {
+                padding: 5rem 0 3rem;
+            }
+            
+            .course-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .course-content {
+                padding: 0 1rem 3rem;
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
   <div class="container">
-    
     <nav>
-      <ul>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#projetos">Projetos</a></li>
         <li><a href="contato.html">Contato</a></li>
         <li><a href="materias.html">Matérias</a></li>
       </ul>
     </nav>
   </div>
 </header>
-<body>
-    
-    <div class="card">
+
+<div class="course-header">
+    <h1>Técnicas Avançadas de Programação</h1>
+    <p>Desenvolvimento de sistemas com práticas modernas e padrões de projeto</p>
+</div>
+
+<main class="course-content">
+    <article class="course-card fade-in">
         <h2>CRUD 1-N em .NET com PostgreSQL</h2>
-        <p>Implementação completa de um sistema de cadastro de produtos e fornecedores com relacionamento 1-N.</p>
-        <h3>Tecnologias utilizadas:</h3>
+        <p>Implementação completa de um sistema de cadastro de produtos e fornecedores com relacionamento 1-N, utilizando as melhores práticas de desenvolvimento.</p>
+        
+        <div class="tech-stack">
+            <span class="tech-badge"><i class="fas fa-database"></i> ASP.NET Core MVC</span>
+            <span class="tech-badge"><i class="fas fa-code"></i> Entity Framework Core</span>
+            <span class="tech-badge"><i class="fas fa-server"></i> PostgreSQL</span>
+            <span class="tech-badge"><i class="fas fa-paint-brush"></i> Bootstrap</span>
+        </div>
+        
+        <h3>Principais Funcionalidades:</h3>
         <ul>
-            <li>ASP.NET Core MVC</li>
-            <li>Entity Framework Core</li>
-            <li>PostgreSQL</li>
-            <li>Bootstrap para interface</li>
+            <li>Cadastro completo de produtos e fornecedores</li>
+            <li>Relacionamento 1-N entre entidades</li>
+            <li>Validações de dados no cliente e servidor</li>
+            <li>Operações CRUD completas</li>
+            <li>Interface responsiva com Bootstrap</li>
         </ul>
-    </div>
+    </article>
     
-    <div class="card">
-        <h2>Técnicas Avançadas de Programação</h2>
+    <article class="course-card fade-in">
+        <h2>Técnicas Avançadas</h2>
+        
         <h3>Programação Orientada a Objetos</h3>
         <ul>
-            <li>Classes, Objetos e os 4 pilares da POO</li>
-            <li>Padrões de projeto e arquitetura</li>
-            <li>TDD e Versionamento</li>
+            <li><strong>Classes e Objetos:</strong> Modelagem de entidades do mundo real</li>
+            <li><strong>4 Pilares da POO:</strong> Encapsulamento, Herança, Polimorfismo e Abstração</li>
+            <li><strong>Padrões de Projeto:</strong> Singleton, Factory, Repository, etc.</li>
+            <li><strong>Arquitetura Limpa:</strong> Separação de responsabilidades</li>
+            <li><strong>TDD:</strong> Desenvolvimento Guiado por Testes</li>
+            <li><strong>Versionamento:</strong> Git e fluxos de trabalho colaborativo</li>
         </ul>
         
         <h3>Estruturas Básicas</h3>
         <ul>
-            <li>Condicionais: <code>if-else</code>, <code>switch-case</code></li>
-            <li>Loops: <code>for</code>, <code>while</code>, <code>do-while</code></li>
-            <li>Vetores e Matrizes</li>
+            <li><strong>Condicionais:</strong> <code>if-else</code>, <code>switch-case</code>, operador ternário</li>
+            <li><strong>Loops:</strong> <code>for</code>, <code>while</code>, <code>do-while</code>, <code>foreach</code></li>
+            <li><strong>Coleções:</strong> Vetores, Matrizes, Listas, Dicionários</li>
+            <li><strong>Manipulação de Strings:</strong> Métodos e expressões regulares</li>
+            <li><strong>Tratamento de Exceções:</strong> <code>try-catch-finally</code></li>
         </ul>
+    </article>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 - Adryan Thiago de Oliveira Francisco</p>
     </div>
+</footer>
+
+<script>
+    // Animação de fade-in
+    document.addEventListener('DOMContentLoaded', () => {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => {
+            fadeInObserver.observe(element);
+        });
+    });
+</script>
+
 </body>
 </html>
