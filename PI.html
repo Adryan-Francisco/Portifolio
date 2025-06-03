@@ -4,162 +4,326 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Integrador I - ADS</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    
+    <style>
+        /* Estilos específicos para esta página */
+        .project-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .project-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        main {
+            padding: 0 2rem 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h3::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        h4 {
+            color: var(--dark-color);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        p, li {
+            color: var(--white-color);
+            line-height: 1.8;
+        }
+        
+        ul, ol {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .note {
+            background-color: #e0e7ff;
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .note h4 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        
+        .command {
+            display: block;
+            background-color: var(--dark-color);
+            color: white;
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 1rem 0;
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+        
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--dark-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 2rem;
+            transition: all 0.3s;
+        }
+        
+        .github-link:hover {
+            background-color: #333;
+            transform: translateY(-3px);
+        }
+        
+        .github-link i {
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .project-header {
+                padding: 5rem 0 3rem;
+            }
+            
+            .project-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            main {
+                padding: 0 1rem 3rem;
+            }
+            
+            section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Projeto Integrador I</h1>
-        
+
+<header>
   <div class="container">
-    
     <nav>
-      <ul>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#projetos">Projetos</a></li>
         <li><a href="contato.html">Contato</a></li>
         <li><a href="materias.html">Matérias</a></li>
       </ul>
     </nav>
   </div>
 </header>
-    
 
-    <main>
-        <section>
-            <h3>Visão Geral</h3>
-            <p>O Projeto Integrador I visa aplicar conhecimentos adquiridos nas disciplinas iniciais do curso de ADS, através do desenvolvimento de soluções tecnológicas para problemas reais ou simulados.</p>
-            <p>Neste projeto, utilizaremos o Git e GitHub para controle de versão e colaboração em equipe.</p>
-        </section>
+<div class="project-header">
+    <h1>Projeto Integrador I</h1>
+    <p>Aplicação prática dos conhecimentos iniciais do curso de ADS</p>
+</div>
 
-        <section>
-            <h3>Controle de Versionamento com Git</h3>
-            <p>Git é um sistema de controle de versão distribuído criado em 2005 por Linus Torvalds. Principais vantagens:</p>
-            <ul>
-                <li>Gratuito e open source</li>
-                <li>Alta performance</li>
-                <li>Operações locais (sem necessidade de servidor)</li>
-                <li>Integridade dos dados</li>
-                <li>Suporte a diferentes workflows</li>
-            </ul>
-            
-            <div class="note">
-                <h4>Git vs GitHub</h4>
-                <p>Git é o sistema de controle de versão, enquanto GitHub é um serviço de hospedagem de código que usa Git. Eles são coisas diferentes!</p>
-            </div>
-        </section>
+<main>
+    <section class="fade-in">
+        <h3>Visão Geral</h3>
+        <p>O Projeto Integrador I visa aplicar conhecimentos adquiridos nas disciplinas iniciais do curso de ADS, através do desenvolvimento de soluções tecnológicas para problemas reais ou simulados.</p>
+        <p>Neste projeto, utilizaremos o Git e GitHub para controle de versão e colaboração em equipe.</p>
+    </section>
 
-        <section>
-            <h3>Configuração Inicial do Git</h3>
-            <p>Para começar a usar o Git, é necessário configurar seu usuário:</p>
-            <code class="command">git config --global user.name "Seu Nome"
+    <section class="fade-in">
+        <h3>Controle de Versionamento com Git</h3>
+        <p>Git é um sistema de controle de versão distribuído criado em 2005 por Linus Torvalds. Principais vantagens:</p>
+        <ul>
+            <li>Gratuito e open source</li>
+            <li>Alta performance</li>
+            <li>Operações locais (sem necessidade de servidor)</li>
+            <li>Integridade dos dados</li>
+            <li>Suporte a diferentes workflows</li>
+        </ul>
+        
+        <div class="note">
+            <h4>Git vs GitHub</h4>
+            <p>Git é o sistema de controle de versão, enquanto GitHub é um serviço de hospedagem de código que usa Git. Eles são coisas diferentes!</p>
+        </div>
+    </section>
+
+    <section class="fade-in">
+        <h3>Configuração Inicial do Git</h3>
+        <p>Para começar a usar o Git, é necessário configurar seu usuário:</p>
+        <code class="command">git config --global user.name "Seu Nome"
 git config --global user.email "seu@email.com"</code>
-            
-            <p>Para verificar as configurações:</p>
-            <code class="command">git config --list</code>
-        </section>
+        
+        <p>Para verificar as configurações:</p>
+        <code class="command">git config --list</code>
+    </section>
 
-        <section>
-            <h3>Fluxo Básico de Trabalho</h3>
-            <ol>
-                <li><strong>Working Directory</strong>: Arquivos modificados, inseridos ou excluídos</li>
-                <li><strong>Staging Area</strong>: Arquivos rastreados e prontos para serem versionados (<code>git add</code>)</li>
-                <li><strong>Repository</strong>: Alterações efetivadas (<code>git commit</code>)</li>
-            </ol>
-            
-            <h4>Comandos Essenciais:</h4>
-            <code class="command">git init          # Inicializa um repositório
+    <section class="fade-in">
+        <h3>Fluxo Básico de Trabalho</h3>
+        <ol>
+            <li><strong>Working Directory</strong>: Arquivos modificados, inseridos ou excluídos</li>
+            <li><strong>Staging Area</strong>: Arquivos rastreados e prontos para serem versionados (<code>git add</code>)</li>
+            <li><strong>Repository</strong>: Alterações efetivadas (<code>git commit</code>)</li>
+        </ol>
+        
+        <h4>Comandos Essenciais:</h4>
+        <code class="command">git init          # Inicializa um repositório
 git status        # Verifica o estado dos arquivos
 git add .         # Adiciona todas as alterações
 git commit -m "mensagem"  # Registra as alterações
 git log           # Mostra o histórico de commits</code>
-        </section>
+    </section>
 
-        <section>
-            <h3>Trabalhando com Branches</h3>
-            <p>Branches são ramificações no projeto usadas para desenvolver funcionalidades sem impactar a versão principal.</p>
-            
-            <h4>Comandos para Branches:</h4>
-            <code class="command">git branch                  # Lista branches
+    <section class="fade-in">
+        <h3>Trabalhando com Branches</h3>
+        <p>Branches são ramificações no projeto usadas para desenvolver funcionalidades sem impactar a versão principal.</p>
+        
+        <h4>Comandos para Branches:</h4>
+        <code class="command">git branch                  # Lista branches
 git branch nome_branch     # Cria nova branch
 git checkout nome_branch   # Muda para a branch
 git merge nome_branch      # Mescla branches</code>
-            
-            <div class="note">
-                <h4>Boa Prática</h4>
-                <p>Mantenha a branch principal (main/master) estável e crie branches para cada nova funcionalidade.</p>
-            </div>
-        </section>
+        
+        <div class="note">
+            <h4>Boa Prática</h4>
+            <p>Mantenha a branch principal (main/master) estável e crie branches para cada nova funcionalidade.</p>
+        </div>
+    </section>
 
-        <section>
-            <h3>Trabalhando com GitHub</h3>
-            <p>GitHub é uma plataforma para hospedar repositórios Git e colaborar em projetos.</p>
-            
-            <h4>Fluxo Básico:</h4>
-            <ol>
-                <li>Crie um repositório no GitHub</li>
-                <li>Conecte seu repositório local:
-                    <code class="command">git remote add origin URL_DO_REPOSITORIO</code>
-                </li>
-                <li>Envie suas alterações:
-                    <code class="command">git push origin main</code>
-                </li>
-                <li>Para baixar atualizações:
-                    <code class="command">git pull origin main</code>
-                </li>
-            </ol>
-        </section>
+    <section class="fade-in">
+        <h3>Trabalhando com GitHub</h3>
+        <p>GitHub é uma plataforma para hospedar repositórios Git e colaborar em projetos.</p>
+        
+        <h4>Fluxo Básico:</h4>
+        <ol>
+            <li>Crie um repositório no GitHub</li>
+            <li>Conecte seu repositório local:
+                <code class="command">git remote add origin URL_DO_REPOSITORIO</code>
+            </li>
+            <li>Envie suas alterações:
+                <code class="command">git push origin main</code>
+            </li>
+            <li>Para baixar atualizações:
+                <code class="command">git pull origin main</code>
+            </li>
+        </ol>
+    </section>
 
-        <section>
-            <h3>Trabalho em Equipe com Pull Requests</h3>
-            <p>Pull Requests permitem revisão de código antes de mesclar alterações:</p>
-            <ol>
-                <li>Crie uma branch para sua funcionalidade</li>
-                <li>Faça e commit suas alterações</li>
-                <li>Envie para o GitHub (<code>git push</code>)</li>
-                <li>Abra um Pull Request no GitHub</li>
-                <li>Após revisão, faça o merge</li>
-            </ol>
-            
-            <div class="note">
-                <h4>Resolvendo Conflitos</h4>
-                <p>Quando há alterações conflitantes, é necessário editar manualmente os arquivos marcados pelo Git antes de completar o merge.</p>
-            </div>
-        </section>
+    <section class="fade-in">
+        <h3>Trabalho em Equipe com Pull Requests</h3>
+        <p>Pull Requests permitem revisão de código antes de mesclar alterações:</p>
+        <ol>
+            <li>Crie uma branch para sua funcionalidade</li>
+            <li>Faça e commit suas alterações</li>
+            <li>Envie para o GitHub (<code>git push</code>)</li>
+            <li>Abra um Pull Request no GitHub</li>
+            <li>Após revisão, faça o merge</li>
+        </ol>
+        
+        <div class="note">
+            <h4>Resolvendo Conflitos</h4>
+            <p>Quando há alterações conflitantes, é necessário editar manualmente os arquivos marcados pelo Git antes de completar o merge.</p>
+        </div>
+    </section>
 
-        <section>
-            <h3>Boas Práticas</h3>
-            <ul>
-                <li>Faça commits atômicos (uma mudança por commit)</li>
-                <li>Escreva mensagens de commit claras e descritivas</li>
-                <li>Use o <code>.gitignore</code> para arquivos desnecessários</li>
-                <li>Sincronize frequentemente com o repositório remoto</li>
-                <li>Revise o código dos colegas antes de fazer merge</li>
-            </ul>
-        </section>
+    <section class="fade-in">
+        <h3>Boas Práticas</h3>
+        <ul>
+            <li>Faça commits atômicos (uma mudança por commit)</li>
+            <li>Escreva mensagens de commit claras e descritivas</li>
+            <li>Use o <code>.gitignore</code> para arquivos desnecessários</li>
+            <li>Sincronize frequentemente com o repositório remoto</li>
+            <li>Revise o código dos colegas antes de fazer merge</li>
+        </ul>
+    </section>
 
-        <section>
-            <h3>Etapas do Projeto</h3>
-            <ol>
-                <li>Escolha do Tema / Problema</li>
-                <li>Análise e Planejamento (incluindo setup do repositório Git)</li>
-                <li>Modelagem (com versionamento de documentos)</li>
-                <li>Prototipagem (usando branches para funcionalidades)</li>
-                <li>Documentação (incluindo README no GitHub)</li>
-            </ol>
-        </section>
+    <section class="fade-in">
+        <h3>Etapas do Projeto</h3>
+        <ol>
+            <li>Escolha do Tema / Problema</li>
+            <li>Análise e Planejamento (incluindo setup do repositório Git)</li>
+            <li>Modelagem (com versionamento de documentos)</li>
+            <li>Prototipagem (usando branches para funcionalidades)</li>
+            <li>Documentação (incluindo README no GitHub)</li>
+        </ol>
+    </section>
 
-        <section>
-            <h3>Conclusão</h3>
-            <p>Este projeto representa o início da jornada prática dos estudantes no mundo da tecnologia. O uso de Git e GitHub fortalece o trabalho em equipe, a organização do código e a colaboração eficiente.</p>
-            <p>Dominar essas ferramentas é essencial para qualquer desenvolvedor de software profissional.</p>
-        </section>
-         <a href="https://github.com/Adryan-Francisco/Curso-Git">Atividade feita no GITHUB</a>
-    </main>
+    <section class="fade-in">
+        <h3>Conclusão</h3>
+        <p>Este projeto representa o início da jornada prática dos estudantes no mundo da tecnologia. O uso de Git e GitHub fortalece o trabalho em equipe, a organização do código e a colaboração eficiente.</p>
+        <p>Dominar essas ferramentas é essencial para qualquer desenvolvedor de software profissional.</p>
+        
+        <a href="https://github.com/Adryan-Francisco/Curso-Git" class="github-link">
+            <i class="fab fa-github"></i> Ver Atividade no GitHub
+        </a>
+    </section>
+</main>
 
-    <footer>
-        <p>&copy; 2025 - Adryan Thiago de Oliveira Francisco</p>
-    </footer>
+<footer>
+    <div class="footer-content">
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 - Adryan Thiago de Oliveira Francisco</p>
+    </div>
+</footer>
+
+<script>
+    // Animação de fade-in
+    document.addEventListener('DOMContentLoaded', () => {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => {
+            fadeInObserver.observe(element);
+        });
+    });
+</script>
+
 </body>
 </html>

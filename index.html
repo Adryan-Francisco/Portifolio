@@ -3,72 +3,732 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Adryan Thiago</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Portfólio - Adryan Thiago | Desenvolvedor Backend</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --gray-color: #64748b;
+            --success-color: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f1f5f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--dark-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        
+        .hero-text {
+            flex: 1;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero-text h1 span {
+            color: var(--primary-color);
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--gray-color);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Sobre Mim */
+        #sobre {
+            padding: 6rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .sobre-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .sobre-text {
+            flex: 1;
+        }
+        
+        .sobre-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .sobre-text p {
+            margin-bottom: 1.5rem;
+            color: var(--gray-color);
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .skill {
+            background-color: #e0e7ff;
+            color: var(--primary-color);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .sobre-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .sobre-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Projetos */
+        #projetos {
+            padding: 6rem 0;
+            background-color: #f1f5f9;
+        }
+        
+        .projetos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .projeto-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .projeto-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .projeto-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .projeto-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .projeto-card:hover .projeto-img img {
+            transform: scale(1.1);
+        }
+        
+        .projeto-info {
+            padding: 1.5rem;
+        }
+        
+        .projeto-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .projeto-info p {
+            color: var(--gray-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .projeto-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tag {
+            background-color: #e0e7ff;
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+        
+        .projeto-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .projeto-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .projeto-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Contato */
+        #contato {
+            padding: 6rem 0;
+            background-color: white;
+        }
+        
+        .contato-container {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .contato-info {
+            flex: 1;
+        }
+        
+        .contato-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contato-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #e0e7ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .contato-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .contato-text p, .contato-text a {
+            color: var(--gray-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contato-text a:hover {
+            color: var(--primary-color);
+        }
+        
+        .contato-form {
+            flex: 1;
+            background-color: #f8fafc;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .hero-content, .sobre-content, .contato-container {
+                flex-direction: column;
+            }
+            
+            .hero-text, .sobre-text, .contato-info, .contato-form {
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+            
+            .skills, .projeto-tags, .projeto-links {
+                justify-content: center;
+            }
+            
+            .sobre-image, .hero-image {
+                margin-top: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
-            <h1></h1>
             <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
+                <a href="#" class="logo">Adryan<span>Thiago</span></a>
+                <ul class="nav-links">
+                    <li><a href="#hero">Início</a></li>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="#contato">Contato</a></li>
                     <li><a href="materias.html">Matérias</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="sobre">
+    <!-- Hero Section -->
+    <section id="hero">
         <div class="container">
-            <h2>Sobre Mim</h2>
-            <p>Olá! Meu nome é Adryan Thiago de Oliveira Francisco. Estou cursando Analise e Desenvolvimento de Sistemas.
-                 Estou sempre buscando aprender novas ferramentas e melhorar minhas habilidades em HTML, CSS,e outras tecnologias modernas.
-                Meu ponto forte é a parte do Desenvolvimento BackWend fazer o codigo para que o sistema torne funcional.</p>
-        </div>
-    </section>
-
-    <section id="projetos">
-        <div class="container">
-            <h2>Meus Projetos</h2>
-            <div class="projetos-grid">
-                <div class="projeto">
-                    <h3>Projeto 1</h3>
-                    <p>Descrição curta do projeto 1.</p>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Olá, eu sou <span>Adryan Thiago</span></h1>
+                    <p>Desenvolvedor Backend apaixonado por criar soluções robustas e eficientes. Estudante de Análise e Desenvolvimento de Sistemas com foco em tecnologias modernas.</p>
+                    <a href="#projetos" class="cta-button">Ver Projetos</a>
                 </div>
-                <div class="projeto">
-                    <h3>Projeto 2</h3>
-                    <p>Descrição curta do projeto 2.</p>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Desenvolvedor trabalhando">
                 </div>
-                <!-- Adicione mais projetos aqui -->
             </div>
         </div>
     </section>
 
-    <section id="contato">
+    <!-- Sobre Mim -->
+    <section id="sobre">
         <div class="container">
-            <h2>Contato</h2>
-            <form action="#" method="post">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-
-                <button type="submit">Enviar</button>
-            </form>
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <h3>Desenvolvedor Backend em Ascensão</h3>
+                    <p>Olá! Meu nome é Adryan Thiago de Oliveira Francisco. Estou cursando Análise e Desenvolvimento de Sistemas e tenho um grande entusiasmo por desenvolvimento backend.</p>
+                    <p>Minha paixão é transformar linhas de código em sistemas funcionais e eficientes. Estou constantemente buscando aprender novas tecnologias e aprimorar minhas habilidades para criar soluções robustas e escaláveis.</p>
+                    <p>Meu foco principal está em desenvolver a lógica por trás dos sistemas, garantindo que tudo funcione perfeitamente, desde APIs até bancos de dados e integrações complexas.</p>
+                    
+                    <div class="skills">
+                        <span class="skill">Java</span>
+                        <span class="skill">Python</span>
+                        <span class="skill">Node.js</span>
+                        <span class="skill">SQL</span>
+                        <span class="skill">APIs REST</span>
+                        <span class="skill">Git</span>
+                    </div>
+                </div>
+                <div class="sobre-image">
+                    <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Adryan Thiago">
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Projetos -->
+    <section id="projetos">
+        <div class="container">
+            <h2 class="section-title">Meus Projetos</h2>
+            <div class="projetos-grid">
+                <div class="projeto-card">
+                    <div class="projeto-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Projeto 1">
+                    </div>
+                    <div class="projeto-info">
+                        <h3>Sistema de Gerenciamento</h3>
+                        <p>Plataforma completa para gerenciamento de dados com dashboard administrativo e relatórios personalizados.</p>
+                        <div class="projeto-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">MySQL</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="#" class="projeto-link">
+                                <i class="fas fa-code"></i> Código
+                            </a>
+                            <a href="#" class="projeto-link">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="projeto-card">
+                    <div class="projeto-img">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" alt="Projeto 2">
+                    </div>
+                    <div class="projeto-info">
+                        <h3>API de Análise de Dados</h3>
+                        <p>API robusta para processamento e análise de grandes volumes de dados com endpoints documentados.</p>
+                        <div class="projeto-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="#" class="projeto-link">
+                                <i class="fas fa-code"></i> Código
+                            </a>
+                            <a href="#" class="projeto-link">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="projeto-card">
+                    <div class="projeto-img">
+                        <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Projeto 3">
+                    </div>
+                    <div class="projeto-info">
+                        <h3>Microserviço de Autenticação</h3>
+                        <p>Sistema de autenticação seguro com JWT, roles e permissões escalável para diversos aplicativos.</p>
+                        <div class="projeto-tags">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Express</span>
+                            <span class="tag">JWT</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="#" class="projeto-link">
+                                <i class="fas fa-code"></i> Código
+                            </a>
+                            <a href="#" class="projeto-link">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+        <div class="container">
+            <h2 class="section-title">Contato</h2>
+            <div class="contato-container">
+                <div class="contato-info">
+                    <div class="contato-item">
+                        <div class="contato-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contato-text">
+                            <h3>Email</h3>
+                            <a href="mailto:seuemail@exemplo.com">adryan@exemplo.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contato-item">
+                        <div class="contato-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contato-text">
+                            <h3>Telefone</h3>
+                            <p>+55 (00) 99999-9999</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contato-item">
+                        <div class="contato-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contato-text">
+                            <h3>Localização</h3>
+                            <p>São Paulo, Brasil</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contato-form">
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 - Adryan Thiago de Oliveira Francisco</p>
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p class="copyright">&copy; 2025 Adryan Thiago de Oliveira Francisco. Todos os direitos reservados.</p>
+            </div>
         </div>
     </footer>
 </body>

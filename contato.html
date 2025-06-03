@@ -2,46 +2,127 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Contato</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato | Adryan Thiago</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-        <div class="container">
-            <h1></h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                    <li><a href="materias.html">Matérias</a></li>
-                </ul>
-            </nav>
+<header>
+  <div class="container">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#projetos">Projetos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="materias.html">Matérias</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section id="contato" class="contato-section">
+    <h1 class="section-title">Entre em Contato</h1>
+    
+    <div class="intro-text fade-in">
+      <p>Está com dúvidas, precisa de suporte, tem uma proposta ou quer conversar sobre tecnologia e desenvolvimento?</p>
+      <p>Entre em contato comigo por email, telefone ou WhatsApp. Estou à disposição!</p>
+    </div>
+
+    <div class="contato-container">
+      <div class="contato-info">
+        <div class="contato-card fade-in">
+          <div class="contato-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contato-text">
+            <h3>Email</h3>
+            <p><a href="mailto:adryanfrancisco62@gmail.com">adryanfrancisco62@gmail.com</a></p>
+          </div>
         </div>
-    </header>
 
- <section class="contato">
-  <div class="intro fade-in">
-    <p>Está com dúvidas, precisa de suporte, tem uma proposta ou quer conversar sobre tecnologia e desenvolvimento?</p>
-    <p>Entre em contato comigo por email, telefone ou WhatsApp. Estou à disposição!</p>
+        <div class="contato-card fade-in">
+          <div class="contato-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="contato-text">
+            <h3>Telefone / WhatsApp</h3>
+            <p><a href="tel:+5517996231865">(17) 99623-1865</a></p>
+          </div>
+        </div>
+
+        <div class="contato-card fade-in">
+          <div class="contato-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="contato-text">
+            <h3>Localização</h3>
+            <p>São José do Rio Preto, SP</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contato-form fade-in">
+        <h3>Envie uma Mensagem</h3>
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="assunto">Assunto</label>
+            <input type="text" id="assunto" name="assunto" required>
+          </div>
+          <div class="form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Enviar Mensagem</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <div class="social-links">
+      <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p class="copyright">&copy; 2025 - Adryan Thiago de Oliveira Francisco</p>
   </div>
+</footer>
 
-  <div class="info-card fade-in">
-    <h2>Email</h2>
-    <p><a href="mailto:adryanfrancisco62@gmail.com">adryanfrancisco62@gmail.com</a></p>
-  </div>
+<!-- Font Awesome para ícones -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-  <div class="info-card fade-in">
-    <h2>Telefone / WhatsApp</h2>
-    <p><a href="tel:+5517996231865">(17) 99623-1865</a></p>
-  </div>
-</section>
+<!-- Script para animações -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    const fadeInObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
 
-  <footer>
-    &copy; 2025 - Contato | Adryan Thiago de Oliveira Francisco
-  </footer>
+    fadeElements.forEach(element => {
+      fadeInObserver.observe(element);
+    });
+  });
+</script>
 
 </body>
 </html>
