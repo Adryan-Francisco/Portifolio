@@ -7,79 +7,112 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   
- <header>
-        <h1>Engenharia de Software</h1>
-        
-  <div class="container">
-    
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="materias.html">Matérias</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-    <main>
-        <section id="introducao">
+    <header>
+        <div class="container">
+            <h1>Engenharia de Software</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Sobre</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="materias.html">Matérias</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="introducao" class="section fade-in">
             <h2>Introdução à Engenharia de Software</h2>
-            <ul>
-                <li>História desde a "crise do software" em 1968</li>
-                <li>Conceitos fundamentais de software e seus atributos</li>
-                <li>Diferenças entre Engenharia de Software e Ciência da Computação</li>
-                <li>Tipos de produtos de software (genérico vs personalizado)</li>
-                <li>Atributos essenciais do bom software</li>
-            </ul>
+            <div class="card">
+                <ul>
+                    <li>História desde a "crise do software" em 1968</li>
+                    <li>Conceitos fundamentais de software e seus atributos</li>
+                    <li>Diferenças entre Engenharia de Software e Ciência da Computação</li>
+                    <li>Tipos de produtos de software (genérico vs personalizado)</li>
+                    <li>Atributos essenciais do bom software</li>
+                </ul>
+            </div>
         </section>
 
-        <section id="processos">
+        <section id="processos" class="section fade-in">
             <h2>Processos de Software</h2>
-            <ul>
-                <li>Modelos tradicionais (Cascata, Incremental, Espiral)</li>
-                <li>Processo Unificado (RUP) e suas fases</li>
-                <li>Atividades fundamentais do desenvolvimento</li>
-                <li>Integração e configuração com reuso de software</li>
-            </ul>
+            <div class="card">
+                <ul>
+                    <li>Modelos tradicionais (Cascata, Incremental, Espiral)</li>
+                    <li>Processo Unificado (RUP) e suas fases</li>
+                    <li>Atividades fundamentais do desenvolvimento</li>
+                    <li>Integração e configuração com reuso de software</li>
+                </ul>
+            </div>
         </section>
 
-        <section id="requisitos">
+        <section id="requisitos" class="section fade-in">
             <h2>Engenharia de Requisitos</h2>
-            <ul>
-                <li>Tipos de requisitos (funcionais e não-funcionais)</li>
-                <li>Técnicas de elicitação (entrevistas, cenários, casos de uso)</li>
-                <li>Documentação e validação de requisitos</li>
-                <li>Gerenciamento de mudanças de requisitos</li>
-            </ul>
+            <div class="card">
+                <ul>
+                    <li>Tipos de requisitos (funcionais e não-funcionais)</li>
+                    <li>Técnicas de elicitação (entrevistas, cenários, casos de uso)</li>
+                    <li>Documentação e validação de requisitos</li>
+                    <li>Gerenciamento de mudanças de requisitos</li>
+                </ul>
+            </div>
         </section>
 
-        <section id="modelagem">
+        <section id="modelagem" class="section fade-in">
             <h2>Modelagem de Sistemas</h2>
-            <ul>
-                <li>Diagramas UML (Casos de Uso, Classes, Sequência)</li>
-                <li>Modelos comportamentais e estruturais</li>
-                <li>Engenharia Dirigida por Modelos (MDE)</li>
-                <li>Arquitetura 4+1 (visões lógica, processo, desenvolvimento, física)</li>
-            </ul>
+            <div class="card">
+                <ul>
+                    <li>Diagramas UML (Casos de Uso, Classes, Sequência)</li>
+                    <li>Modelos comportamentais e estruturais</li>
+                    <li>Engenharia Dirigida por Modelos (MDE)</li>
+                    <li>Arquitetura 4+1 (visões lógica, processo, desenvolvimento, física)</li>
+                </ul>
+            </div>
         </section>
 
-        <section id="arquitetura">
+        <section id="arquitetura" class="section fade-in">
             <h2>Projeto de Arquitetura</h2>
-            <ul>
-                <li>Padrões arquiteturais (MVC, Camadas, Cliente-Servidor)</li>
-                <li>Decisões arquiteturais baseadas em requisitos não-funcionais</li>
-                <li>Aplicações para diferentes tipos de sistemas</li>
-                <li>Componentes e relacionamentos em diagramas de classes</li>
-            </ul>
+            <div class="card">
+                <ul>
+                    <li>Padrões arquiteturais (MVC, Camadas, Cliente-Servidor)</li>
+                    <li>Decisões arquiteturais baseadas em requisitos não-funcionais</li>
+                    <li>Aplicações para diferentes tipos de sistemas</li>
+                    <li>Componentes e relacionamentos em diagramas de classes</li>
+                </ul>
+            </div>
         </section>
     </main>
 
     <footer>
-       
-        <p>&copy; 2025 - Adryan Thiago de Oliveira Francisco</p>
+        <div class="container">
+            <p>&copy; 2025 - Adryan Thiago de Oliveira Francisco</p>
+        </div>
     </footer>
+
+    <script>
+        // Simple script to handle fade-in animations as user scrolls
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = () => {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+            
+            // Check on load
+            fadeInOnScroll();
+            
+            // Check on scroll
+            window.addEventListener('scroll', fadeInOnScroll);
+        });
+    </script>
 </body>
 </html>

@@ -3,28 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interação Humano-Computador e Figma | Portfólio</title>
+    <meta name="description" content="Conceitos fundamentais de IHC e guia prático para uso do Figma no design de interfaces">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-</head>
-<header>
-        <h1>Interação Humano-Computador e Figma</h1>
+    <style>
+        /* Estilos específicos para esta página */
+        :root {
+            --ihc-primary: #2563eb;
+            --ihc-secondary: #1e40af;
+            --highlight-bg: #EDE7F6;
+            --badge-bg: #D1C4E9;
+        }
         
+        .course-header {
+            background: linear-gradient(135deg, var(--ihc-primary) 0%, var(--ihc-secondary) 100%);
+            color: white;
+            padding: clamp(4rem, 8vw, 6rem) 0 clamp(3rem, 6vw, 4rem);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .course-header h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .card h2 {
+            color: var(--ihc-primary);
+        }
+        
+        .card h2::after {
+            background: var(--ihc-primary);
+        }
+        
+        .card h3 {
+            color: var(--ihc-secondary);
+        }
+        
+        .highlight {
+            background-color: var(--highlight-bg);
+            border-left: 4px solid var(--ihc-primary);
+        }
+        
+        .badge {
+            background-color: var(--badge-bg);
+            color: var(--ihc-primary);
+        }
+        
+        li::before {
+            color: var(--ihc-primary);
+        }
+        
+        a {
+            color: var(--ihc-secondary);
+        }
+        
+        a:hover {
+            color: var(--ihc-primary);
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
   <div class="container">
-    
-    <nav>
-      <ul>
+    <nav aria-label="Navegação principal">
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#projetos">Projetos</a></li>
         <li><a href="contato.html">Contato</a></li>
         <li><a href="materias.html">Matérias</a></li>
       </ul>
     </nav>
   </div>
 </header>
-<body>
-    
-    <div class="card">
-        <h2>Interação Humano-Computador (IHC)</h2>
+
+<div class="course-header">
+    <h1>Interação Humano-Computador e Figma</h1>
+    <p>Princípios de design de interfaces e ferramentas para prototipagem</p>
+</div>
+
+<main class="course-content">
+    <article class="card fade-in" aria-labelledby="ihc-heading">
+        <h2 id="ihc-heading">Interação Humano-Computador (IHC)</h2>
         
         <div class="highlight">
             <p><strong>Definição:</strong> Processo pelo qual seres humanos interagem com computadores (PCs, smartphones, tablets, eletrodomésticos, etc.).</p>
@@ -65,10 +132,10 @@
                 <li>Semótica (comunicação e expressão)</li>
             </ul>
         </div>
-    </div>
+    </article>
     
-    <div class="card">
-        <h2>Figma: Introdução e Ferramentas Básicas</h2>
+    <article class="card fade-in" aria-labelledby="figma-heading">
+        <h2 id="figma-heading">Figma: Introdução e Ferramentas Básicas</h2>
         
         <div class="highlight">
             <p><strong>O que é Figma?</strong> Software de edição gráfica de vetor e prototipagem, baseado principalmente no navegador web, com versões desktop para GNU/Linux, macOS e Windows.</p>
@@ -77,7 +144,7 @@
         
         <h3>Acesso e Configuração Inicial</h3>
         <ul>
-            <li>Acesse: <a href="https://www.figma.com" target="_blank">www.figma.com</a></li>
+            <li>Acesse: <a href="https://www.figma.com" target="_blank" rel="noopener noreferrer">www.figma.com</a></li>
             <li>Versões gratuitas e pagas disponíveis</li>
             <li>Pode inserir imagens de referência ou criar novo projeto</li>
         </ul>
@@ -119,10 +186,10 @@
             <li>Clicar em "Prototype" para criar áreas clicáveis</li>
             <li>Configurar Interaction details: On Click > Navigate To > página/área</li>
         </ul>
-    </div>
+    </article>
     
-    <div class="card">
-        <h2>Conceitos Chave em IHC</h2>
+    <article class="card fade-in" aria-labelledby="concepts-heading">
+        <h2 id="concepts-heading">Conceitos Chave em IHC</h2>
         
         <h3>Engenharia de Software vs IHC</h3>
         <ul>
@@ -140,6 +207,43 @@
             <li>Experiência do Usuário (UX) e do Consumidor</li>
             <li>Pesquisas com usuário (Qualitativa, Quantitativa, Teste A/B, etc.)</li>
         </ul>
+    </article>
+</main>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="social-links" aria-label="Redes sociais">
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 - Adryan Thiago de Oliveira Francisco</p>
     </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeInObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        fadeElements.forEach(element => {
+            fadeInObserver.observe(element);
+        });
+    });
+</script>
+
 </body>
 </html>

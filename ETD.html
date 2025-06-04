@@ -3,32 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura de Dados | Portfólio</title>
+    <meta name="description" content="Conceitos fundamentais de estruturas de dados: vetores, listas encadeadas, pilhas e filas">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-   
-    
-</head>
- <header>
-        <h1>Estrutura de Dados</h1>
+    <style>
+        /* Estilos específicos para esta página */
+        :root {
+            --data-primary: #2563eb;
+            --data-secondary: #1e40af;
+            --highlight-bg: #E8F5E9;
+            --code-bg: #263238;
+            --table-header: #C8E6C9;
+        }
         
+        .course-header {
+            background: linear-gradient(135deg, var(--data-primary) 0%, var(--data-secondary) 100%);
+            color: white;
+            padding: clamp(4rem, 8vw, 6rem) 0 clamp(3rem, 6vw, 4rem);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .course-header h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .card h2 {
+            color: var(--data-primary);
+        }
+        
+        .card h2::after {
+            background: var(--data-primary);
+        }
+        
+        .card h3 {
+            color: var(--data-secondary);
+        }
+        
+        .highlight {
+            background-color: var(--highlight-bg);
+            border-left: 4px solid var(--data-primary);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--table-header);
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        pre {
+            background-color: var(--code-bg);
+            color: #ECEFF1;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .note {
+            background-color: var(--highlight-bg);
+            border-left: 4px solid var(--data-primary);
+            padding: 1.5rem;
+            border-radius: 0 4px 4px 0;
+            margin: 2rem 0;
+        }
+        
+        .note h3 {
+            margin-top: 0;
+            color: var(--data-primary);
+        }
+        
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--dark-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .github-link:hover {
+            background-color: #333;
+            transform: translateY(-2px);
+        }
+        
+        .github-link i {
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
   <div class="container">
-    
-    <nav>
-      <ul>
+    <nav aria-label="Navegação principal">
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#projetos">Projetos</a></li>
         <li><a href="contato.html">Contato</a></li>
         <li><a href="materias.html">Matérias</a></li>
       </ul>
     </nav>
   </div>
 </header>
-<body>
-     
-    <div class="container">
-       
 
-        <h2>1. Vetores</h2>
+<div class="course-header">
+    <h1>Estrutura de Dados</h1>
+    <p>Conceitos fundamentais de organização e manipulação eficiente de dados</p>
+</div>
+
+<main class="container">
+    <article class="card fade-in" aria-labelledby="arrays-heading">
+        <h2 id="arrays-heading">1. Vetores</h2>
+        
         <h3>1.1 Vetores Não Ordenados</h3>
         <ul>
             <li>Elementos armazenados sem ordem específica</li>
@@ -87,8 +206,10 @@
                 <td>Divide usando pivô, recursivo, eficiente para grandes conjuntos</td>
             </tr>
         </table>
-
-        <h2>2. Structs</h2>
+    </article>
+    
+    <article class="card fade-in" aria-labelledby="structs-heading">
+        <h2 id="structs-heading">2. Structs</h2>
         <ul>
             <li>Agrupamento de variáveis de tipos diferentes sob um único nome</li>
             <li>Permite criar tipos de dados personalizados</li>
@@ -101,8 +222,11 @@
             </li>
             <li>Ponteiros para structs permitem passagem por referência e alocação dinâmica</li>
         </ul>
-
-        <h2>3. Listas Encadeadas</h2>
+    </article>
+    
+    <article class="card fade-in" aria-labelledby="lists-heading">
+        <h2 id="lists-heading">3. Listas Encadeadas</h2>
+        
         <h3>3.1 Lista Simplesmente Encadeada</h3>
         <ul>
             <li>Cada nó contém dados e ponteiro para próximo nó</li>
@@ -140,8 +264,11 @@
             <li>Permite navegação bidirecional</li>
             <li>Mais eficiente para remoções em posições arbitrárias</li>
         </ul>
-
-        <h2>4. Pilhas e Filas</h2>
+    </article>
+    
+    <article class="card fade-in" aria-labelledby="stacks-queues-heading">
+        <h2 id="stacks-queues-heading">4. Pilhas e Filas</h2>
+        
         <h3>4.1 Pilhas (LIFO)</h3>
         <ul>
             <li>Último a entrar é o primeiro a sair</li>
@@ -165,8 +292,10 @@
             <li>Elementos com maior prioridade são atendidos primeiro</li>
             <li>Pode ser implementada com duas filas separadas ou usando heap</li>
         </ul>
-
-        <h2>5. Comparação de Estruturas</h2>
+    </article>
+    
+    <article class="card fade-in" aria-labelledby="comparison-heading">
+        <h2 id="comparison-heading">5. Comparação de Estruturas</h2>
         <table>
             <tr>
                 <th>Estrutura</th>
@@ -199,18 +328,56 @@
                 <td>Processamento em ordem de chegada, buffers</td>
             </tr>
         </table>
-
-        <div class="note">
-            <h3>Dicas Importantes</h3>
-            <ul>
-                <li>Para vetores grandes com muitas buscas, prefira ordenados com busca binária</li>
-                <li>Para aplicações com muitas inserções/remoções, prefira listas encadeadas</li>
-                <li>Sempre libere memória alocada dinamicamente com <code>free()</code></li>
-                <li>Use passagem por referência (ponteiros) para structs grandes para melhor desempenho</li>
+    </article>
     
-            </ul>
-            <a href="https://github.com/Adryan-Francisco/AtividadeC">Atividade feita no GITHUB</a>
-        </div>
+    <div class="note fade-in">
+        <h3>Dicas Importantes</h3>
+        <ul>
+            <li>Para vetores grandes com muitas buscas, prefira ordenados com busca binária</li>
+            <li>Para aplicações com muitas inserções/remoções, prefira listas encadeadas</li>
+            <li>Sempre libere memória alocada dinamicamente com <code>free()</code></li>
+            <li>Use passagem por referência (ponteiros) para structs grandes para melhor desempenho</li>
+        </ul>
+        <a href="https://github.com/Adryan-Francisco/AtividadeC" class="github-link">
+            <i class="fab fa-github"></i> Ver Atividade no GitHub
+        </a>
     </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="social-links" aria-label="Redes sociais">
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 - Adryan Thiago de Oliveira Francisco</p>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeInObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        fadeElements.forEach(element => {
+            fadeInObserver.observe(element);
+        });
+    });
+</script>
+
 </body>
 </html>
