@@ -4,45 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-</head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+        }
 
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+
+        .section {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+  <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Técnicas Avançadas de Banco de Dados</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html" class="nav-link">Sobre</a></li>
+                    <li><a href="#projetos" class="nav-link">Projetos</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                    <li><a href="materias.html" class="nav-link">Matérias</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 <body>
-      <header>
-        <h1>Técnicas Avançadas de Banco de Dados Relacional e Não Relacional</h1>
-        
-  <div class="container">
-    
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="materias.html">Matérias</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+
+    <h1>Técnicas Avançadas de Banco de Dados</h1>
 
     <div class="section">
-        <h2>O que são Procedures e Functions?</h2>
-        <p>Quando uma aplicação executa uma query SQL comum, o texto completo da consulta é enviado ao servidor para ser interpretado, compilado e executado. Esse processo pode causar lentidão quando repetido muitas vezes.</p>
-        
-        <p>Para melhorar o <strong>desempenho, reutilização de código</strong> e <strong>organização das regras de negócio</strong>, os SGBDs oferecem mecanismos para encapsular comandos SQL em blocos reutilizáveis chamados:</p>
-        
-        <ul>
-            <li><strong>Stored Procedures</strong> (Procedimentos Armazenados)</li>
-            <li><strong>Functions</strong> (Funções)</li>
-        </ul>
-        
-        <div class="note">
-            <p>Esses blocos são armazenados diretamente no servidor do banco de dados e executados localmente, o que <strong>reduz o tráfego de rede</strong>, <strong>aumenta a segurança</strong> e melhora o <strong>tempo de resposta das aplicações</strong>.</p>
-        </div>
+        <h2>1. Introdução</h2>
+        <p>Este resumo aborda técnicas de banco de dados no PostgreSQL, com foco em <strong>Stored Procedures</strong>, <strong>Functions</strong> e <strong>Data Control Language (DCL)</strong>.</p>
     </div>
 
     <div class="section">
-        <h2>Diferença entre Function e Procedure</h2>
-        
+        <h2>2. Differences entre Procedures e Functions</h2>
         <table>
             <tr>
                 <th>Característica</th>
@@ -55,339 +86,96 @@
                 <td>Pode retornar ou não</td>
             </tr>
             <tr>
-                <td>Forma de chamada</td>
-                <td>Pode ser usada em SELECT, WHERE etc.</td>
-                <td>Executada via CALL</td>
+                <td>Chamada</td>
+                <td>Usada em SELECT, WHERE, etc.</td>
+                <td>Executada com CALL</td>
             </tr>
             <tr>
-                <td>Uso mais comum</td>
-                <td>Cálculos, consultas, transformações</td>
-                <td>Ações como inserção, exclusão etc.</td>
-            </tr>
-            <tr>
-                <td>Suporte a múltiplos resultados</td>
-                <td>Sim (inclusive com RETURNS TABLE)</td>
-                <td>Não diretamente, mas pode usar parâmetros OUT</td>
+                <td>Uso comum</td>
+                <td>Cálculos, transformações</td>
+                <td>Ações como INSERT, DELETE</td>
             </tr>
         </table>
     </div>
 
     <div class="section">
-        <h2>Tipos de Funções no PostgreSQL</h2>
-        
-        <h3>1. Funções em Linguagem SQL</h3>
+        <h2>3. Tipos de Funções no PostgreSQL</h2>
         <ul>
-            <li>Utilizam apenas comandos SQL simples: SELECT, INSERT, UPDATE, DELETE</li>
-            <li>Não suportam estruturas de controle (como IF, LOOP)</li>
-            <li>Indicadas para operações simples e diretas</li>
+            <li><strong>SQL Functions:</strong> Apenas comandos SQL básicos.</li>
+            <li><strong>PL/pgSQL Functions:</strong> Suportam lógica com IF, LOOP, variáveis.</li>
+            <li><strong>Linguagens Externas:</strong> Usam C, Python, Java (maior desempenho, exigem configuração).</li>
         </ul>
-        
-        <h3>2. Funções Procedurais (PL/pgSQL)</h3>
-        <ul>
-            <li>Suportam variáveis, loops, condições, cursores etc.</li>
-            <li>Usam a linguagem PL/pgSQL, semelhante ao PL/SQL do Oracle</li>
-            <li>Podem ser utilizadas para lógicas de negócio complexas</li>
-        </ul>
-        
-        <h3>3. Funções em Linguagens Externas</h3>
-        <ul>
-            <li>Criadas com linguagens como C, Java, Python</li>
-            <li>Permitem a criação de algoritmos complexos e de alto desempenho</li>
-            <li>Exigem instalação e configuração adicionais no servidor PostgreSQL</li>
-        </ul>
-        
-        <div class="note">
-            <p>Para verificar as linguagens disponíveis:</p>
-            <pre>SELECT * FROM pg_language;</pre>
-        </div>
     </div>
 
     <div class="section">
-        <h2>Vantagens do uso de Procedures e Functions</h2>
+        <h2>4. Vantagens de Procedures e Functions</h2>
         <ul>
-            <li><strong>Reutilização de código:</strong> Crie rotinas modulares e reaproveitáveis</li>
-            <li><strong>Menor tráfego de rede:</strong> A lógica é executada no servidor, não no cliente</li>
-            <li><strong>Centralização da lógica de negócio:</strong> Facilita manutenção e padronização</li>
-            <li><strong>Segurança:</strong> Pode restringir o acesso a tabelas sensíveis via encapsulamento</li>
-            <li><strong>Melhor desempenho:</strong> Armazenamento pré-compilado otimiza a execução</li>
-            <li><strong>Facilidade de manutenção:</strong> Alterações no servidor valem para todos os clientes</li>
+            <li>Reutilização de código</li>
+            <li>Menor tráfego de rede</li>
+            <li>Melhor desempenho</li>
+            <li>Segurança</li>
+            <li>Centralização da lógica</li>
         </ul>
-        
-        <h3>Desvantagem</h3>
-        <p><strong>Dependência de plataforma:</strong> A sintaxe e funcionalidades podem variar entre os SGBDs, dificultando a portabilidade entre bancos de dados diferentes.</p>
+        <p><strong>Desvantagem:</strong> Dependência da plataforma/SGBD.</p>
     </div>
 
     <div class="section">
-        <h2>Sintaxe Geral</h2>
-        
-        <h3>Procedure (a partir do PostgreSQL 11)</h3>
-        <pre>CREATE PROCEDURE nome_da_procedure(
-    IN parametro1 tipo,
-    OUT resultado tipo
-)
-LANGUAGE plpgsql
-AS $$
+        <h2>5. Exemplos</h2>
+
+        <h3>Function: Olá Pessoal</h3>
+        <pre>CREATE FUNCTION sp_ola() RETURNS TEXT LANGUAGE SQL AS $$
+SELECT 'Olá, Pessoal!';
+$$;</pre>
+
+        <h3>Procedure: Olá Pessoal</h3>
+        <pre>CREATE PROCEDURE nome() LANGUAGE plpgsql AS $$
 BEGIN
-    -- comandos da procedure
+    RAISE NOTICE 'Olá, Pessoal!';
 END;
 $$;</pre>
-        
-        <h3>Function</h3>
-        <pre>CREATE FUNCTION nome_da_funcao(param1 tipo)
-RETURNS tipo
-LANGUAGE plpgsql
-AS $$
-DECLARE
-    variavel tipo;
-BEGIN
-    -- comandos da função
-    RETURN variavel;
-END;
+
+        <h3>Função com retorno:</h3>
+        <pre>CREATE FUNCTION total_clientes() RETURNS BIGINT LANGUAGE SQL AS $$
+SELECT COUNT(*) FROM cliente;
 $$;</pre>
     </div>
 
     <div class="section">
-        <h2>Exemplos</h2>
-        
-        <h3>Exemplo 1: Retornar uma mensagem "Olá, Pessoal"</h3>
-        
-        <h4>Versão com FUNCTION:</h4>
-        <pre>CREATE FUNCTION sp_ola()
-RETURNS TEXT
-LANGUAGE SQL
-AS $$
-    SELECT 'Olá, Pessoal!';
-$$;</pre>
-        
-        <p><strong>Uso:</strong></p>
-        <pre>SELECT sp_ola();</pre>
-        
-        <h4>Versão com Procedure:</h4>
-        <pre>CREATE PROCEDURE nome()
-LANGUAGE plpgsql
-AS $$
-BEGIN
-    raise notice 'Olá, Pessoal!';
-END;
-$$;</pre>
-        
-        <p><strong>Uso:</strong></p>
-        <pre>CALL nome();</pre>
-        
-        <h3>Exemplo 2: Retornar a quantidade de clientes</h3>
-        <pre>CREATE FUNCTION total_clientes()
-RETURNS BIGINT
-LANGUAGE SQL
-AS $$
-    SELECT COUNT(*)
-    FROM CLIENTE;
-$$;</pre>
-        
-        <p><strong>Uso:</strong></p>
-        <pre>SELECT total_clientes();</pre>
-        
-        <h3>Exemplo 3: Listar todos os clientes</h3>
-        <pre>CREATE FUNCTION listar_cliente()
-RETURNS TABLE(codigo INT, nome VARCHAR)
-LANGUAGE SQL
-AS $$
-    SELECT codigo_cliente, nome_cliente
-    FROM cliente;
-$$;</pre>
-        
-        <p><strong>Uso:</strong></p>
-        <pre>SELECT * FROM listar_clientes();</pre>
-        
-        <h3>Exemplo 4: Filtrar clientes por estado</h3>
-        <pre>CREATE FUNCTION Clientes_Estado(est varchar)
-RETURNS TABLE(codigo INTEGER, nome VARCHAR, estado VARCHAR)
-LANGUAGE SQL
-AS $$
-    SELECT codigo_cliente, nome_cliente, uf
-    FROM cliente
-    WHERE uf = est;
-$$;</pre>
-        
-        <p><strong>Uso:</strong></p>
-        <pre>SELECT * FROM Clientes_Estado('RJ');</pre>
-    </div>
+        <h2>6. DCL – Data Control Language</h2>
+        <p>Gerencia usuários, permissões e papéis no PostgreSQL.</p>
 
-    <div class="section">
-        <h2>DCL – Data Control Language</h2>
-        <p>É formado por um grupo de comandos SQL, responsáveis pela administração dos usuários, dos grupos e das permissões.</p>
-        
-        <h3>Papéis (Roles) no PostgreSQL</h3>
-        <p>Um papel (role) é uma entidade no PostgreSQL utilizada para <strong>gerenciar permissões e acessos</strong> ao banco de dados. Ela pode ser configurada para:</p>
+        <h3>Comandos:</h3>
+        <pre>
+CREATE ROLE nome_papel;
+ALTER ROLE nome_papel WITH ENCRYPTED PASSWORD '123';
+DROP ROLE nome_papel;
+GRANT UPDATE ON tabela TO papel;
+REVOKE ALL ON tabela FROM PUBLIC;
+        </pre>
+
+        <h3>Opções de CREATE ROLE:</h3>
         <ul>
-            <li>Realizar login (atuando como um usuário)</li>
-            <li>Agrupar outros papéis (funcionando como um grupo)</li>
-            <li>Exercer ambas as funções</li>
+            <li>LOGIN, SUPERUSER, CREATEDB, CREATEROLE</li>
+            <li>PASSWORD 'senha', CONNECTION LIMIT, VALID UNTIL</li>
+            <li>IN ROLE, NOINHERIT, etc.</li>
         </ul>
-        
-        <p>Além disso, papéis podem ser <strong>proprietários de objetos</strong> no banco e <strong>atribuir ou herdar privilégios</strong> de outros papéis.</p>
-        
-        <h4>Sintaxe básica:</h4>
-        <pre>CREATE ROLE nome [[WITH] opção [...]]</pre>
     </div>
 
     <div class="section">
-        <h2>Principais Opções para CREATE ROLE</h2>
-        
-        <table>
-            <tr>
-                <th>Opção</th>
-                <th>Descrição</th>
-            </tr>
-            <tr>
-                <td>LOGIN / NOLOGIN</td>
-                <td>Permite ou não o login</td>
-            </tr>
-            <tr>
-                <td>SUPERUSER / NOSUPERUSER</td>
-                <td>Define se é superusuário</td>
-            </tr>
-            <tr>
-                <td>CREATEDB / NOCREATEDB</td>
-                <td>Pode ou não criar bancos</td>
-            </tr>
-            <tr>
-                <td>CREATEROLE / NOCREATEROLE</td>
-                <td>Pode ou não criar papéis</td>
-            </tr>
-            <tr>
-                <td>INHERIT / NOINHERIT</td>
-                <td>Herda privilégios de papéis aos quais pertence</td>
-            </tr>
-            <tr>
-                <td>PASSWORD 'senha'</td>
-                <td>Define senha</td>
-            </tr>
-            <tr>
-                <td>ENCRYPTED / UNENCRYPTED</td>
-                <td>Define se a senha é criptografada</td>
-            </tr>
-            <tr>
-                <td>VALID UNTIL 'YYYY-MM-DD'</td>
-                <td>Expira após essa data</td>
-            </tr>
-            <tr>
-                <td>CONNECTION LIMIT n</td>
-                <td>Limita conexões simultâneas (-1 = sem limite)</td>
-            </tr>
-            <tr>
-                <td>IN ROLE, ROLE</td>
-                <td>Define relacionamentos com outros papéis</td>
-            </tr>
-        </table>
+        <h2>7. Grupos e Permissões</h2>
+        <ul>
+            <li>Grupos são papéis sem LOGIN</li>
+            <li>Adicionar usuários a um grupo:</li>
+        </ul>
+        <pre>GRANT nome_grupo TO user1, user2;</pre>
+
+        <ul>
+            <li>Remover:</li>
+        </ul>
+        <pre>REVOKE nome_grupo FROM user2;</pre>
     </div>
 
-    <div class="section">
-        <h2>Comandos Básicos para Papéis</h2>
-        
-        <h3>Criar um papel (role)</h3>
-        <pre>CREATE ROLE nome_papel;</pre>
-        
-        <h3>Alterar um papel (definindo senha criptografada)</h3>
-        <pre>ALTER ROLE nome_papel WITH ENCRYPTED PASSWORD '123';</pre>
-        
-        <h3>Excluir um papel</h3>
-        <pre>DROP ROLE nome_papel;</pre>
-        
-        <h3>Listar todos os papéis</h3>
-        <pre>SELECT * FROM pg_user;</pre>
-        <p>Ou para listar apenas papéis que podem fazer login:</p>
-        <pre>SELECT * FROM pg_roles WHERE rolcanlogin;</pre>
-        
-        <div class="note">
-            <h4>Grupos de Papéis</h4>
-            <p>Grupos são representados por papéis sem permissão de login.</p>
-        </div>
-        
-        <h3>Criar um papel-grupo</h3>
-        <pre>CREATE ROLE nome_grupo;</pre>
-        
-        <h3>Adicionar usuários a um grupo</h3>
-        <pre>GRANT nome_grupo TO user1, user2, user3;</pre>
-        
-        <h3>Remover usuários de um grupo</h3>
-        <pre>REVOKE nome_grupo FROM user3;</pre>
-        
-        <h3>Listar todos os grupos</h3>
-        <pre>SELECT * FROM pg_group;</pre>
-    </div>
+   
 
-    <div class="section">
-        <h2>Concedendo e Revogando Privilégios</h2>
-        
-        <p>O superusuário possui acesso completo e irrestrito a todos os objetos e operações em qualquer banco de dados do PostgreSQL.</p>
-        
-        <p>Quando um usuário cria um objeto (como um banco, tabela, view, função etc.), ele se torna automaticamente o proprietário desse objeto.</p>
-        
-        <p>Para que outros papéis (ou usuários) possam acessar ou manipular esse objeto, é necessário <strong>conceder explicitamente os privilégios apropriados</strong>.</p>
-        
-        <h3>Privilégios disponíveis</h3>
-        <p>Existem vários privilégios diferentes: <strong>SELECT, INSERT, UPDATE, DELETE, RULE, REFERENCES, TRIGGER, CREATE, TEMPORARY, EXECUTE e USAGE</strong>.</p>
-        
-        <p>A aplicabilidade dos privilégios depende do tipo de objeto (tabela, função, etc.).</p>
-        
-        <h3>Comandos</h3>
-        <p>Para conceder privilégios, utiliza-se o comando <span class="command">GRANT</span>.</p>
-        <p>Para revogá-los, utiliza-se o comando <span class="command">REVOKE</span>.</p>
-        
-        <h4>Exemplos:</h4>
-        <pre>-- Dando privilégios a um papel
-GRANT UPDATE ON nome_tabela TO nome_papel;
-
--- Dando privilégios a um grupo inteiro
-GRANT SELECT ON nome_tabela TO nome_grupo;
-
--- Removendo todos os privilégios de todos os usuários
-REVOKE ALL ON nome_tabela FROM PUBLIC;</pre>
-    </div>
-
-    <div class="section">
-        <h2>Exercícios Práticos</h2>
-        
-        <h3>Exercícios com Papéis</h3>
-        <ol>
-            <li>Crie um papel chamado vendedor com senha criptografada.</li>
-            <li>Altere o papel vendedor, concedendo permissão de superusuário e login.</li>
-            <li>Remova a permissão de superusuário e a herança de privilégios do papel vendedor.</li>
-            <li>Remova o papel vendedor.</li>
-        </ol>
-        
-        <h3>Exercícios Avançados</h3>
-        <ol start="5">
-            <li>Crie o papel limitado com as seguintes restrições:
-                <ul>
-                    <li>Senha criptografada</li>
-                    <li>Sem superusuário</li>
-                    <li>Sem permissão para criar banco de dados nem papéis</li>
-                    <li>Sem herança de privilégios</li>
-                    <li>Permissão de login</li>
-                    <li>Até 4 conexões simultâneas</li>
-                    <li>Validade até 31/06/2025</li>
-                </ul>
-            </li>
-            <li>Crie os papéis vendedor, secretaria e atendente, com:
-                <ul>
-                    <li>Senha criptografada</li>
-                    <li>Sem herança de privilégios</li>
-                    <li>Permissão de login</li>
-                </ul>
-            </li>
-        </ol>
-        
-        <h3>Exercícios com Grupos e Privilégios</h3>
-        <ol start="7">
-            <li>Liste todos os papéis existentes.</li>
-            <li>Crie um papel chamado funcionario que servirá como grupo.</li>
-            <li>Adicione os papéis vendedor, secretaria, atendente e limitado ao grupo funcionario.</li>
-            <li>Remova o papel limitado do grupo funcionario.</li>
-            <li>Liste todos os grupos (papéis sem login).</li>
-            <li>No banco vendas, remova todas as permissões das tabelas cliente, pedido, vendedor, item do pedido e produto.</li>
-            <li>Conceda os privilégios de seleção, inserção e alteração nas tabelas cliente e vendedor para o papel secretária.</li>
-        </ol>
-    </div>
 </body>
 </html>

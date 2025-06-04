@@ -126,27 +126,25 @@
 <body>
 
 <header class="header">
-  <div class="container">
-    <nav aria-label="Navegação principal">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#sobre">Sobre</a></li>
-        <li><a href="index.html#projetos">Projetos</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="materias.html">Matérias</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Estrutura de Dados</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html" class="nav-link">Sobre</a></li>
+                    <li><a href="#projetos" class="nav-link">Projetos</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                    <li><a href="materias.html" class="nav-link">Matérias</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<div class="course-header">
-    <h1>Estrutura de Dados</h1>
-    <p>Conceitos fundamentais de organização e manipulação eficiente de dados</p>
-</div>
+
 
 <main class="container">
     <article class="card fade-in" aria-labelledby="arrays-heading">
-        <h2 id="arrays-heading">1. Vetores</h2>
+    
         
         <h3>1.1 Vetores Não Ordenados</h3>
         <ul>
@@ -183,33 +181,12 @@
             </tr>
         </table>
 
-        <h3>1.4 Algoritmos de Ordenação</h3>
-        <table>
-            <tr>
-                <th>Algoritmo</th>
-                <th>Complexidade</th>
-                <th>Características</th>
-            </tr>
-            <tr>
-                <td>Bubble Sort</td>
-                <td>O(n²)</td>
-                <td>Simples, compara pares adjacentes</td>
-            </tr>
-            <tr>
-                <td>Selection Sort</td>
-                <td>O(n²)</td>
-                <td>Encontra menor elemento e coloca na posição correta</td>
-            </tr>
-            <tr>
-                <td>QuickSort</td>
-                <td>O(n log n) médio</td>
-                <td>Divide usando pivô, recursivo, eficiente para grandes conjuntos</td>
-            </tr>
+        
         </table>
     </article>
     
     <article class="card fade-in" aria-labelledby="structs-heading">
-        <h2 id="structs-heading">2. Structs</h2>
+       
         <ul>
             <li>Agrupamento de variáveis de tipos diferentes sob um único nome</li>
             <li>Permite criar tipos de dados personalizados</li>
@@ -225,7 +202,7 @@
     </article>
     
     <article class="card fade-in" aria-labelledby="lists-heading">
-        <h2 id="lists-heading">3. Listas Encadeadas</h2>
+       
         
         <h3>3.1 Lista Simplesmente Encadeada</h3>
         <ul>
