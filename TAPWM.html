@@ -239,22 +239,121 @@
                 margin: 0.5rem;
             }
         }
+         /* Menu Mobile */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            padding: 1rem 0;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+        }
+
+        .mobile-nav-links li {
+            padding: 0.8rem 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .mobile-nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            display: block;
+        }
+
+        .mobile-nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Ajustes para telas menores */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            /* Ajuste do padding para o header */
+            header {
+                padding: 0 20px;
+            }
+
+            /* Ajuste do hero section para mobile */
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
 
-  <header class="header">
+<!-- Header Atualizado com Menu Mobile -->
+    <header>
         <div class="container">
-            <nav class="navbar">
-                <a href="index.html" class="logo">Programação Web e Mobile</a>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="index.html" class="nav-link">Sobre</a></li>
-                    <li><a href="#projetos" class="nav-link">Projetos</a></li>
-                    <li><a href="contato.html" class="nav-link">Contato</a></li>
-                    <li><a href="materias.html" class="nav-link">Matérias</a></li>
+            <nav>
+                <a href="#" class="logo">Adryan<span>Thiago</span></a>
+                
+                <!-- Menu Desktop -->
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="materias.html">Matérias</a></li>
                 </ul>
+                
+                <!-- Ícone do Menu Mobile -->
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
             </nav>
+        </div>
+        
+        <!-- Menu Mobile -->
+        <div class="mobile-nav" id="mobile-nav">
+            <ul class="mobile-nav-links">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="materias.html">Matérias</a></li>
+            </ul>
         </div>
     </header>
 
@@ -383,6 +482,17 @@
             fadeInObserver.observe(element);
         });
     });
+     // Script para o menu mobile
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.getElementById('mobile-nav').classList.toggle('active');
+        });
+
+        // Fechar o menu ao clicar em um link
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-nav').classList.remove('active');
+            });
+        });
 </script>
 
 </body>
