@@ -1,661 +1,160 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lingua Inglesa - Unidade 1 | It's Nice to Meet You</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Linguagens de Integração - Portfólio Adryan Thiago</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: var(--dark-text);
-            background-color: #f5f5f5;
-        }
-        
-      /* Estilos específicos para esta página */
-        .course-header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            padding: 6rem 0 4rem;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .course-header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-        }
-        
- .course-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .course-card h2 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        
-        .course-card h2::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background: var(--primary-color);
-            bottom: 0;
-            left: 0;
-        }
-        
-        .course-card h3 {
-            color: var(--dark-color);
-            margin: 1.5rem 0 1rem;
-            font-size: 1.3rem;
-        }
-        
-        .course-card p, .course-card li {
-            color: var(--gray-color);
-            line-height: 1.8;
-        }
-        
-        .course-card ul {
-            padding-left: 1.5rem;
-            margin: 1rem 0;
-        }
-        
-        .course-card li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.2rem;
-        }
-        
-        .course-card li::before {
-            content: '•';
-            color: var(--primary-color);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-        
-        .course-card code {
-            background-color: #e0e7ff;
-            color: var(--primary-color);
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9rem;
-        }
-        
-        .container {
-            width: 85%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            flex-wrap: wrap;
-        }
-        
-        nav ul li {
-            margin: 0 10px;
-        }
-        
-        nav ul li a {
-            color: var(--light-text);
-            text-decoration: none;
-            padding: 0.8rem 1.2rem;
-            display: block;
-            transition: all 0.3s ease;
-            border-radius: 4px;
-            font-weight: 500;
-        }
-        
-        nav ul li a:hover {
-            background-color: var(--primary-color);
-        }
-        
-        .course-header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            padding: 8rem 0 4rem;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-          
-        .lp {
-            
-            color: white;
-            padding: 8rem 0 4rem;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        .course-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .course-header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        .course-content {
-            padding: 0 2rem 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature-card h2 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        
-        .feature-card h2::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background: var(--primary-color);
-            bottom: 0;
-            left: 0;
-        }
-        
-        .feature-card h3 {
-            color: var(--secondary-color);
-            margin: 1.5rem 0 1rem;
-            font-size: 1.2rem;
-        }
-        
-        .feature-card ul {
-            padding-left: 1.5rem;
-            margin: 1rem 0;
-        }
-        
-        .feature-card li {
-            color: var(--gray-color);
-            margin-bottom: 0.8rem;
-            line-height: 1.6;
-            position: relative;
-            padding-left: 1.2rem;
-        }
-        
-        .feature-card li::before {
-            content: '•';
-            color: var(--primary-color);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-        
-        .feature-card li strong {
-            color: var(--dark-text);
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-        }
-        
-        th {
-            background-color: #f2f2f2;
-            color: var(--secondary-color);
-        }
-        
-        .example {
-            background-color: var(--light-bg);
-            border-left: 4px solid var(--primary-color);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .example p {
-            margin: 0.5rem 0;
-        }
-        
-        .highlight {
-            color: var(--accent-color);
-            font-weight: 600;
-        }
-        
-        .tech-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin: 1.5rem 0;
-        }
-        
-        .tech-item {
-            background-color: #e0e7ff;
-            color: var(--primary-color);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-family: 'Poppins', sans-serif;
-            margin: 0.5rem 0;
-        }
-        
-        .btn:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-        
-        footer {
-            background-color: var(--secondary-color);
-            color: var(--light-text);
-            padding: 2rem 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .social-links {
-            margin-bottom: 1rem;
-        }
-        
-        .social-link {
-            color: var(--light-text);
-            margin: 0 10px;
-            font-size: 1.2rem;
-            transition: color 0.3s;
-        }
-        
-        .social-link:hover {
-            color: var(--primary-color);
-        }
-        
-        .copyright {
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            .course-header {
-                padding: 7rem 0 3rem;
-            }
-            
-            .course-header h1 {
-                font-size: 2rem;
-            }
-            
-            .course-content {
-                padding: 0 1rem 3rem;
-                grid-template-columns: 1fr;
-            }
-            
-            nav ul {
-                flex-wrap: wrap;
-            }
-            
-            nav ul li {
-                margin: 0.3rem;
-            }
-        }
-        /* Menu Mobile */
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--dark-color);
-        }
-
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 80px;
-            left: 0;
-            width: 100%;
-            background-color: white;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-            padding: 1rem 0;
-            animation: slideDown 0.3s ease-out;
-        }
-
-        .mobile-nav.active {
-            display: block;
-        }
-
-        .mobile-nav-links {
-            list-style: none;
-        }
-
-        .mobile-nav-links li {
-            padding: 0.8rem 2rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .mobile-nav-links a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
-            display: block;
-        }
-
-        .mobile-nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Ajustes para telas menores */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            /* Ajuste do padding para o header */
-            header {
-                padding: 0 20px;
-            }
-
-            /* Ajuste do hero section para mobile */
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-text p {
-                font-size: 1rem;
-            }
-        }
+        .materia-header { background: var(--gradient-dark); color: white; padding: 8rem 0 6rem; text-align: center; position: relative; overflow: hidden; margin-top: 80px; }
+        .materia-header::before { content: ''; position: absolute; top: -50%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(124, 58, 237, 0.3) 0%, transparent 70%); border-radius: 50%; z-index: 0; }
+        .materia-header::after { content: ''; position: absolute; bottom: -30%; left: -5%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, transparent 70%); border-radius: 50%; z-index: 0; }
+        .materia-header-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .materia-header h1 { font-size: 3.5rem; margin-bottom: 1.5rem; animation: fadeInUp 0.8s ease-out; }
+        .materia-header p { font-size: 1.2rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 1rem; }
+        .materia-meta { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; font-size: 0.95rem; }
+        .meta-item { display: flex; align-items: center; gap: 0.5rem; background: rgba(255, 255, 255, 0.1); padding: 0.6rem 1.2rem; border-radius: 50px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        main { padding: 4rem 0; background: linear-gradient(180deg, rgba(124, 58, 237, 0.03) 0%, rgba(236, 72, 153, 0.03) 100%); }
+        .materia-content { max-width: 900px; margin: 0 auto; }
+        section { background: white; margin-bottom: 2rem; padding: 2.5rem; border-radius: 15px; box-shadow: var(--shadow); border: 1px solid rgba(124, 58, 237, 0.1); animation: fadeInUp 0.6s ease-out; animation-fill-mode: both; }
+        section:nth-child(1) { animation-delay: 0.2s; }
+        section:nth-child(2) { animation-delay: 0.3s; }
+        section:nth-child(3) { animation-delay: 0.4s; }
+        section:nth-child(4) { animation-delay: 0.5s; }
+        section:nth-child(5) { animation-delay: 0.6s; }
+        h3 { background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1.5rem; font-size: 1.8rem; position: relative; padding-bottom: 0.8rem; }
+        h3::after { content: ''; position: absolute; width: 80px; height: 4px; background: var(--gradient-primary); bottom: 0; left: 0; border-radius: 2px; }
+        h4 { color: var(--dark-color); margin: 1.5rem 0 1rem; font-size: 1.1rem; font-weight: 600; }
+        p, li { color: var(--gray-color); line-height: 1.8; margin-bottom: 1rem; }
+        ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+        li { margin-bottom: 0.8rem; }
+        .note { background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%); border-left: 4px solid var(--primary-color); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; backdrop-filter: blur(10px); }
+        .note h4 { color: var(--primary-color); margin-top: 0; }
+        code { font-family: 'Courier New', Courier, monospace; background: rgba(124, 58, 237, 0.1); padding: 0.2rem 0.5rem; border-radius: 4px; color: var(--primary-color); font-size: 0.9rem; }
+        .github-link { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gradient-primary); color: white; padding: 0.9rem 1.8rem; border-radius: 50px; text-decoration: none; font-weight: 600; margin-top: 2rem; transition: all var(--transition); box-shadow: var(--shadow); }
+        .github-link:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); background: var(--gradient-secondary); }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-color); text-decoration: none; font-weight: 500; margin-bottom: 2rem; transition: all var(--transition); }
+        .back-link:hover { transform: translateX(-5px); }
+        @media (max-width: 768px) { .materia-header { padding: 6rem 0 4rem; } .materia-header h1 { font-size: 2.5rem; } section { padding: 1.5rem; } .materia-meta { gap: 1rem; font-size: 0.85rem; } h3 { font-size: 1.5rem; } }
+        @media (max-width: 480px) { .materia-header { padding: 4rem 0 3rem; } .materia-header h1 { font-size: 1.8rem; } main { padding: 2rem 0; } section { padding: 1rem; } .materia-meta { flex-direction: column; gap: 0.5rem; } }
     </style>
 </head>
-
 <body>
-<!-- Header Atualizado com Menu Mobile -->
-<header>
-    <div class="container">
-        <nav>
-            <a href="#" class="logo">Adryan<span>Thiago</span></a>
-            
-            <!-- Menu Desktop -->
-            <ul class="nav-links">
+    <header>
+        <div class="container">
+            <nav aria-label="Navegação principal">
+                <a href="index.html" class="logo" aria-label="Voltar ao início">Adryan<span>Thiago</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#projetos">Projetos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="materias.html">Matérias</a></li>
+                </ul>
+                <div class="menu-toggle" id="mobile-menu" role="button" tabindex="0" aria-label="Abrir menu de navegação"><i class="fas fa-bars"></i></div>
+            </nav>
+        </div>
+        <div class="mobile-nav" id="mobile-nav">
+            <ul class="mobile-nav-links">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#projetos">Projetos</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li><a href="materias.html">Matérias</a></li>
             </ul>
-            
-            <!-- Ícone do Menu Mobile -->
-            <div class="menu-toggle" id="mobile-menu">
-                <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <div class="materia-header">
+        <div class="materia-header-content">
+            <a href="materias.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar</a>
+            <h1>Linguagens de Integração</h1>
+            <p>APIs, protocolos e padrões de comunicação entre sistemas</p>
+            <div class="materia-meta">
+                <div class="meta-item"><i class="fas fa-book"></i><span>1º Semestre</span></div>
+                <div class="meta-item"><i class="fas fa-clock"></i><span>80 horas</span></div>
+                <div class="meta-item"><i class="fas fa-language"></i><span>Integração</span></div>
             </div>
-        </nav>
+        </div>
     </div>
-    
-    <!-- Menu Mobile -->
-    <div class="mobile-nav" id="mobile-nav">
-        <ul class="mobile-nav-links">
-            <li><a href="#hero">Início</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="contato.html">Contato</a></li>
-            <li><a href="materias.html">Matérias</a></li>
-        </ul>
-    </div>
-</header>
 
-  
-<div class="lp">
+    <main>
+        <div class="container materia-content">
+            <section>
+                <h3><i class="fas fa-language"></i> Visão Geral</h3>
+                <p>Estudo de mecanismos para integração entre sistemas diversos, permitindo comunicação eficiente entre aplicações.</p>
+                <p>Essencial em ambientes corporativos onde múltiplos sistemas precisam conversar e compartilhar dados.</p>
+            </section>
 
-</div>
+            <section>
+                <h3><i class="fas fa-api"></i> APIs - Application Programming Interfaces</h3>
+                <p>Contrato que define como programas se comunicam:</p>
+                <ul>
+                    <li><strong>REST:</strong> Paradigma baseado em recursos HTTP</li>
+                    <li><strong>SOAP:</strong> Protocolo baseado em XML</li>
+                    <li><strong>GraphQL:</strong> Query language para APIs</li>
+                    <li><strong>WebSocket:</strong> Comunicação bidirecional em tempo real</li>
+                </ul>
+            </section>
 
-<main class="course-content">
-    <article class="feature-card">
-        <h2>Conversação e Apresentações</h2>
-        <p>Diálogos básicos para se apresentar e cumprimentar pessoas:</p>
-        
-        <div class="example">
-            <p><strong>Joshua:</strong> Hi. My name is Joshua Brown.</p>
-            <p><strong>Isabella:</strong> I'm Isabella Martins.</p>
-            <p><strong>Joshua:</strong> It's nice to meet you, Isabella.</p>
-        </div>
-        
-        <h3>Expressões úteis</h3>
-        <ul>
-            <li><strong>Hello / Hi</strong> - Olá / Oi</li>
-            <li><strong>Good morning/afternoon/evening</strong> - Bom dia/tarde/noite</li>
-            <li><strong>How are you?</strong> - Como você está?</li>
-            <li><strong>I'm fine, thank you</strong> - Estou bem, obrigado</li>
-            <li><strong>What's your name?</strong> - Qual é o seu nome?</li>
-        </ul>
-    </article>
-    
-    <article class="feature-card">
-        <h2>Gramática Básica</h2>
-        
-        <h3>Pronomes Possessivos</h3>
-        <table>
-            <tr>
-                <th>Pergunta</th>
-                <th>Resposta</th>
-            </tr>
-            <tr>
-                <td>What's <span class="highlight">your</span> name?</td>
-                <td><span class="highlight">My</span> name is Carlos.</td>
-            </tr>
-            <tr>
-                <td>What's <span class="highlight">his</span> name?</td>
-                <td><span class="highlight">His</span> name is Joshua.</td>
-            </tr>
-            <tr>
-                <td>What's <span class="highlight">her</span> name?</td>
-                <td><span class="highlight">Her</span> name is Isabella.</td>
-            </tr>
-        </table>
-        
-        <h3>Verbo "To Be"</h3>
-        <p>Formas no presente:</p>
-        <ul>
-            <li><strong>I am</strong> (I'm)</li>
-            <li><strong>You are</strong> (You're)</li>
-            <li><strong>He/She/It is</strong> (He's/She's/It's)</li>
-        </ul>
-        
-        <div class="example">
-            <p><strong>Afirmativo:</strong> She is a teacher. (She's)</p>
-            <p><strong>Negativo:</strong> He is not a doctor. (He isn't)</p>
-            <p><strong>Interrogativo:</strong> Are you a student?</p>
-        </div>
-    </article>
-    
-    <article class="feature-card">
-        <h2>Vocabulário e Pronúncia</h2>
-        
-        <h3>Alfabeto Inglês</h3>
-        <div class="tech-list">
-            <span class="tech-item">A</span>
-            <span class="tech-item">B</span>
-            <span class="tech-item">C</span>
-            <span class="tech-item">D</span>
-            <span class="tech-item">E</span>
-            <span class="tech-item">F</span>
-            <span class="tech-item">G</span>
-            <span class="tech-item">H</span>
-            <span class="tech-item">I</span>
-            <span class="tech-item">J</span>
-            <span class="tech-item">K</span>
-            <span class="tech-item">L</span>
-            <span class="tech-item">M</span>
-            <span class="tech-item">N</span>
-            <span class="tech-item">O</span>
-            <span class="tech-item">P</span>
-            <span class="tech-item">Q</span>
-            <span class="tech-item">R</span>
-            <span class="tech-item">S</span>
-            <span class="tech-item">T</span>
-            <span class="tech-item">U</span>
-            <span class="tech-item">V</span>
-            <span class="tech-item">W</span>
-            <span class="tech-item">X</span>
-            <span class="tech-item">Y</span>
-            <span class="tech-item">Z</span>
-        </div>
-        
-        <h3>Títulos Formais</h3>
-        <ul>
-            <li><strong>Mr.</strong> Rodriguez (homens)</li>
-            <li><strong>Mrs.</strong> Jones (mulheres casadas)</li>
-            <li><strong>Miss</strong> Kato (mulheres solteiras)</li>
-            <li><strong>Ms.</strong> Yong (mulheres, estado civil não especificado)</li>
-        </ul>
-        
-        <h3>Números (0-10)</h3>
-        <ul>
-            <li>Zero</li>
-            <li>One</li>
-            <li>Two</li>
-            <li>Three</li>
-            <li>Four</li>
-            <li>Five</li>
-            <li>Six</li>
-            <li>Seven</li>
-            <li>Eight</li>
-            <li>Nine</li>
-            <li>Ten</li>
-        </ul>
-    </article>
-    
-    <article class="feature-card">
-        <h2>Exercícios Práticos</h2>
-        
-        <h3>Complete o Diálogo</h3>
-        <div class="example">
-            <p><strong>Ben:</strong> Hello, Christy. How <span class="highlight">are</span> you?</p>
-            <p><strong>Christy:</strong> <span class="highlight">I'm</span> fine, thanks.</p>
-        </div>
-        
-        <h3>Substitua por Pronomes</h3>
-        <div class="example">
-            <p><strong>Julia Martin</strong> is a good student. → <span class="highlight">She</span> is a good student.</p>
-            <p><strong>Mark and I</strong> are friends. → <span class="highlight">We</span> are friends.</p>
-        </div>
-        
-        <h3>Traduza para o Inglês</h3>
-        <ul>
-            <li>Olá, meu nome é Pedro → <span class="highlight">Hello, my name is Pedro</span></li>
-            <li>Ela não é professora → <span class="highlight">She isn't a teacher</span></li>
-        </ul>
-        
-        <a href="#" class="btn">Mais Exercícios</a>
-    </article>
-</main>
+            <section>
+                <h3><i class="fas fa-exchange-alt"></i> Padrões de Integração</h3>
+                <p>Soluções comuns para conectar sistemas:</p>
+                <ul>
+                    <li><strong>Ponto-a-Ponto:</strong> Conexão direta entre dois sistemas</li>
+                    <li><strong>Hub-and-Spoke:</strong> Sistema central integra outros</li>
+                    <li><strong>Message-Oriented Middleware:</strong> Fila de mensagens</li>
+                    <li><strong>Event-Driven:</strong> Baseado em eventos</li>
+                </ul>
 
-<footer>
-    <div class="footer-content">
-        <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                <div class="note">
+                    <h4><i class="fas fa-lightbulb"></i> Padrão Empresarial</h4>
+                    <p>Enterprise Integration Patterns é referência definitiva para arquitetos de integração.</p>
+                </div>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-tools"></i> Tecnologias Populares</h3>
+                <ul>
+                    <li><strong>JSON/XML:</strong> Formatos de dados</li>
+                    <li><strong>Message Brokers:</strong> RabbitMQ, Apache Kafka</li>
+                    <li><strong>Integration Platforms:</strong> MuleSoft, Boomi</li>
+                    <li><strong>ETL Tools:</strong> Talend, Apache NiFi</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-graduation-cap"></i> Conclusão</h3>
+                <p>Profissionais especializados em integração de sistemas são críticos para a transformação digital das empresas.</p>
+                <a href="https://github.com/Adryan-Francisco" class="github-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> Ver Projetos no GitHub
+                </a>
+            </section>
         </div>
-        <p class="copyright">&copy; 2025 - Adryan Thiago de Oliveira Francisco</p>
-    </div>
-</footer>
-<script>
-        // Script para o menu mobile
-        document.getElementById('mobile-menu').addEventListener('click', function() {
-            document.getElementById('mobile-nav').classList.toggle('active');
-        });
+    </main>
 
-        // Fechar o menu ao clicar em um link
-        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
-            link.addEventListener('click', function() {
-                document.getElementById('mobile-nav').classList.remove('active');
-            });
-        });
-         // Script para o menu mobile
-        document.getElementById('mobile-menu').addEventListener('click', function() {
-            document.getElementById('mobile-nav').classList.toggle('active');
-        });
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links" role="list" aria-label="Links de redes sociais">
+                    <a href="https://github.com/Adryan-Francisco" class="social-link" role="listitem" aria-label="Perfil no GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                </div>
+                <p class="copyright">&copy; 2025 Adryan Thiago de Oliveira Francisco. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
-        // Fechar o menu ao clicar em um link
-        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
-            link.addEventListener('click', function() {
-                document.getElementById('mobile-nav').classList.remove('active');
-            });
-        });
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', function() { document.getElementById('mobile-nav').classList.toggle('active'); });
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => { link.addEventListener('click', function() { document.getElementById('mobile-nav').classList.remove('active'); }); });
+        window.addEventListener('scroll', function() { const header = document.querySelector('header'); if (window.scrollY > 10) { header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); } });
     </script>
 </body>
 </html>

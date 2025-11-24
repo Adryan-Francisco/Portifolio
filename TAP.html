@@ -1,337 +1,208 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Técnicas Avançadas de Programação | ADS</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Técnicas de Apresentação e Prototipagem - Portfólio Adryan Thiago</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Estilos específicos para esta página */
-        .course-header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            padding: 6rem 0 4rem;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .course-header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-        }
-        
-        .course-content {
-            padding: 0 2rem 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-        }
-        
-        .course-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .course-card h2 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        
-        .course-card h2::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background: var(--primary-color);
-            bottom: 0;
-            left: 0;
-        }
-        
-        .course-card h3 {
-            color: var(--dark-color);
-            margin: 1.5rem 0 1rem;
-            font-size: 1.3rem;
-        }
-        
-        .course-card p, .course-card li {
-            color: var(--gray-color);
-            line-height: 1.8;
-        }
-        
-        .course-card ul {
-            padding-left: 1.5rem;
-            margin: 1rem 0;
-        }
-        
-        .course-card li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.2rem;
-        }
-        
-        .course-card li::before {
-            content: '•';
-            color: var(--primary-color);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-        
-        .course-card code {
-            background-color: #e0e7ff;
-            color: var(--primary-color);
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9rem;
-        }
-        
-        .tech-badge {
-            display: inline-block;
-            background-color: #e0e7ff;
-            color: var(--primary-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
+        .materia-header { background: var(--gradient-dark); color: white; padding: 8rem 0 6rem; text-align: center; position: relative; overflow: hidden; margin-top: 80px; }
+        .materia-header::before { content: ''; position: absolute; top: -50%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(124, 58, 237, 0.3) 0%, transparent 70%); border-radius: 50%; z-index: 0; }
+        .materia-header::after { content: ''; position: absolute; bottom: -30%; left: -5%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, transparent 70%); border-radius: 50%; z-index: 0; }
+        .materia-header-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .materia-header h1 { font-size: 3.5rem; margin-bottom: 1.5rem; animation: fadeInUp 0.8s ease-out; }
+        .materia-header p { font-size: 1.2rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 1rem; }
+        .materia-meta { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; font-size: 0.95rem; }
+        .meta-item { display: flex; align-items: center; gap: 0.5rem; background: rgba(255, 255, 255, 0.1); padding: 0.6rem 1.2rem; border-radius: 50px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        main { padding: 4rem 0; background: linear-gradient(180deg, rgba(124, 58, 237, 0.03) 0%, rgba(236, 72, 153, 0.03) 100%); }
+        .materia-content { max-width: 900px; margin: 0 auto; }
+        section { background: white; margin-bottom: 2rem; padding: 2.5rem; border-radius: 15px; box-shadow: var(--shadow); border: 1px solid rgba(124, 58, 237, 0.1); animation: fadeInUp 0.6s ease-out; animation-fill-mode: both; }
+        section:nth-child(1) { animation-delay: 0.2s; }
+        section:nth-child(2) { animation-delay: 0.3s; }
+        section:nth-child(3) { animation-delay: 0.4s; }
+        section:nth-child(4) { animation-delay: 0.5s; }
+        section:nth-child(5) { animation-delay: 0.6s; }
+        h3 { background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1.5rem; font-size: 1.8rem; position: relative; padding-bottom: 0.8rem; }
+        h3::after { content: ''; position: absolute; width: 80px; height: 4px; background: var(--gradient-primary); bottom: 0; left: 0; border-radius: 2px; }
+        h4 { color: var(--dark-color); margin: 1.5rem 0 1rem; font-size: 1.1rem; font-weight: 600; }
+        p, li { color: var(--gray-color); line-height: 1.8; margin-bottom: 1rem; }
+        ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+        li { margin-bottom: 0.8rem; }
+        .note { background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%); border-left: 4px solid var(--primary-color); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; backdrop-filter: blur(10px); }
+        .note h4 { color: var(--primary-color); margin-top: 0; }
+        code { font-family: 'Courier New', Courier, monospace; background: rgba(124, 58, 237, 0.1); padding: 0.2rem 0.5rem; border-radius: 4px; color: var(--primary-color); font-size: 0.9rem; }
+        .github-link { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gradient-primary); color: white; padding: 0.9rem 1.8rem; border-radius: 50px; text-decoration: none; font-weight: 600; margin-top: 2rem; transition: all var(--transition); box-shadow: var(--shadow); }
+        .github-link:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); background: var(--gradient-secondary); }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-color); text-decoration: none; font-weight: 500; margin-bottom: 2rem; transition: all var(--transition); }
+        .back-link:hover { transform: translateX(-5px); }
         @media (max-width: 768px) {
-            .course-header {
-                padding: 5rem 0 3rem;
-            }
-            
-            .course-header h1 {
-                font-size: 2.2rem;
-            }
-            
-            .course-content {
-                padding: 0 1rem 3rem;
-                grid-template-columns: 1fr;
-            }
+            .materia-header { padding: 6rem 0 4rem; }
+            .materia-header h1 { font-size: 2.5rem; }
+            section { padding: 1.5rem; }
+            .materia-meta { gap: 1rem; font-size: 0.85rem; }
+            h3 { font-size: 1.5rem; }
         }
-         /* Menu Mobile */
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--dark-color);
-        }
-
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 80px;
-            left: 0;
-            width: 100%;
-            background-color: white;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-            padding: 1rem 0;
-            animation: slideDown 0.3s ease-out;
-        }
-
-        .mobile-nav.active {
-            display: block;
-        }
-
-        .mobile-nav-links {
-            list-style: none;
-        }
-
-        .mobile-nav-links li {
-            padding: 0.8rem 2rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .mobile-nav-links a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
-            display: block;
-        }
-
-        .mobile-nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Ajustes para telas menores */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            /* Ajuste do padding para o header */
-            header {
-                padding: 0 20px;
-            }
-
-            /* Ajuste do hero section para mobile */
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-text p {
-                font-size: 1rem;
-            }
+        @media (max-width: 480px) {
+            .materia-header { padding: 4rem 0 3rem; }
+            .materia-header h1 { font-size: 1.8rem; }
+            main { padding: 2rem 0; }
+            section { padding: 1rem; }
+            .materia-meta { flex-direction: column; gap: 0.5rem; }
         }
     </style>
 </head>
 <body>
-
-<!-- Header Atualizado com Menu Mobile -->
     <header>
         <div class="container">
-            <nav>
-                <a href="#" class="logo">Adryan<span>Thiago</span></a>
-                
-                <!-- Menu Desktop -->
+            <nav aria-label="Navegação principal">
+                <a href="index.html" class="logo" aria-label="Voltar ao início">Adryan<span>Thiago</span></a>
                 <ul class="nav-links">
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#projetos">Projetos</a></li>
                     <li><a href="contato.html">Contato</a></li>
                     <li><a href="materias.html">Matérias</a></li>
                 </ul>
-                
-                <!-- Ícone do Menu Mobile -->
-                <div class="menu-toggle" id="mobile-menu">
+                <div class="menu-toggle" id="mobile-menu" role="button" tabindex="0" aria-label="Abrir menu de navegação">
                     <i class="fas fa-bars"></i>
                 </div>
             </nav>
         </div>
-        
-        <!-- Menu Mobile -->
         <div class="mobile-nav" id="mobile-nav">
             <ul class="mobile-nav-links">
-                <li><a href="#hero">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#projetos">Projetos</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li><a href="materias.html">Matérias</a></li>
             </ul>
         </div>
     </header>
 
-
-<main class="course-content">
-    <article class="course-card fade-in">
-        <h2>CRUD 1-N em .NET com PostgreSQL</h2>
-        <p>Implementação completa de um sistema de cadastro de produtos e fornecedores com relacionamento 1-N, utilizando as melhores práticas de desenvolvimento.</p>
-        
-        <div class="tech-stack">
-            <span class="tech-badge"><i class="fas fa-database"></i> ASP.NET Core MVC</span>
-            <span class="tech-badge"><i class="fas fa-code"></i> Entity Framework Core</span>
-            <span class="tech-badge"><i class="fas fa-server"></i> PostgreSQL</span>
-            <span class="tech-badge"><i class="fas fa-paint-brush"></i> Bootstrap</span>
+    <div class="materia-header">
+        <div class="materia-header-content">
+            <a href="materias.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar</a>
+            <h1>TAP</h1>
+            <p>Técnicas de Apresentação e Prototipagem</p>
+            <div class="materia-meta">
+                <div class="meta-item"><i class="fas fa-book"></i><span>1º Semestre</span></div>
+                <div class="meta-item"><i class="fas fa-clock"></i><span>80 horas</span></div>
+                <div class="meta-item"><i class="fas fa-code"></i><span>Prototipagem</span></div>
+            </div>
         </div>
-        
-        <h3>Principais Funcionalidades:</h3>
-        <ul>
-            <li>Cadastro completo de produtos e fornecedores</li>
-            <li>Relacionamento 1-N entre entidades</li>
-            <li>Validações de dados no cliente e servidor</li>
-            <li>Operações CRUD completas</li>
-            <li>Interface responsiva com Bootstrap</li>
-        </ul>
-    </article>
-    
-    <article class="course-card fade-in">
-        <h2>Técnicas Avançadas</h2>
-        
-        <h3>Programação Orientada a Objetos</h3>
-        <ul>
-            <li><strong>Classes e Objetos:</strong> Modelagem de entidades do mundo real</li>
-            <li><strong>4 Pilares da POO:</strong> Encapsulamento, Herança, Polimorfismo e Abstração</li>
-            <li><strong>Padrões de Projeto:</strong> Singleton, Factory, Repository, etc.</li>
-            <li><strong>Arquitetura Limpa:</strong> Separação de responsabilidades</li>
-            <li><strong>TDD:</strong> Desenvolvimento Guiado por Testes</li>
-            <li><strong>Versionamento:</strong> Git e fluxos de trabalho colaborativo</li>
-        </ul>
-        
-        <h3>Estruturas Básicas</h3>
-        <ul>
-            <li><strong>Condicionais:</strong> <code>if-else</code>, <code>switch-case</code>, operador ternário</li>
-            <li><strong>Loops:</strong> <code>for</code>, <code>while</code>, <code>do-while</code>, <code>foreach</code></li>
-            <li><strong>Coleções:</strong> Vetores, Matrizes, Listas, Dicionários</li>
-            <li><strong>Manipulação de Strings:</strong> Métodos e expressões regulares</li>
-            <li><strong>Tratamento de Exceções:</strong> <code>try-catch-finally</code></li>
-        </ul>
-    </article>
-</main>
-
-<footer>
-    <div class="footer-content">
-        <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <p class="copyright">&copy; 2025 - Adryan Thiago de Oliveira Francisco</p>
     </div>
-</footer>
 
-<script>
-    // Animação de fade-in
-    document.addEventListener('DOMContentLoaded', () => {
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const fadeInObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
+    <main>
+        <div class="container materia-content">
+            <section>
+                <h3><i class="fas fa-code"></i> Visão Geral</h3>
+                <p>Técnicas de Apresentação e Prototipagem ensina metodologias para apresentar ideias de forma efetiva e criar protótipos funcionais de soluções tecnológicas.</p>
+                <p>Habilidades essenciais para comunicar conceitos complexos e validar ideias antes da implementação completa.</p>
+            </section>
 
-        fadeElements.forEach(element => {
-            fadeInObserver.observe(element);
-        });
-    });
-     // Script para o menu mobile
+            <section>
+                <h3><i class="fas fa-lightbulb"></i> Prototipagem de Interfaces</h3>
+                <p>Processo de criar representações de produtos interativos para validação e teste.</p>
+                <ul>
+                    <li><strong>Wireframes:</strong> Esquemas de layout básico</li>
+                    <li><strong>Mockups:</strong> Representações visuais mais detalhadas</li>
+                    <li><strong>Protótipos Interativos:</strong> Simulação do comportamento real</li>
+                    <li><strong>Design Responsivo:</strong> Adaptação a diferentes telas</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-palette"></i> Design de Experiência do Usuário (UX)</h3>
+                <p>Foco em criar experiências intuitivas e satisfatórias para os usuários.</p>
+                <ul>
+                    <li><strong>Pesquisa de Usuário:</strong> Entender necessidades e comportamentos</li>
+                    <li><strong>Personas:</strong> Representações de usuários típicos</li>
+                    <li><strong>Jornada do Usuário:</strong> Mapeamento de interações</li>
+                    <li><strong>Testes de Usabilidade:</strong> Validação com usuários reais</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-mobile-alt"></i> Ferramentas Populares</h3>
+                <p>Plataformas e softwares para criar protótipos:</p>
+                <ul>
+                    <li><strong>Figma:</strong> Prototipagem colaborativa na nuvem</li>
+                    <li><strong>Adobe XD:</strong> Suite profissional de design</li>
+                    <li><strong>Sketch:</strong> Design vetorial para interfaces</li>
+                    <li><strong>InVision:</strong> Prototipagem e colaboração</li>
+                    <li><strong>Protopie:</strong> Prototipagem interativa avançada</li>
+                </ul>
+
+                <div class="note">
+                    <h4><i class="fas fa-lightbulb"></i> Dica</h4>
+                    <p>Investir tempo em prototipagem evita retrabalho e economiza recursos no desenvolvimento final.</p>
+                </div>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-presentation"></i> Técnicas de Apresentação</h3>
+                <p>Como comunicar ideias de forma persuasiva e clara.</p>
+                <ul>
+                    <li><strong>Storytelling:</strong> Narrativa atraente de problemas e soluções</li>
+                    <li><strong>Dados Visuais:</strong> Gráficos e diagramas para impacto</li>
+                    <li><strong>Demonstração ao Vivo:</strong> Apresentação de funcionalidades</li>
+                    <li><strong>Pitch de Elevador:</strong> Resumir em 30-60 segundos</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-graduation-cap"></i> Conclusão</h3>
+                <p>Dominar apresentação e prototipagem diferencia profissionais no mercado, permitindo validar ideias rapidamente e comunicar com stakeholders efetivamente.</p>
+                <a href="https://github.com/Adryan-Francisco" class="github-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> Ver Projetos no GitHub
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links" role="list" aria-label="Links de redes sociais">
+                    <a href="https://github.com/Adryan-Francisco" class="social-link" role="listitem" aria-label="Perfil no GitHub">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no LinkedIn">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no Twitter">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no Instagram">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <p class="copyright">&copy; 2025 Adryan Thiago de Oliveira Francisco. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
         document.getElementById('mobile-menu').addEventListener('click', function() {
             document.getElementById('mobile-nav').classList.toggle('active');
         });
-
-        // Fechar o menu ao clicar em um link
         document.querySelectorAll('.mobile-nav-links a').forEach(link => {
             link.addEventListener('click', function() {
                 document.getElementById('mobile-nav').classList.remove('active');
             });
         });
-</script>
-
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,172 +1,285 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interação Humano-Computador e Figma | Portfólio</title>
-    <meta name="description" content="Conceitos fundamentais de IHC e guia prático para uso do Figma no design de interfaces">
+    <title>Informática, Tecnologia e Humanidades Computacionais - Portfólio Adryan Thiago</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Estilos específicos para esta página */
-        :root {
-            --ihc-primary: #2563eb;
-            --ihc-secondary: #1e40af;
-            --highlight-bg: #EDE7F6;
-            --badge-bg: #D1C4E9;
-        }
-        
-        .course-header {
-            background: linear-gradient(135deg, var(--ihc-primary) 0%, var(--ihc-secondary) 100%);
+        /* Materia Page Styles */
+        .materia-header {
+            background: var(--gradient-dark);
             color: white;
-            padding: clamp(4rem, 8vw, 6rem) 0 clamp(3rem, 6vw, 4rem);
+            padding: 8rem 0 6rem;
             text-align: center;
-            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
         }
-        
-        .course-header h1 {
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
+
+        .materia-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .materia-header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .materia-header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .materia-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .materia-header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        
-        .card h2 {
-            color: var(--ihc-primary);
-        }
-        
-        .card h2::after {
-            background: var(--ihc-primary);
-        }
-        
-        .card h3 {
-            color: var(--ihc-secondary);
-        }
-        
-        .highlight {
-            background-color: var(--highlight-bg);
-            border-left: 4px solid var(--ihc-primary);
-        }
-        
-        .badge {
-            background-color: var(--badge-bg);
-            color: var(--ihc-primary);
-        }
-        
-        li::before {
-            color: var(--ihc-primary);
-        }
-        
-        a {
-            color: var(--ihc-secondary);
-        }
-        
-        a:hover {
-            color: var(--ihc-primary);
-        }
-        /* Menu Mobile */
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--dark-color);
         }
 
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 80px;
+        .materia-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        main {
+            padding: 4rem 0;
+            background: linear-gradient(180deg, rgba(124, 58, 237, 0.03) 0%, rgba(236, 72, 153, 0.03) 100%);
+        }
+
+        .materia-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 2rem;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(124, 58, 237, 0.1);
+            animation: fadeInUp 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        section:nth-child(1) { animation-delay: 0.2s; }
+        section:nth-child(2) { animation-delay: 0.3s; }
+        section:nth-child(3) { animation-delay: 0.4s; }
+        section:nth-child(4) { animation-delay: 0.5s; }
+        section:nth-child(5) { animation-delay: 0.6s; }
+
+        h3 {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        h3::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            bottom: 0;
             left: 0;
-            width: 100%;
-            background-color: white;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-            padding: 1rem 0;
-            animation: slideDown 0.3s ease-out;
+            border-radius: 2px;
         }
 
-        .mobile-nav.active {
-            display: block;
-        }
-
-        .mobile-nav-links {
-            list-style: none;
-        }
-
-        .mobile-nav-links li {
-            padding: 0.8rem 2rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .mobile-nav-links a {
-            text-decoration: none;
+        h4 {
             color: var(--dark-color);
-            font-weight: 500;
-            display: block;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
         }
 
-        .mobile-nav-links a:hover {
+        p, li {
+            color: var(--gray-color);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        .note {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .note h4 {
             color: var(--primary-color);
+            margin-top: 0;
         }
 
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background: rgba(124, 58, 237, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            color: var(--primary-color);
+            font-size: 0.9rem;
         }
 
-        /* Ajustes para telas menores */
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.9rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: all var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .github-link:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: var(--gradient-secondary);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: all var(--transition);
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Responsividade */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .materia-header {
+                padding: 6rem 0 4rem;
             }
 
-            .menu-toggle {
-                display: block;
+            .materia-header h1 {
+                font-size: 2.5rem;
             }
 
-            /* Ajuste do padding para o header */
-            header {
-                padding: 0 20px;
+            section {
+                padding: 1.5rem;
             }
 
-            /* Ajuste do hero section para mobile */
-            .hero-text h1 {
-                font-size: 2.2rem;
+            .materia-meta {
+                gap: 1rem;
+                font-size: 0.85rem;
             }
 
-            .hero-text p {
-                font-size: 1rem;
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .materia-header {
+                padding: 4rem 0 3rem;
+            }
+
+            .materia-header h1 {
+                font-size: 1.8rem;
+            }
+
+            main {
+                padding: 2rem 0;
+            }
+
+            section {
+                padding: 1rem;
+            }
+
+            .materia-meta {
+                flex-direction: column;
+                gap: 0.5rem;
             }
         }
     </style>
 </head>
 <body>
-
-<!-- Header Atualizado com Menu Mobile -->
+    <!-- Header -->
     <header>
         <div class="container">
-            <nav>
-                <a href="#" class="logo">Adryan<span>Thiago</span></a>
+            <nav aria-label="Navegação principal">
+                <a href="index.html" class="logo" aria-label="Voltar ao início">Adryan<span>Thiago</span></a>
                 
                 <!-- Menu Desktop -->
                 <ul class="nav-links">
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#projetos">Projetos</a></li>
                     <li><a href="contato.html">Contato</a></li>
                     <li><a href="materias.html">Matérias</a></li>
                 </ul>
                 
                 <!-- Ícone do Menu Mobile -->
-                <div class="menu-toggle" id="mobile-menu">
+                <div class="menu-toggle" id="mobile-menu" role="button" tabindex="0" aria-label="Abrir menu de navegação">
                     <i class="fas fa-bars"></i>
                 </div>
             </nav>
@@ -176,94 +289,156 @@
         <div class="mobile-nav" id="mobile-nav">
             <ul class="mobile-nav-links">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#projetos">Projetos</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li><a href="materias.html">Matérias</a></li>
             </ul>
         </div>
     </header>
 
-
-<main class="course-content">
-    <article class="card fade-in" aria-labelledby="ihc-heading">
-     
-        
-        <div class="highlight">
-         
-        <h3>Diferença entre Interface e Interação:</h3>
-        <ul>
-            <li><strong>Interface:</strong> Contato entre usuário e sistema</li>
-            <li><strong>Interação:</strong> Processo de comunicação entre usuário e sistema</li>
-        </ul>
-        
-       
+    <!-- Materia Header -->
+    <div class="materia-header">
+        <div class="materia-header-content">
+            <a href="materias.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Voltar
+            </a>
+            <h1>ITHC</h1>
+            <p>Informática, Tecnologia e Humanidades Computacionais</p>
+            <div class="materia-meta">
+                <div class="meta-item">
+                    <i class="fas fa-book"></i>
+                    <span>1º Semestre</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-clock"></i>
+                    <span>80 horas</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-handshake"></i>
+                    <span>Sociedade</span>
+                </div>
+            </div>
         </div>
-    </article>
-    
-    <article class="card fade-in" aria-labelledby="figma-heading">
-    
-    
-        <ul>
-            <li>Criar Grid: Layout Grid > Columns (sugestão: 4 colunas com Margin 16)</li>
-            <li>Shape tools para adicionar formas</li>
-            <li>Corner radius para alterar bordas de ângulo reto</li>
-            <li>Effects > Drop Shadow para adicionar sombras</li>
-            <li>Espaçamentos recomendados: múltiplos de 8 (8px, 16px, 24px...)</li>
-        </ul>
-        
-        
-    </article>
-    
-    <article class="card fade-in" aria-labelledby="concepts-heading">
-       
-        
-        <ul>
-            <li>Interface, Interação e Affordance</li>
-            <li>Usabilidade, Acessibilidade e Comunicabilidade</li>
-            <li>Arquitetura da Informação</li>
-            <li>Projeto e prototipação (baixa, média e alta fidelidade)</li>
-            <li>Avaliação Heurística e de Comunicabilidade</li>
-            <li>Experiência do Usuário (UX) e do Consumidor</li>
-            <li>Pesquisas com usuário (Qualitativa, Quantitativa, Teste A/B, etc.)</li>
-        </ul>
-    </article>
-</main>
-
-<footer class="footer">
-    <div class="footer-content">
-        <div class="social-links" aria-label="Redes sociais">
-            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <p class="copyright">&copy; 2025 - Adryan Thiago de Oliveira Francisco</p>
     </div>
-</footer>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const fadeInObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    fadeInObserver.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
+    <!-- Main Content -->
+    <main>
+        <div class="container materia-content">
+            <section>
+                <h3><i class="fas fa-handshake"></i> Visão Geral</h3>
+                <p>Estudo das relações entre tecnologia, sociedade, ética e impacto social da computação.</p>
+                <p>Abrange aspectos humanísticos e sociais da tecnologia, preparando desenvolvedores como profissionais responsáveis e conscientes do impacto de suas criações.</p>
+            </section>
 
-        fadeElements.forEach(element => {
-            fadeInObserver.observe(element);
-        });
-    });
-     // Script para o menu mobile
+            <section>
+                <h3><i class="fas fa-globe"></i> Tecnologia e Sociedade</h3>
+                <p>A tecnologia não é neutra. Ela molda e é moldada pela sociedade em que está inserida.</p>
+                <ul>
+                    <li><strong>Transformações Digitais:</strong> Como tecnologia muda economia e relações sociais</li>
+                    <li><strong>Inclusão Digital:</strong> Acesso equitativo a tecnologia</li>
+                    <li><strong>Analfabetismo Digital:</strong> Desafios de educação tecnológica</li>
+                    <li><strong>Dependência Tecnológica:</strong> Riscos do excesso de uso</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-shield-alt"></i> Ética em Computação</h3>
+                <p>Questões éticas fundamentais que desenvolvedores precisam considerar:</p>
+                <ul>
+                    <li><strong>Privacidade:</strong> Proteção de dados pessoais</li>
+                    <li><strong>Segurança:</strong> Responsabilidade em sistemas críticos</li>
+                    <li><strong>Viés Algorítmico:</strong> Discriminação em sistemas de IA</li>
+                    <li><strong>Propriedade Intelectual:</strong> Respeito a direitos autorais</li>
+                    <li><strong>Sustentabilidade:</strong> Impacto ambiental da computação</li>
+                </ul>
+
+                <div class="note">
+                    <h4><i class="fas fa-lightbulb"></i> Código de Ética</h4>
+                    <p>Profissionais de TI devem seguir códigos de ética como os da ACM (Association for Computing Machinery) que estabelecem compromissos com a sociedade.</p>
+                </div>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-lock"></i> Cibersegurança e Privacidade</h3>
+                <p>Crescimento de ciberataques e preocupações com privacidade digital.</p>
+                <ul>
+                    <li><strong>LGPD (Lei Geral de Proteção de Dados):</strong> Regulação de dados no Brasil</li>
+                    <li><strong>GDPR:</strong> Regulação na Europa</li>
+                    <li><strong>Segurança em APIs:</strong> Proteção de dados em trânsito</li>
+                    <li><strong>Conformidade Regulatória:</strong> Atendimento a leis e normas</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-robot"></i> Inteligência Artificial e Responsabilidade</h3>
+                <p>IA traz benefícios mas também riscos que precisam ser gerenciados.</p>
+                <ul>
+                    <li><strong>Viés em Dados:</strong> Dados de treinamento refletem preconceitos históricos</li>
+                    <li><strong>Transparência:</strong> Explicabilidade de decisões algorítmicas</li>
+                    <li><strong>Accountability:</strong> Responsabilidade por decisões de IA</li>
+                    <li><strong>Impacto no Emprego:</strong> Automação e desemprego tecnológico</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-leaf"></i> Computação Sustentável</h3>
+                <p>A indústria de TI tem impacto ambiental significativo:</p>
+                <ul>
+                    <li><strong>Consumo de Energia:</strong> Data centers consomem bilhões de watts</li>
+                    <li><strong>Resíduos Eletrônicos:</strong> Descarte responsável de equipamentos</li>
+                    <li><strong>Green Computing:</strong> Práticas sustentáveis em desenvolvimento</li>
+                    <li><strong>Eficiência Energética:</strong> Otimização de sistemas</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-handshake"></i> Responsabilidade Social Corporativa</h3>
+                <p>Empresas de tecnologia têm responsabilidade com comunidades e meio ambiente:</p>
+                <ul>
+                    <li>Contribuição social e comunitária</li>
+                    <li>Diversidade e inclusão em equipes</li>
+                    <li>Transparência em práticas comerciais</li>
+                    <li>Investimento em educação tecnológica</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-graduation-cap"></i> Conclusão</h3>
+                <p>Profissionais de TI precisam ser mais que técnicos; precisam ser pensadores críticos, éticos e conscientes do impacto de seu trabalho na sociedade.</p>
+                
+                <a href="https://github.com/Adryan-Francisco" class="github-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> Ver Projetos no GitHub
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links" role="list" aria-label="Links de redes sociais">
+                    <a href="https://github.com/Adryan-Francisco" class="social-link" role="listitem" aria-label="Perfil no GitHub">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no LinkedIn">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no Twitter">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no Instagram">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <p class="copyright">&copy; 2025 Adryan Thiago de Oliveira Francisco. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile toggle
         document.getElementById('mobile-menu').addEventListener('click', function() {
             document.getElementById('mobile-nav').classList.toggle('active');
         });
@@ -274,7 +449,16 @@
                 document.getElementById('mobile-nav').classList.remove('active');
             });
         });
-</script>
 
+        // Header shadow on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>

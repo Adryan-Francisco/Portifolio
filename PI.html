@@ -3,241 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Integrador I - ADS</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Projeto Integrador I - Portfólio Adryan Thiago</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Estilos específicos para esta página */
-        .project-header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        /* Materia Page Styles */
+        .materia-header {
+            background: var(--gradient-dark);
             color: white;
-            padding: 6rem 0 4rem;
+            padding: 8rem 0 6rem;
             text-align: center;
-            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
         }
-        
-        .project-header h1 {
-            font-size: 2.8rem;
+
+        .materia-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .materia-header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .materia-header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .materia-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .materia-header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 1rem;
         }
-        
+
+        .materia-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
         main {
-            padding: 0 2rem 4rem;
+            padding: 4rem 0;
+            background: linear-gradient(180deg, rgba(124, 58, 237, 0.03) 0%, rgba(236, 72, 153, 0.03) 100%);
+        }
+
+        .materia-content {
             max-width: 900px;
             margin: 0 auto;
         }
-        
+
         section {
-            margin-bottom: 3rem;
             background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(124, 58, 237, 0.1);
+            animation: fadeInUp 0.6s ease-out;
+            animation-fill-mode: both;
         }
-        
+
+        section:nth-child(1) { animation-delay: 0.2s; }
+        section:nth-child(2) { animation-delay: 0.3s; }
+        section:nth-child(3) { animation-delay: 0.4s; }
+        section:nth-child(4) { animation-delay: 0.5s; }
+        section:nth-child(5) { animation-delay: 0.6s; }
+
         h3 {
-            color: var(--primary-color);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 1.5rem;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             position: relative;
-            padding-bottom: 0.5rem;
+            padding-bottom: 0.8rem;
         }
-        
+
         h3::after {
             content: '';
             position: absolute;
-            width: 60px;
-            height: 3px;
-            background: var(--primary-color);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
             bottom: 0;
             left: 0;
+            border-radius: 2px;
         }
-        
+
         h4 {
             color: var(--dark-color);
             margin: 1.5rem 0 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
         }
-        
+
         p, li {
-            color: var(--white-color);
+            color: var(--gray-color);
             line-height: 1.8;
+            margin-bottom: 1rem;
         }
-        
+
         ul, ol {
             padding-left: 1.5rem;
             margin: 1rem 0;
         }
-        
+
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
         }
-        
+
         .note {
-            background-color: #e0e7ff;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
             border-left: 4px solid var(--primary-color);
-            padding: 1rem;
+            padding: 1.5rem;
             margin: 1.5rem 0;
-            border-radius: 0 4px 4px 0;
+            border-radius: 0 8px 8px 0;
+            backdrop-filter: blur(10px);
         }
-        
+
         .note h4 {
             color: var(--primary-color);
             margin-top: 0;
         }
-        
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background: rgba(124, 58, 237, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
         .command {
             display: block;
-            background-color: var(--dark-color);
-            color: white;
-            padding: 1rem;
-            border-radius: 6px;
+            background: var(--dark-color);
+            color: #0f0;
+            padding: 1.5rem;
+            border-radius: 8px;
             font-family: 'Courier New', Courier, monospace;
             margin: 1rem 0;
             overflow-x: auto;
             line-height: 1.6;
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.1);
         }
-        
+
         .github-link {
             display: inline-flex;
             align-items: center;
-            background-color: var(--dark-color);
+            gap: 0.5rem;
+            background: var(--gradient-primary);
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 0.9rem 1.8rem;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             margin-top: 2rem;
-            transition: all 0.3s;
+            transition: all var(--transition);
+            box-shadow: var(--shadow);
         }
-        
+
         .github-link:hover {
-            background-color: #333;
             transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: var(--gradient-secondary);
         }
-        
-        .github-link i {
-            margin-right: 0.5rem;
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: all var(--transition);
         }
-        
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Responsividade */
         @media (max-width: 768px) {
-            .project-header {
-                padding: 5rem 0 3rem;
+            .materia-header {
+                padding: 6rem 0 4rem;
             }
-            
-            .project-header h1 {
-                font-size: 2.2rem;
+
+            .materia-header h1 {
+                font-size: 2.5rem;
             }
-            
-            main {
-                padding: 0 1rem 3rem;
-            }
-            
+
             section {
                 padding: 1.5rem;
             }
-        }
-         /* Menu Mobile */
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--dark-color);
-        }
 
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 80px;
-            left: 0;
-            width: 100%;
-            background-color: white;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-            padding: 1rem 0;
-            animation: slideDown 0.3s ease-out;
-        }
-
-        .mobile-nav.active {
-            display: block;
-        }
-
-        .mobile-nav-links {
-            list-style: none;
-        }
-
-        .mobile-nav-links li {
-            padding: 0.8rem 2rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .mobile-nav-links a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
-            display: block;
-        }
-
-        .mobile-nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
+            .materia-meta {
+                gap: 1rem;
+                font-size: 0.85rem;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+
+            h3 {
+                font-size: 1.5rem;
             }
         }
 
-        /* Ajustes para telas menores */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+        @media (max-width: 480px) {
+            .materia-header {
+                padding: 4rem 0 3rem;
             }
 
-            .menu-toggle {
-                display: block;
+            .materia-header h1 {
+                font-size: 1.8rem;
             }
 
-            /* Ajuste do padding para o header */
-            header {
-                padding: 0 20px;
+            main {
+                padding: 2rem 0;
             }
 
-            /* Ajuste do hero section para mobile */
-            .hero-text h1 {
-                font-size: 2.2rem;
+            section {
+                padding: 1rem;
             }
 
-            .hero-text p {
-                font-size: 1rem;
+            .materia-meta {
+                flex-direction: column;
+                gap: 0.5rem;
             }
         }
     </style>
 </head>
 <body>
-
-<!-- Header Atualizado com Menu Mobile -->
+    <!-- Header -->
     <header>
         <div class="container">
-            <nav>
-                <a href="#" class="logo">Adryan<span>Thiago</span></a>
+            <nav aria-label="Navegação principal">
+                <a href="index.html" class="logo" aria-label="Voltar ao início">Adryan<span>Thiago</span></a>
                 
                 <!-- Menu Desktop -->
                 <ul class="nav-links">
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#projetos">Projetos</a></li>
                     <li><a href="contato.html">Contato</a></li>
                     <li><a href="materias.html">Matérias</a></li>
                 </ul>
                 
                 <!-- Ícone do Menu Mobile -->
-                <div class="menu-toggle" id="mobile-menu">
+                <div class="menu-toggle" id="mobile-menu" role="button" tabindex="0" aria-label="Abrir menu de navegação">
                     <i class="fas fa-bars"></i>
                 </div>
             </nav>
@@ -247,179 +303,210 @@
         <div class="mobile-nav" id="mobile-nav">
             <ul class="mobile-nav-links">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#projetos">Projetos</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li><a href="materias.html">Matérias</a></li>
             </ul>
         </div>
     </header>
 
-
-<main>
-    <section class="fade-in">
-        <h3>Visão Geral</h3>
-        <p>O Projeto Integrador I visa aplicar conhecimentos adquiridos nas disciplinas iniciais do curso de ADS, através do desenvolvimento de soluções tecnológicas para problemas reais ou simulados.</p>
-        <p>Neste projeto, utilizaremos o Git e GitHub para controle de versão e colaboração em equipe.</p>
-    </section>
-
-    <section class="fade-in">
-        <h3>Controle de Versionamento com Git</h3>
-        <p>Git é um sistema de controle de versão distribuído criado em 2005 por Linus Torvalds. Principais vantagens:</p>
-        <ul>
-            <li>Gratuito e open source</li>
-            <li>Alta performance</li>
-            <li>Operações locais (sem necessidade de servidor)</li>
-            <li>Integridade dos dados</li>
-            <li>Suporte a diferentes workflows</li>
-        </ul>
-        
-        <div class="note">
-            <h4>Git vs GitHub</h4>
-            <p>Git é o sistema de controle de versão, enquanto GitHub é um serviço de hospedagem de código que usa Git. Eles são coisas diferentes!</p>
+    <!-- Materia Header -->
+    <div class="materia-header">
+        <div class="materia-header-content">
+            <a href="materias.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Voltar
+            </a>
+            <h1>Projeto Integrador I</h1>
+            <p>Integração de conhecimentos em desenvolvimento de soluções tecnológicas</p>
+            <div class="materia-meta">
+                <div class="meta-item">
+                    <i class="fas fa-book"></i>
+                    <span>1º Semestre</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-clock"></i>
+                    <span>80 horas</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-code-branch"></i>
+                    <span>Git & GitHub</span>
+                </div>
+            </div>
         </div>
-    </section>
-
-    <section class="fade-in">
-        <h3>Configuração Inicial do Git</h3>
-        <p>Para começar a usar o Git, é necessário configurar seu usuário:</p>
-        <code class="command">git config --global user.name "Seu Nome"
-git config --global user.email "seu@email.com"</code>
-        
-        <p>Para verificar as configurações:</p>
-        <code class="command">git config --list</code>
-    </section>
-
-    <section class="fade-in">
-        <h3>Fluxo Básico de Trabalho</h3>
-        <ol>
-            <li><strong>Working Directory</strong>: Arquivos modificados, inseridos ou excluídos</li>
-            <li><strong>Staging Area</strong>: Arquivos rastreados e prontos para serem versionados (<code>git add</code>)</li>
-            <li><strong>Repository</strong>: Alterações efetivadas (<code>git commit</code>)</li>
-        </ol>
-        
-        <h4>Comandos Essenciais:</h4>
-        <code class="command">git init          # Inicializa um repositório
-git status        # Verifica o estado dos arquivos
-git add .         # Adiciona todas as alterações
-git commit -m "mensagem"  # Registra as alterações
-git log           # Mostra o histórico de commits</code>
-    </section>
-
-    <section class="fade-in">
-        <h3>Trabalhando com Branches</h3>
-        <p>Branches são ramificações no projeto usadas para desenvolver funcionalidades sem impactar a versão principal.</p>
-        
-        <h4>Comandos para Branches:</h4>
-        <code class="command">git branch                  # Lista branches
-git branch nome_branch     # Cria nova branch
-git checkout nome_branch   # Muda para a branch
-git merge nome_branch      # Mescla branches</code>
-        
-        <div class="note">
-            <h4>Boa Prática</h4>
-            <p>Mantenha a branch principal (main/master) estável e crie branches para cada nova funcionalidade.</p>
-        </div>
-    </section>
-
-    <section class="fade-in">
-        <h3>Trabalhando com GitHub</h3>
-        <p>GitHub é uma plataforma para hospedar repositórios Git e colaborar em projetos.</p>
-        
-        <h4>Fluxo Básico:</h4>
-        <ol>
-            <li>Crie um repositório no GitHub</li>
-            <li>Conecte seu repositório local:
-                <code class="command">git remote add origin URL_DO_REPOSITORIO</code>
-            </li>
-            <li>Envie suas alterações:
-                <code class="command">git push origin main</code>
-            </li>
-            <li>Para baixar atualizações:
-                <code class="command">git pull origin main</code>
-            </li>
-        </ol>
-    </section>
-
-    <section class="fade-in">
-        <h3>Trabalho em Equipe com Pull Requests</h3>
-        <p>Pull Requests permitem revisão de código antes de mesclar alterações:</p>
-        <ol>
-            <li>Crie uma branch para sua funcionalidade</li>
-            <li>Faça e commit suas alterações</li>
-            <li>Envie para o GitHub (<code>git push</code>)</li>
-            <li>Abra um Pull Request no GitHub</li>
-            <li>Após revisão, faça o merge</li>
-        </ol>
-        
-        <div class="note">
-            <h4>Resolvendo Conflitos</h4>
-            <p>Quando há alterações conflitantes, é necessário editar manualmente os arquivos marcados pelo Git antes de completar o merge.</p>
-        </div>
-    </section>
-
-    <section class="fade-in">
-        <h3>Boas Práticas</h3>
-        <ul>
-            <li>Faça commits atômicos (uma mudança por commit)</li>
-            <li>Escreva mensagens de commit claras e descritivas</li>
-            <li>Use o <code>.gitignore</code> para arquivos desnecessários</li>
-            <li>Sincronize frequentemente com o repositório remoto</li>
-            <li>Revise o código dos colegas antes de fazer merge</li>
-        </ul>
-    </section>
-
-    <section class="fade-in">
-        <h3>Etapas do Projeto</h3>
-        <ol>
-            <li>Escolha do Tema / Problema</li>
-            <li>Análise e Planejamento (incluindo setup do repositório Git)</li>
-            <li>Modelagem (com versionamento de documentos)</li>
-            <li>Prototipagem (usando branches para funcionalidades)</li>
-            <li>Documentação (incluindo README no GitHub)</li>
-        </ol>
-    </section>
-
-    <section class="fade-in">
-        <h3>Conclusão</h3>
-        <p>Este projeto representa o início da jornada prática dos estudantes no mundo da tecnologia. O uso de Git e GitHub fortalece o trabalho em equipe, a organização do código e a colaboração eficiente.</p>
-        <p>Dominar essas ferramentas é essencial para qualquer desenvolvedor de software profissional.</p>
-        
-        <a href="https://github.com/Adryan-Francisco/Curso-Git" class="github-link">
-            <i class="fab fa-github"></i> Ver Atividade no GitHub
-        </a>
-    </section>
-</main>
-
-<footer>
-    <div class="footer-content">
-        <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <p class="copyright">&copy; 2025 - Adryan Thiago de Oliveira Francisco</p>
     </div>
-</footer>
 
-<script>
-    // Animação de fade-in
-    document.addEventListener('DOMContentLoaded', () => {
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const fadeInObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
+    <!-- Main Content -->
+    <main>
+        <div class="container materia-content">
+            <section>
+                <h3><i class="fas fa-project-diagram"></i> Visão Geral</h3>
+                <p>O Projeto Integrador I visa aplicar conhecimentos adquiridos nas disciplinas iniciais do curso de ADS, através do desenvolvimento de soluções tecnológicas para problemas reais ou simulados.</p>
+                <p>Neste projeto, utilizaremos o <strong>Git e GitHub</strong> para controle de versão e colaboração em equipe, essencial para qualquer desenvolvedor profissional.</p>
+            </section>
 
-        fadeElements.forEach(element => {
-            fadeInObserver.observe(element);
-        });
-    });
-     // Script para o menu mobile
+            <section>
+                <h3><i class="fas fa-code-branch"></i> Controle de Versionamento com Git</h3>
+                <p>Git é um sistema de controle de versão distribuído criado em 2005 por Linus Torvalds. Principais vantagens:</p>
+                <ul>
+                    <li>Gratuito e open source</li>
+                    <li>Alta performance e escalabilidade</li>
+                    <li>Operações locais (sem necessidade de servidor sempre disponível)</li>
+                    <li>Integridade garantida dos dados com checksum SHA-1</li>
+                    <li>Suporte a diferentes workflows e colaboração eficiente</li>
+                </ul>
+                
+                <div class="note">
+                    <h4><i class="fas fa-lightbulb"></i> Git vs GitHub</h4>
+                    <p><strong>Git</strong> é o sistema de controle de versão distribuído, enquanto <strong>GitHub</strong> é um serviço de hospedagem de código que utiliza Git. Eles são ferramentas diferentes e complementares!</p>
+                </div>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-cog"></i> Configuração Inicial do Git</h3>
+                <p>Para começar a usar o Git, é necessário configurar seu usuário:</p>
+                <code class="command">$ git config --global user.name "Seu Nome"
+$ git config --global user.email "seu@email.com"</code>
+                
+                <p>Para verificar as configurações:</p>
+                <code class="command">$ git config --list</code>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-random"></i> Fluxo Básico de Trabalho</h3>
+                <p>O Git trabalha com três áreas principais:</p>
+                <ol>
+                    <li><strong>Working Directory</strong>: Arquivos modificados, inseridos ou excluídos</li>
+                    <li><strong>Staging Area</strong>: Arquivos rastreados e prontos para serem versionados</li>
+                    <li><strong>Repository</strong>: Alterações efetivadas e registradas</li>
+                </ol>
+                
+                <h4><i class="fas fa-terminal"></i> Comandos Essenciais:</h4>
+                <code class="command">$ git init              # Inicializa um repositório local
+$ git status            # Verifica o estado dos arquivos
+$ git add .             # Adiciona todas as alterações
+$ git commit -m "msg"   # Registra as alterações com mensagem
+$ git log               # Mostra o histórico de commits</code>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-tree"></i> Trabalhando com Branches</h3>
+                <p>Branches são ramificações no projeto usadas para desenvolver funcionalidades sem impactar a versão principal (main).</p>
+                
+                <h4><i class="fas fa-terminal"></i> Comandos para Branches:</h4>
+                <code class="command">$ git branch                    # Lista branches
+$ git branch nome_branch      # Cria nova branch
+$ git checkout nome_branch    # Muda para a branch
+$ git merge nome_branch       # Mescla branches</code>
+                
+                <div class="note">
+                    <h4><i class="fas fa-check-circle"></i> Boa Prática</h4>
+                    <p>Mantenha a branch principal (main/master) estável e sempre funcional. Crie branches separadas para cada nova funcionalidade ou correção de bugs.</p>
+                </div>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-github"></i> Trabalhando com GitHub</h3>
+                <p>GitHub é uma plataforma web para hospedar repositórios Git e colaborar em projetos com a comunidade.</p>
+                
+                <h4><i class="fas fa-list-ol"></i> Fluxo Básico:</h4>
+                <ol>
+                    <li>Crie um novo repositório no GitHub</li>
+                    <li>Conecte seu repositório local ao remoto:
+                        <code class="command">$ git remote add origin URL_DO_REPOSITORIO</code>
+                    </li>
+                    <li>Envie suas alterações para o servidor:
+                        <code class="command">$ git push origin main</code>
+                    </li>
+                    <li>Para baixar atualizações do repositório remoto:
+                        <code class="command">$ git pull origin main</code>
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-code-review"></i> Trabalho em Equipe com Pull Requests</h3>
+                <p>Pull Requests (PRs) permitem revisão de código e discussão antes de mesclar alterações na branch principal:</p>
+                <ol>
+                    <li>Crie uma branch para sua funcionalidade</li>
+                    <li>Faça os commits necessários</li>
+                    <li>Envie para o GitHub (<code>git push</code>)</li>
+                    <li>Abra um Pull Request no GitHub</li>
+                    <li>Após revisão e aprovação, faça o merge</li>
+                </ol>
+                
+                <div class="note">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Resolvendo Conflitos</h4>
+                    <p>Quando há alterações conflitantes em commits diferentes, é necessário editar manualmente os arquivos marcados pelo Git antes de completar o merge.</p>
+                </div>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-star"></i> Boas Práticas em Git</h3>
+                <ul>
+                    <li><strong>Commits atômicos:</strong> Uma mudança lógica por commit</li>
+                    <li><strong>Mensagens claras:</strong> Descreva o que foi feito de forma concisa</li>
+                    <li><strong>Use .gitignore:</strong> Não versione arquivos desnecessários (node_modules, .env, etc)</li>
+                    <li><strong>Sincronize frequentemente:</strong> Evite conflitos fazendo pull regularmente</li>
+                    <li><strong>Revise o código:</strong> Avalie PRs antes de fazer merge</li>
+                    <li><strong>Documente mudanças:</strong> Mantenha um README atualizado</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-tasks"></i> Etapas do Projeto</h3>
+                <ol>
+                    <li><strong>Escolha do Tema / Problema:</strong> Defina o escopo do projeto</li>
+                    <li><strong>Análise e Planejamento:</strong> Setup do repositório e ferramentas</li>
+                    <li><strong>Modelagem:</strong> Versionamento de documentos e diagramas</li>
+                    <li><strong>Prototipagem:</strong> Usando branches para cada funcionalidade</li>
+                    <li><strong>Documentação:</strong> README completo e comentários no código</li>
+                </ol>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-graduation-cap"></i> Conclusão</h3>
+                <p>Este projeto representa o início da jornada prática dos estudantes no mundo da tecnologia. O domínio de Git e GitHub é essencial para:</p>
+                <ul>
+                    <li>Trabalhar eficientemente em equipes</li>
+                    <li>Organizar e rastrear o código</li>
+                    <li>Colaborar com desenvolvedores ao redor do mundo</li>
+                    <li>Manter histórico completo das mudanças</li>
+                </ul>
+                <p>Estas habilidades são requisitos fundamentais para qualquer desenvolvedor de software profissional no mercado atual.</p>
+                
+                <a href="https://github.com/Adryan-Francisco/Curso-Git" class="github-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> Ver Atividade no GitHub
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links" role="list" aria-label="Links de redes sociais">
+                    <a href="https://github.com/Adryan-Francisco" class="social-link" role="listitem" aria-label="Perfil no GitHub">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no LinkedIn">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no Twitter">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no Instagram">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <p class="copyright">&copy; 2025 Adryan Thiago de Oliveira Francisco. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile toggle
         document.getElementById('mobile-menu').addEventListener('click', function() {
             document.getElementById('mobile-nav').classList.toggle('active');
         });
@@ -430,7 +517,16 @@ git merge nome_branch      # Mescla branches</code>
                 document.getElementById('mobile-nav').classList.remove('active');
             });
         });
-</script>
 
+        // Header shadow on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,175 +1,299 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Engenharia de Software</title>
+    <title>Estruturas Gerenciais - Portfólio Adryan Thiago</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-      
-        /* Header */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 0;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--dark-color);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 2rem;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
-            transition: color 0.3s;
+        /* Materia Page Styles */
+        .materia-header {
+            background: var(--gradient-dark);
+            color: white;
+            padding: 8rem 0 6rem;
+            text-align: center;
             position: relative;
+            overflow: hidden;
+            margin-top: 80px;
         }
-        
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        .nav-links a::after {
+
+        .materia-header::before {
             content: '';
             position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            bottom: -5px;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .materia-header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .materia-header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .materia-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .materia-header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+        }
+
+        .materia-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        main {
+            padding: 4rem 0;
+            background: linear-gradient(180deg, rgba(124, 58, 237, 0.03) 0%, rgba(236, 72, 153, 0.03) 100%);
+        }
+
+        .materia-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 2rem;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(124, 58, 237, 0.1);
+            animation: fadeInUp 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        section:nth-child(1) { animation-delay: 0.2s; }
+        section:nth-child(2) { animation-delay: 0.3s; }
+        section:nth-child(3) { animation-delay: 0.4s; }
+        section:nth-child(4) { animation-delay: 0.5s; }
+        section:nth-child(5) { animation-delay: 0.6s; }
+
+        h3 {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        h3::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            bottom: 0;
             left: 0;
-            transition: width 0.3s;
+            border-radius: 2px;
         }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-      /* Menu Mobile */
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
+
+        h4 {
             color: var(--dark-color);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
         }
 
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 80px;
-            left: 0;
-            width: 100%;
-            background-color: white;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-            padding: 1rem 0;
-            animation: slideDown 0.3s ease-out;
+        p, li {
+            color: var(--gray-color);
+            line-height: 1.8;
+            margin-bottom: 1rem;
         }
 
-        .mobile-nav.active {
-            display: block;
+        ul, ol {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
         }
 
-        .mobile-nav-links {
-            list-style: none;
+        li {
+            margin-bottom: 0.8rem;
         }
 
-        .mobile-nav-links li {
-            padding: 0.8rem 2rem;
-            border-bottom: 1px solid #eee;
+        .note {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            backdrop-filter: blur(10px);
         }
 
-        .mobile-nav-links a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
-            display: block;
-        }
-
-        .mobile-nav-links a:hover {
+        .note h4 {
             color: var(--primary-color);
+            margin-top: 0;
         }
 
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background: rgba(124, 58, 237, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            color: var(--primary-color);
+            font-size: 0.9rem;
         }
 
-        /* Ajustes para telas menores */
+        .command {
+            display: block;
+            background: var(--dark-color);
+            color: #0f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 1rem 0;
+            overflow-x: auto;
+            line-height: 1.6;
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.1);
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.9rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: all var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .github-link:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: var(--gradient-secondary);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: all var(--transition);
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Responsividade */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .materia-header {
+                padding: 6rem 0 4rem;
             }
 
-            .menu-toggle {
-                display: block;
+            .materia-header h1 {
+                font-size: 2.5rem;
             }
 
-            /* Ajuste do padding para o header */
-            header {
-                padding: 0 20px;
+            section {
+                padding: 1.5rem;
             }
 
-            /* Ajuste do hero section para mobile */
-            .hero-text h1 {
-                font-size: 2.2rem;
+            .materia-meta {
+                gap: 1rem;
+                font-size: 0.85rem;
             }
 
-            .hero-text p {
-                font-size: 1rem;
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .materia-header {
+                padding: 4rem 0 3rem;
+            }
+
+            .materia-header h1 {
+                font-size: 1.8rem;
+            }
+
+            main {
+                padding: 2rem 0;
+            }
+
+            section {
+                padding: 1rem;
+            }
+
+            .materia-meta {
+                flex-direction: column;
+                gap: 0.5rem;
             }
         }
     </style>
 </head>
 <body>
-  <!-- Header Atualizado com Menu Mobile -->
+    <!-- Header -->
     <header>
         <div class="container">
-            <nav>
-                <a href="#" class="logo">Adryan<span>Thiago</span></a>
+            <nav aria-label="Navegação principal">
+                <a href="index.html" class="logo" aria-label="Voltar ao início">Adryan<span>Thiago</span></a>
                 
                 <!-- Menu Desktop -->
                 <ul class="nav-links">
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#projetos">Projetos</a></li>
                     <li><a href="contato.html">Contato</a></li>
                     <li><a href="materias.html">Matérias</a></li>
                 </ul>
                 
                 <!-- Ícone do Menu Mobile -->
-                <div class="menu-toggle" id="mobile-menu">
+                <div class="menu-toggle" id="mobile-menu" role="button" tabindex="0" aria-label="Abrir menu de navegação">
                     <i class="fas fa-bars"></i>
                 </div>
             </nav>
@@ -179,106 +303,152 @@
         <div class="mobile-nav" id="mobile-nav">
             <ul class="mobile-nav-links">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#projetos">Projetos</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li><a href="materias.html">Matérias</a></li>
             </ul>
         </div>
     </header>
 
-    <main class="container">
-        <section id="introducao" class="section fade-in">
-            <h2>Introdução à Engenharia de Software</h2>
-            <div class="card">
-                <ul>
-                    <li>História desde a "crise do software" em 1968</li>
-                    <li>Conceitos fundamentais de software e seus atributos</li>
-                    <li>Diferenças entre Engenharia de Software e Ciência da Computação</li>
-                    <li>Tipos de produtos de software (genérico vs personalizado)</li>
-                    <li>Atributos essenciais do bom software</li>
-                </ul>
+    <!-- Materia Header -->
+    <div class="materia-header">
+        <div class="materia-header-content">
+            <a href="materias.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Voltar
+            </a>
+            <h1>Estruturas Gerenciais</h1>
+            <p>Fundamentos de gestão e organização empresarial</p>
+            <div class="materia-meta">
+                <div class="meta-item">
+                    <i class="fas fa-book"></i>
+                    <span>1º Semestre</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-clock"></i>
+                    <span>80 horas</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-cogs"></i>
+                    <span>Gestão</span>
+                </div>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <section id="processos" class="section fade-in">
-            <h2>Processos de Software</h2>
-            <div class="card">
-                <ul>
-                    <li>Modelos tradicionais (Cascata, Incremental, Espiral)</li>
-                    <li>Processo Unificado (RUP) e suas fases</li>
-                    <li>Atividades fundamentais do desenvolvimento</li>
-                    <li>Integração e configuração com reuso de software</li>
-                </ul>
-            </div>
-        </section>
+    <!-- Main Content -->
+    <main>
+        <div class="container materia-content">
+            <section>
+                <h3><i class="fas fa-cogs"></i> Visão Geral</h3>
+                <p>Estruturas Gerenciais estuda a organização, planejamento e coordenação de recursos em ambientes organizacionais para atingir objetivos estratégicos.</p>
+                <p>Esta disciplina fornece bases para compreender como as empresas funcionam e como os profissionais de TI podem contribuir para a eficiência operacional.</p>
+            </section>
 
-        <section id="requisitos" class="section fade-in">
-            <h2>Engenharia de Requisitos</h2>
-            <div class="card">
+            <section>
+                <h3><i class="fas fa-building"></i> Fundamentos de Organização</h3>
+                <p>Uma organização é um agrupamento de pessoas reunidas para atingir um objetivo comum. Características principais:</p>
                 <ul>
-                    <li>Tipos de requisitos (funcionais e não-funcionais)</li>
-                    <li>Técnicas de elicitação (entrevistas, cenários, casos de uso)</li>
-                    <li>Documentação e validação de requisitos</li>
-                    <li>Gerenciamento de mudanças de requisitos</li>
+                    <li><strong>Hierarquia:</strong> Estrutura de autoridade e responsabilidade</li>
+                    <li><strong>Divisão de Trabalho:</strong> Especialização de funções</li>
+                    <li><strong>Coordenação:</strong> Alinhamento de esforços</li>
+                    <li><strong>Comunicação:</strong> Fluxo de informações</li>
                 </ul>
-            </div>
-        </section>
+            </section>
 
-        <section id="modelagem" class="section fade-in">
-            <h2>Modelagem de Sistemas</h2>
-            <div class="card">
-                <ul>
-                    <li>Diagramas UML (Casos de Uso, Classes, Sequência)</li>
-                    <li>Modelos comportamentais e estruturais</li>
-                    <li>Engenharia Dirigida por Modelos (MDE)</li>
-                    <li>Arquitetura 4+1 (visões lógica, processo, desenvolvimento, física)</li>
-                </ul>
-            </div>
-        </section>
+            <section>
+                <h3><i class="fas fa-chart-org"></i> Tipos de Estruturas Organizacionais</h3>
+                
+                <h4><i class="fas fa-diagram-project"></i> Funcional</h4>
+                <p>Agrupamento por funções (departamentos de vendas, marketing, TI). Eficiente em operações padronizadas.</p>
 
-        <section id="arquitetura" class="section fade-in">
-            <h2>Projeto de Arquitetura</h2>
-            <div class="card">
+                <h4><i class="fas fa-share-alt"></i> Divisional</h4>
+                <p>Agrupamento por produto, mercado ou geografia. Flexível para diferentes negócios.</p>
+
+                <h4><i class="fas fa-network-wired"></i> Matricial</h4>
+                <p>Combinação de funcional e divisional. Oferece flexibilidade mas pode gerar conflitos de autoridade.</p>
+
+                <h4><i class="fas fa-project-diagram"></i> Por Processos</h4>
+                <p>Organização em torno de processos-chave. Alinhada com metodologias ágeis e DevOps.</p>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-tasks"></i> Planejamento Estratégico</h3>
+                <p>Processo de definição de metas e recursos para alcançar objetivos de longo prazo.</p>
                 <ul>
-                    <li>Padrões arquiteturais (MVC, Camadas, Cliente-Servidor)</li>
-                    <li>Decisões arquiteturais baseadas em requisitos não-funcionais</li>
-                    <li>Aplicações para diferentes tipos de sistemas</li>
-                    <li>Componentes e relacionamentos em diagramas de classes</li>
+                    <li><strong>Análise SWOT:</strong> Forças, Fraquezas, Oportunidades, Ameaças</li>
+                    <li><strong>Missão:</strong> Razão de existir da organização</li>
+                    <li><strong>Visão:</strong> O que a organização quer ser</li>
+                    <li><strong>Valores:</strong> Princípios que guiam a organização</li>
+                    <li><strong>Objetivos:</strong> Metas mensuráveis e alcançáveis</li>
                 </ul>
-            </div>
-        </section>
+
+                <div class="note">
+                    <h4><i class="fas fa-lightbulb"></i> Para TI</h4>
+                    <p>Profissionais de TI precisam alinhar soluções tecnológicas aos objetivos estratégicos da empresa, não apenas resolver problemas técnicos.</p>
+                </div>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-people-group"></i> Gestão de Recursos Humanos</h3>
+                <p>RH é fundamental para o sucesso organizacional. Envolve:</p>
+                <ul>
+                    <li>Recrutamento e seleção de talentos</li>
+                    <li>Treinamento e desenvolvimento</li>
+                    <li>Motivação e retenção</li>
+                    <li>Avaliação de desempenho</li>
+                    <li>Cultura organizacional</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-chart-line"></i> Gestão de Processos</h3>
+                <p>Business Process Management (BPM) otimiza processos organizacionais:</p>
+                <ol>
+                    <li><strong>Modelagem:</strong> Documentar processo atual</li>
+                    <li><strong>Análise:</strong> Identificar ineficiências</li>
+                    <li><strong>Redesenho:</strong> Otimizar fluxo</li>
+                    <li><strong>Implementação:</strong> Executar mudanças</li>
+                    <li><strong>Monitoramento:</strong> Medir resultados</li>
+                </ol>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-graduation-cap"></i> Conclusão</h3>
+                <p>Compreender estruturas gerenciais é essencial para que desenvolvedores se tornem profissionais versáteis e capazes de contribuir estrategicamente nas organizações.</p>
+                
+                <a href="https://github.com/Adryan-Francisco" class="github-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> Ver Projetos no GitHub
+                </a>
+            </section>
+        </div>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 - Adryan Thiago de Oliveira Francisco</p>
+            <div class="footer-content">
+                <div class="social-links" role="list" aria-label="Links de redes sociais">
+                    <a href="https://github.com/Adryan-Francisco" class="social-link" role="listitem" aria-label="Perfil no GitHub">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no LinkedIn">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no Twitter">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no Instagram">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <p class="copyright">&copy; 2025 Adryan Thiago de Oliveira Francisco. Todos os direitos reservados.</p>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Simple script to handle fade-in animations as user scrolls
-        document.addEventListener('DOMContentLoaded', () => {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            
-            const fadeInOnScroll = () => {
-                fadeElements.forEach(element => {
-                    const elementTop = element.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (elementTop < windowHeight - 100) {
-                        element.classList.add('visible');
-                    }
-                });
-            };
-            
-            // Check on load
-            fadeInOnScroll();
-            
-            // Check on scroll
-            window.addEventListener('scroll', fadeInOnScroll);
-        });
-         // Script para o menu mobile
+        // Menu mobile toggle
         document.getElementById('mobile-menu').addEventListener('click', function() {
             document.getElementById('mobile-nav').classList.toggle('active');
         });
@@ -288,6 +458,16 @@
             link.addEventListener('click', function() {
                 document.getElementById('mobile-nav').classList.remove('active');
             });
+        });
+
+        // Header shadow on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         });
     </script>
 </body>

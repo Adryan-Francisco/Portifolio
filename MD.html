@@ -1,331 +1,166 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matemática Discreta</title>
+    <title>Metodologias e Práticas de Desenvolvimento - Portfólio Adryan Thiago</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Menu Mobile */
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--dark-color);
-        }
-
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 80px;
-            left: 0;
-            width: 100%;
-            background-color: white;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-            padding: 1rem 0;
-            animation: slideDown 0.3s ease-out;
-        }
-
-        .mobile-nav.active {
-            display: block;
-        }
-
-        .mobile-nav-links {
-            list-style: none;
-        }
-
-        .mobile-nav-links li {
-            padding: 0.8rem 2rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .mobile-nav-links a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
-            display: block;
-        }
-
-        .mobile-nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Ajustes para telas menores */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            /* Ajuste do padding para o header */
-            header {
-                padding: 0 20px;
-            }
-
-            /* Ajuste do hero section para mobile */
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-text p {
-                font-size: 1rem;
-            }
-        }
+        .materia-header { background: var(--gradient-dark); color: white; padding: 8rem 0 6rem; text-align: center; position: relative; overflow: hidden; margin-top: 80px; }
+        .materia-header::before { content: ''; position: absolute; top: -50%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(124, 58, 237, 0.3) 0%, transparent 70%); border-radius: 50%; z-index: 0; }
+        .materia-header::after { content: ''; position: absolute; bottom: -30%; left: -5%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, transparent 70%); border-radius: 50%; z-index: 0; }
+        .materia-header-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .materia-header h1 { font-size: 3.5rem; margin-bottom: 1.5rem; animation: fadeInUp 0.8s ease-out; }
+        .materia-header p { font-size: 1.2rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 1rem; }
+        .materia-meta { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; font-size: 0.95rem; }
+        .meta-item { display: flex; align-items: center; gap: 0.5rem; background: rgba(255, 255, 255, 0.1); padding: 0.6rem 1.2rem; border-radius: 50px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        main { padding: 4rem 0; background: linear-gradient(180deg, rgba(124, 58, 237, 0.03) 0%, rgba(236, 72, 153, 0.03) 100%); }
+        .materia-content { max-width: 900px; margin: 0 auto; }
+        section { background: white; margin-bottom: 2rem; padding: 2.5rem; border-radius: 15px; box-shadow: var(--shadow); border: 1px solid rgba(124, 58, 237, 0.1); animation: fadeInUp 0.6s ease-out; animation-fill-mode: both; }
+        section:nth-child(1) { animation-delay: 0.2s; }
+        section:nth-child(2) { animation-delay: 0.3s; }
+        section:nth-child(3) { animation-delay: 0.4s; }
+        section:nth-child(4) { animation-delay: 0.5s; }
+        section:nth-child(5) { animation-delay: 0.6s; }
+        h3 { background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1.5rem; font-size: 1.8rem; position: relative; padding-bottom: 0.8rem; }
+        h3::after { content: ''; position: absolute; width: 80px; height: 4px; background: var(--gradient-primary); bottom: 0; left: 0; border-radius: 2px; }
+        h4 { color: var(--dark-color); margin: 1.5rem 0 1rem; font-size: 1.1rem; font-weight: 600; }
+        p, li { color: var(--gray-color); line-height: 1.8; margin-bottom: 1rem; }
+        ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+        li { margin-bottom: 0.8rem; }
+        .note { background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%); border-left: 4px solid var(--primary-color); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; backdrop-filter: blur(10px); }
+        .note h4 { color: var(--primary-color); margin-top: 0; }
+        code { font-family: 'Courier New', Courier, monospace; background: rgba(124, 58, 237, 0.1); padding: 0.2rem 0.5rem; border-radius: 4px; color: var(--primary-color); font-size: 0.9rem; }
+        .github-link { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gradient-primary); color: white; padding: 0.9rem 1.8rem; border-radius: 50px; text-decoration: none; font-weight: 600; margin-top: 2rem; transition: all var(--transition); box-shadow: var(--shadow); }
+        .github-link:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); background: var(--gradient-secondary); }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-color); text-decoration: none; font-weight: 500; margin-bottom: 2rem; transition: all var(--transition); }
+        .back-link:hover { transform: translateX(-5px); }
+        @media (max-width: 768px) { .materia-header { padding: 6rem 0 4rem; } .materia-header h1 { font-size: 2.5rem; } section { padding: 1.5rem; } .materia-meta { gap: 1rem; font-size: 0.85rem; } h3 { font-size: 1.5rem; } }
+        @media (max-width: 480px) { .materia-header { padding: 4rem 0 3rem; } .materia-header h1 { font-size: 1.8rem; } main { padding: 2rem 0; } section { padding: 1rem; } .materia-meta { flex-direction: column; gap: 0.5rem; } }
     </style>
 </head>
 <body>
-   <!-- Header Atualizado com Menu Mobile -->
     <header>
         <div class="container">
-            <nav>
-                <a href="#" class="logo">Adryan<span>Thiago</span></a>
-                
-                <!-- Menu Desktop -->
+            <nav aria-label="Navegação principal">
+                <a href="index.html" class="logo" aria-label="Voltar ao início">Adryan<span>Thiago</span></a>
                 <ul class="nav-links">
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#projetos">Projetos</a></li>
                     <li><a href="contato.html">Contato</a></li>
                     <li><a href="materias.html">Matérias</a></li>
                 </ul>
-                
-                <!-- Ícone do Menu Mobile -->
-                <div class="menu-toggle" id="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
+                <div class="menu-toggle" id="mobile-menu" role="button" tabindex="0" aria-label="Abrir menu de navegação"><i class="fas fa-bars"></i></div>
             </nav>
         </div>
-        
-        <!-- Menu Mobile -->
         <div class="mobile-nav" id="mobile-nav">
             <ul class="mobile-nav-links">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#projetos">Projetos</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li><a href="materias.html">Matérias</a></li>
             </ul>
         </div>
     </header>
 
-    <main class="container">
-        <!-- Seção 1: Lógica Formal -->
-        <section id="logica" class="section fade-in">
-            <h2>1. Lógica Formal e Tabelas-Verdade</h2>
-            
-            <div class="two-columns">
-                <div class="card">
-                    <h3>Condicionais</h3>
-                    <h4>Implicação (→)</h4>
-                    <div class="table-container">
-                        <table>
-                            <tr>
-                                <th>p</th>
-                                <th>q</th>
-                                <th>p → q</th>
-                            </tr>
-                            <tr>
-                                <td>V</td>
-                                <td>V</td>
-                                <td>V</td>
-                            </tr>
-                            <tr>
-                                <td>V</td>
-                                <td>F</td>
-                                <td>F</td>
-                            </tr>
-                            <tr>
-                                <td>F</td>
-                                <td>V</td>
-                                <td>V</td>
-                            </tr>
-                            <tr>
-                                <td>F</td>
-                                <td>F</td>
-                                <td>V</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <h4>Equivalência (↔)</h4>
-                    <div class="table-container">
-                        <table>
-                            <tr>
-                                <th>p</th>
-                                <th>q</th>
-                                <th>p ↔ q</th>
-                            </tr>
-                            <tr>
-                                <td>V</td>
-                                <td>V</td>
-                                <td>V</td>
-                            </tr>
-                            <tr>
-                                <td>V</td>
-                                <td>F</td>
-                                <td>F</td>
-                            </tr>
-                            <tr>
-                                <td>F</td>
-                                <td>V</td>
-                                <td>F</td>
-                            </tr>
-                            <tr>
-                                <td>F</td>
-                                <td>F</td>
-                                <td>V</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
+    <div class="materia-header">
+        <div class="materia-header-content">
+            <a href="materias.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar</a>
+            <h1>Metodologias de Desenvolvimento</h1>
+            <p>Práticas e processos para desenvolvimento profissional de software</p>
+            <div class="materia-meta">
+                <div class="meta-item"><i class="fas fa-book"></i><span>2º Semestre</span></div>
+                <div class="meta-item"><i class="fas fa-clock"></i><span>80 horas</span></div>
+                <div class="meta-item"><i class="fas fa-square-root-alt"></i><span>Qualidade</span></div>
             </div>
-            
-            <div class="card">
-                <h3>Negación de Proposiciones</h3>
+        </div>
+    </div>
+
+    <main>
+        <div class="container materia-content">
+            <section>
+                <h3><i class="fas fa-square-root-alt"></i> Visão Geral</h3>
+                <p>Estudo de metodologias e boas práticas para desenvolvimento profissional de software.</p>
+                <p>Cobre desde ciclo de vida do software até qualidade, testes e documentação de projetos.</p>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-sliders-h"></i> Ciclo de Vida de Software</h3>
+                <p>Fases do desenvolvimento:</p>
                 <ul>
-                    <li>~(p ∧ q) ⇔ (~p ∨ ~q)</li>
-                    <li>~(p ∨ q) ⇔ (~p ∧ ~q)</li>
-                    <li>~(p → q) ⇔ (p ∧ ~q)</li>
+                    <li><strong>Requisitos:</strong> Entender o que precisa ser feito</li>
+                    <li><strong>Design:</strong> Planejar a solução</li>
+                    <li><strong>Implementação:</strong> Codificar</li>
+                    <li><strong>Testes:</strong> Verificar qualidade</li>
+                    <li><strong>Deployment:</strong> Colocar em produção</li>
+                    <li><strong>Manutenção:</strong> Suporte e melhorias</li>
                 </ul>
-            </div>
-        </section>
+            </section>
 
-        <!-- Seção 2: Teoria dos Conjuntos -->
-        <section id="conjuntos" class="section fade-in">
-            <h2>2. Teoria dos Conjuntos</h2>
-            
-            <div class="two-columns">
-                <div class="card">
-                    <h3>Conjuntos Numéricos</h3>
-                    <ul>
-                        <li><strong>Naturais (ℕ)</strong>: {0, 1, 2, ...}</li>
-                        <li><strong>Inteiros (ℤ)</strong>: {..., -2, -1, 0, 1, 2, ...}</li>
-                        <li><strong>Racionais (ℚ)</strong>: Frações p/q, q ≠ 0.</li>
-                        <li><strong>Reais (ℝ)</strong>: Todos os números na reta real.</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3>Intervalos</h3>
-                    <ul>
-                        <li><strong>Fechado</strong>: [a, b] = {x ∈ ℝ | a ≤ x ≤ b}</li>
-                        <li><strong>Aberto</strong>: (a, b) = {x ∈ ℝ | a < x < b}</li>
-                        <li><strong>Semiaberto</strong>: [a, b) ou (a, b]</li>
-                        <li><strong>Infinito</strong>: (-∞, b] ou [a, ∞)</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+            <section>
+                <h3><i class="fas fa-check-square"></i> Qualidade de Software</h3>
+                <p>Atributos desejáveis:</p>
+                <ul>
+                    <li><strong>Confiabilidade:</strong> Funciona como esperado</li>
+                    <li><strong>Performance:</strong> Executa eficientemente</li>
+                    <li><strong>Segurança:</strong> Protege dados</li>
+                    <li><strong>Manutenibilidade:</strong> Fácil de modificar</li>
+                    <li><strong>Usabilidade:</strong> Fácil de usar</li>
+                    <li><strong>Portabilidade:</strong> Funciona em diferentes plataformas</li>
+                </ul>
 
-        <!-- Seção 3: Teoria dos Grafos -->
-        <section id="grafos" class="section fade-in">
-            <h2>3. Teoria dos Grafos</h2>
-            
-            <div class="two-columns">
-                <div class="card">
-                    <h3>Definições Básicas</h3>
-                    <ul>
-                        <li><strong>Grafo</strong>: Conjunto de vértices e arestas</li>
-                        <li><strong>Grafo Simples</strong>: Sem laços ou arestas múltiplas</li>
-                        <li><strong>Grafo Completo</strong>: Todos os vértices conectados</li>
-                        <li><strong>Árvore</strong>: Grafo acíclico e conexo</li>
-                        <li><strong>Grafo Bipartido</strong>: Vértices divididos em dois conjuntos</li>
-                    </ul>
+                <div class="note">
+                    <h4><i class="fas fa-lightbulb"></i> Testes</h4>
+                    <p>Testes são essenciais para garantir qualidade. Incluem unitários, integração, sistema e aceitação.</p>
                 </div>
-                
-                <div class="card">
-                    <h3>Árvore de Decisão</h3>
-                    <p>Usada em algoritmos de busca como:</p>
-                    <ul>
-                        <li>Busca binária</li>
-                        <li>Algoritmos de ordenação</li>
-                        <li>Árvores de decisão em machine learning</li>
-                        <li>Jogos (como xadrez)</li>
-                    </ul>
-                    <p>Complexidade: O(log n) para buscas eficientes</p>
-                </div>
-            </div>
-            
-            <div class="card">
-   
-                <div class="two-columns">
-                    <div>
-                        <h4>Matriz de Adjacência</h4>
-                        <ul>
-                            <li>Matriz quadrada n × n</li>
-                            <li>1 se existe aresta, 0 caso contrário</li>
-                            <li>Boa para grafos densos</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>Lista de Adjacência</h4>
-                        <ul>
-                            <li>Array de listas</li>
-                            <li>Cada vértice aponta para seus vizinhos</li>
-                            <li>Eficiente para grafos esparsos</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-tools"></i> Boas Práticas</h3>
+                <ul>
+                    <li>Code Review: Revisão por pares</li>
+                    <li>Refatoração: Melhorar código existente</li>
+                    <li>Documentação: Manter atualizada</li>
+                    <li>Versionamento: Controle de histórico</li>
+                    <li>Pair Programming: Programação em dupla</li>
+                    <li>Continuous Integration: Integração frequente</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-graduation-cap"></i> Conclusão</h3>
+                <p>Profissionais que dominam metodologias de desenvolvimento produzem software de qualidade superior e são mais produtivos e valorizados no mercado.</p>
+                <a href="https://github.com/Adryan-Francisco" class="github-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> Ver Projetos no GitHub
+                </a>
+            </section>
+        </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 - Adryan Thiago de Oliveira Francisco</p>
+            <div class="footer-content">
+                <div class="social-links" role="list" aria-label="Links de redes sociais">
+                    <a href="https://github.com/Adryan-Francisco" class="social-link" role="listitem" aria-label="Perfil no GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                </div>
+                <p class="copyright">&copy; 2025 Adryan Thiago de Oliveira Francisco. Todos os direitos reservados.</p>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Simple script to handle fade-in animations as user scrolls
-        document.addEventListener('DOMContentLoaded', () => {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            
-            const fadeInOnScroll = () => {
-                fadeElements.forEach(element => {
-                    const elementTop = element.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (elementTop < windowHeight - 100) {
-                        element.classList.add('visible');
-                    }
-                });
-            };
-            
-            // Check on load
-            fadeInOnScroll();
-            
-            // Check on scroll
-            window.addEventListener('scroll', fadeInOnScroll);
-        });
-         // Script para o menu mobile
-        document.getElementById('mobile-menu').addEventListener('click', function() {
-            document.getElementById('mobile-nav').classList.toggle('active');
-        });
-
-        // Fechar o menu ao clicar em um link
-        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
-            link.addEventListener('click', function() {
-                document.getElementById('mobile-nav').classList.remove('active');
-            });
-        });
+        document.getElementById('mobile-menu').addEventListener('click', function() { document.getElementById('mobile-nav').classList.toggle('active'); });
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => { link.addEventListener('click', function() { document.getElementById('mobile-nav').classList.remove('active'); }); });
+        window.addEventListener('scroll', function() { const header = document.querySelector('header'); if (window.scrollY > 10) { header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); } });
     </script>
 </body>
 </html>

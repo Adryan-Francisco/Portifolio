@@ -3,364 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <title>Tabelas, Análise e Banco de Dados - Portfólio Adryan Thiago</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 30px;
-            line-height: 1.6;
-            background-color: #f8f8f8;
-        }
-
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-
-        .section {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 30px;
-            border-left: 5px solid #3498db;
-        }
-
-        pre {
-            background-color: #eee;
-            padding: 10px;
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        table, th, td {
-            border: 1px solid #ccc;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        ul, ol {
-            margin-left: 20px;
-        }
-         /* Header */
-         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 0;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--dark-color);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 2rem;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        /* Menu Mobile */
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--dark-color);
-        }
-
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 80px;
-            left: 0;
-            width: 100%;
-            background-color: white;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-            padding: 1rem 0;
-            animation: slideDown 0.3s ease-out;
-        }
-
-        .mobile-nav.active {
-            display: block;
-        }
-
-        .mobile-nav-links {
-            list-style: none;
-        }
-
-        .mobile-nav-links li {
-            padding: 0.8rem 2rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .mobile-nav-links a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
-            display: block;
-        }
-
-        .mobile-nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Ajustes para telas menores */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            /* Ajuste do padding para o header */
-            header {
-                padding: 0 20px;
-            }
-
-            /* Ajuste do hero section para mobile */
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-text p {
-                font-size: 1rem;
-            }
-        }
+        .materia-header { background: var(--gradient-dark); color: white; padding: 8rem 0 6rem; text-align: center; position: relative; overflow: hidden; margin-top: 80px; }
+        .materia-header::before { content: ''; position: absolute; top: -50%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(124, 58, 237, 0.3) 0%, transparent 70%); border-radius: 50%; z-index: 0; }
+        .materia-header::after { content: ''; position: absolute; bottom: -30%; left: -5%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, transparent 70%); border-radius: 50%; z-index: 0; }
+        .materia-header-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .materia-header h1 { font-size: 3.5rem; margin-bottom: 1.5rem; animation: fadeInUp 0.8s ease-out; }
+        .materia-header p { font-size: 1.2rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 1rem; }
+        .materia-meta { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; font-size: 0.95rem; }
+        .meta-item { display: flex; align-items: center; gap: 0.5rem; background: rgba(255, 255, 255, 0.1); padding: 0.6rem 1.2rem; border-radius: 50px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        main { padding: 4rem 0; background: linear-gradient(180deg, rgba(124, 58, 237, 0.03) 0%, rgba(236, 72, 153, 0.03) 100%); }
+        .materia-content { max-width: 900px; margin: 0 auto; }
+        section { background: white; margin-bottom: 2rem; padding: 2.5rem; border-radius: 15px; box-shadow: var(--shadow); border: 1px solid rgba(124, 58, 237, 0.1); animation: fadeInUp 0.6s ease-out; animation-fill-mode: both; }
+        section:nth-child(1) { animation-delay: 0.2s; }
+        section:nth-child(2) { animation-delay: 0.3s; }
+        section:nth-child(3) { animation-delay: 0.4s; }
+        section:nth-child(4) { animation-delay: 0.5s; }
+        section:nth-child(5) { animation-delay: 0.6s; }
+        h3 { background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1.5rem; font-size: 1.8rem; position: relative; padding-bottom: 0.8rem; }
+        h3::after { content: ''; position: absolute; width: 80px; height: 4px; background: var(--gradient-primary); bottom: 0; left: 0; border-radius: 2px; }
+        h4 { color: var(--dark-color); margin: 1.5rem 0 1rem; font-size: 1.1rem; font-weight: 600; }
+        p, li { color: var(--gray-color); line-height: 1.8; margin-bottom: 1rem; }
+        ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+        li { margin-bottom: 0.8rem; }
+        .note { background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%); border-left: 4px solid var(--primary-color); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; backdrop-filter: blur(10px); }
+        .note h4 { color: var(--primary-color); margin-top: 0; }
+        code { font-family: 'Courier New', Courier, monospace; background: rgba(124, 58, 237, 0.1); padding: 0.2rem 0.5rem; border-radius: 4px; color: var(--primary-color); font-size: 0.9rem; }
+        .github-link { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gradient-primary); color: white; padding: 0.9rem 1.8rem; border-radius: 50px; text-decoration: none; font-weight: 600; margin-top: 2rem; transition: all var(--transition); box-shadow: var(--shadow); }
+        .github-link:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); background: var(--gradient-secondary); }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-color); text-decoration: none; font-weight: 500; margin-bottom: 2rem; transition: all var(--transition); }
+        .back-link:hover { transform: translateX(-5px); }
+        @media (max-width: 768px) { .materia-header { padding: 6rem 0 4rem; } .materia-header h1 { font-size: 2.5rem; } section { padding: 1.5rem; } .materia-meta { gap: 1rem; font-size: 0.85rem; } h3 { font-size: 1.5rem; } }
+        @media (max-width: 480px) { .materia-header { padding: 4rem 0 3rem; } .materia-header h1 { font-size: 1.8rem; } main { padding: 2rem 0; } section { padding: 1rem; } .materia-meta { flex-direction: column; gap: 0.5rem; } }
     </style>
 </head>
-<header>
-    <div class="container">
-        <nav>
-            <a href="#" class="logo">Adryan<span>Thiago</span></a>
-            
-            <!-- Menu Desktop -->
-            <ul class="nav-links">
+<body>
+    <header>
+        <div class="container">
+            <nav aria-label="Navegação principal">
+                <a href="index.html" class="logo" aria-label="Voltar ao início">Adryan<span>Thiago</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#projetos">Projetos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="materias.html">Matérias</a></li>
+                </ul>
+                <div class="menu-toggle" id="mobile-menu" role="button" tabindex="0" aria-label="Abrir menu de navegação"><i class="fas fa-bars"></i></div>
+            </nav>
+        </div>
+        <div class="mobile-nav" id="mobile-nav">
+            <ul class="mobile-nav-links">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#projetos">Projetos</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li><a href="materias.html">Matérias</a></li>
             </ul>
-            
-            <!-- Ícone do Menu Mobile -->
-            <div class="menu-toggle" id="mobile-menu">
-                <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <div class="materia-header">
+        <div class="materia-header-content">
+            <a href="materias.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar</a>
+            <h1>Tabelas, Análise e Banco de Dados</h1>
+            <p>Fundamentos de banco de dados e linguagem SQL</p>
+            <div class="materia-meta">
+                <div class="meta-item"><i class="fas fa-book"></i><span>1º Semestre</span></div>
+                <div class="meta-item"><i class="fas fa-clock"></i><span>80 horas</span></div>
+                <div class="meta-item"><i class="fas fa-database"></i><span>SQL</span></div>
             </div>
-        </nav>
-    </div>
-    
-    <!-- Menu Mobile -->
-    <div class="mobile-nav" id="mobile-nav">
-        <ul class="mobile-nav-links">
-            <li><a href="inde.html">Início</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="contato.html">Contato</a></li>
-            <li><a href="materias.html">Matérias</a></li>
-        </ul>
-    </div>
-</header>
-<body>
-
-    <h1>Técnicas Avançadas de Banco de Dados</h1>
-
-    <div class="section">
-        <h2>1. Introdução</h2>
-        <p>Este resumo aborda técnicas de banco de dados no PostgreSQL, com foco em <strong>Stored Procedures</strong>, <strong>Functions</strong> e <strong>Data Control Language (DCL)</strong>.</p>
+        </div>
     </div>
 
-    <div class="section">
-        <h2>2. Differences entre Procedures e Functions</h2>
-        <table>
-            <tr>
-                <th>Característica</th>
-                <th>Function</th>
-                <th>Procedure</th>
-            </tr>
-            <tr>
-                <td>Retorno</td>
-                <td>Sempre retorna um valor</td>
-                <td>Pode retornar ou não</td>
-            </tr>
-            <tr>
-                <td>Chamada</td>
-                <td>Usada em SELECT, WHERE, etc.</td>
-                <td>Executada com CALL</td>
-            </tr>
-            <tr>
-                <td>Uso comum</td>
-                <td>Cálculos, transformações</td>
-                <td>Ações como INSERT, DELETE</td>
-            </tr>
-        </table>
-    </div>
+    <main>
+        <div class="container materia-content">
+            <section>
+                <h3><i class="fas fa-database"></i> Visão Geral</h3>
+                <p>Estudo de fundamentos de banco de dados relacionais, modelagem de dados e linguagem SQL.</p>
+                <p>Essencial para qualquer desenvolvedor, permitindo armazenar e consultar dados de forma eficiente.</p>
+            </section>
 
-    <div class="section">
-        <h2>3. Tipos de Funções no PostgreSQL</h2>
-        <ul>
-            <li><strong>SQL Functions:</strong> Apenas comandos SQL básicos.</li>
-            <li><strong>PL/pgSQL Functions:</strong> Suportam lógica com IF, LOOP, variáveis.</li>
-            <li><strong>Linguagens Externas:</strong> Usam C, Python, Java (maior desempenho, exigem configuração).</li>
-        </ul>
-    </div>
+            <section>
+                <h3><i class="fas fa-table"></i> Conceitos de Banco de Dados</h3>
+                <p>Estruturas fundamentais:</p>
+                <ul>
+                    <li><strong>Tabela:</strong> Conjunto de linhas e colunas</li>
+                    <li><strong>Coluna:</strong> Atributo com tipo de dado</li>
+                    <li><strong>Linha/Registro:</strong> Instância de dados</li>
+                    <li><strong>Chave Primária:</strong> Identificador único</li>
+                    <li><strong>Chave Estrangeira:</strong> Relacionamento entre tabelas</li>
+                </ul>
+            </section>
 
-    <div class="section">
-        <h2>4. Vantagens de Procedures e Functions</h2>
-        <ul>
-            <li>Reutilização de código</li>
-            <li>Menor tráfego de rede</li>
-            <li>Melhor desempenho</li>
-            <li>Segurança</li>
-            <li>Centralização da lógica</li>
-        </ul>
-        <p><strong>Desvantagem:</strong> Dependência da plataforma/SGBD.</p>
-    </div>
+            <section>
+                <h3><i class="fas fa-layer-group"></i> Modelo Relacional</h3>
+                <p>Organização de dados em relações (tabelas):</p>
+                <ul>
+                    <li><strong>1:1</strong> Um para um</li>
+                    <li><strong>1:N</strong> Um para muitos</li>
+                    <li><strong>N:N</strong> Muitos para muitos</li>
+                </ul>
 
-    <div class="section">
-        <h2>5. Exemplos</h2>
+                <div class="note">
+                    <h4><i class="fas fa-lightbulb"></i> Normalização</h4>
+                    <p>Processo de organizar tabelas para evitar redundância e anomalias. Formas normais: 1NF, 2NF, 3NF, BCNF.</p>
+                </div>
+            </section>
 
-        <h3>Function: Olá Pessoal</h3>
-        <pre>CREATE FUNCTION sp_ola() RETURNS TEXT LANGUAGE SQL AS $$
-SELECT 'Olá, Pessoal!';
-$$;</pre>
+            <section>
+                <h3><i class="fas fa-search"></i> SQL - Linguagem de Consulta</h3>
+                <p>Comandos principais:</p>
+                <ul>
+                    <li><strong>SELECT:</strong> Recuperar dados</li>
+                    <li><strong>INSERT:</strong> Inserir dados</li>
+                    <li><strong>UPDATE:</strong> Atualizar dados</li>
+                    <li><strong>DELETE:</strong> Remover dados</li>
+                    <li><strong>JOIN:</strong> Combinar tabelas</li>
+                    <li><strong>GROUP BY:</strong> Agrupar dados</li>
+                    <li><strong>ORDER BY:</strong> Ordenar resultados</li>
+                </ul>
+            </section>
 
-        <h3>Procedure: Olá Pessoal</h3>
-        <pre>CREATE PROCEDURE nome() LANGUAGE plpgsql AS $$
-BEGIN
-    RAISE NOTICE 'Olá, Pessoal!';
-END;
-$$;</pre>
+            <section>
+                <h3><i class="fas fa-graduation-cap"></i> Conclusão</h3>
+                <p>Proficiência em banco de dados é crucial para carreira em desenvolvimento. Praticamente todas as aplicações modernas dependem de banco de dados.</p>
+                <a href="https://github.com/Adryan-Francisco" class="github-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> Ver Projetos no GitHub
+                </a>
+            </section>
+        </div>
+    </main>
 
-        <h3>Função com retorno:</h3>
-        <pre>CREATE FUNCTION total_clientes() RETURNS BIGINT LANGUAGE SQL AS $$
-SELECT COUNT(*) FROM cliente;
-$$;</pre>
-    </div>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links" role="list" aria-label="Links de redes sociais">
+                    <a href="https://github.com/Adryan-Francisco" class="social-link" role="listitem" aria-label="Perfil no GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Perfil no Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                </div>
+                <p class="copyright">&copy; 2025 Adryan Thiago de Oliveira Francisco. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
-    <div class="section">
-        <h2>6. DCL – Data Control Language</h2>
-        <p>Gerencia usuários, permissões e papéis no PostgreSQL.</p>
-
-        <h3>Comandos:</h3>
-        <pre>
-CREATE ROLE nome_papel;
-ALTER ROLE nome_papel WITH ENCRYPTED PASSWORD '123';
-DROP ROLE nome_papel;
-GRANT UPDATE ON tabela TO papel;
-REVOKE ALL ON tabela FROM PUBLIC;
-        </pre>
-
-        <h3>Opções de CREATE ROLE:</h3>
-        <ul>
-            <li>LOGIN, SUPERUSER, CREATEDB, CREATEROLE</li>
-            <li>PASSWORD 'senha', CONNECTION LIMIT, VALID UNTIL</li>
-            <li>IN ROLE, NOINHERIT, etc.</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>7. Grupos e Permissões</h2>
-        <ul>
-            <li>Grupos são papéis sem LOGIN</li>
-            <li>Adicionar usuários a um grupo:</li>
-        </ul>
-        <pre>GRANT nome_grupo TO user1, user2;</pre>
-
-        <ul>
-            <li>Remover:</li>
-        </ul>
-        <pre>REVOKE nome_grupo FROM user2;</pre>
-    </div>
-
-   
-<script>
-        // Script para o menu mobile
-        document.getElementById('mobile-menu').addEventListener('click', function() {
-            document.getElementById('mobile-nav').classList.toggle('active');
-        });
-
-        // Fechar o menu ao clicar em um link
-        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
-            link.addEventListener('click', function() {
-                document.getElementById('mobile-nav').classList.remove('active');
-            });
-        });
-         // Script para o menu mobile
-        document.getElementById('mobile-menu').addEventListener('click', function() {
-            document.getElementById('mobile-nav').classList.toggle('active');
-        });
-
-        // Fechar o menu ao clicar em um link
-        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
-            link.addEventListener('click', function() {
-                document.getElementById('mobile-nav').classList.remove('active');
-            });
-        });
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', function() { document.getElementById('mobile-nav').classList.toggle('active'); });
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => { link.addEventListener('click', function() { document.getElementById('mobile-nav').classList.remove('active'); }); });
+        window.addEventListener('scroll', function() { const header = document.querySelector('header'); if (window.scrollY > 10) { header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); } });
     </script>
 </body>
 </html>
